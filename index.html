@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Monday Brief</title>
+<meta name="description" content="Every client gets a personal briefing every Monday, and nobody on your team writes it. An automated client-intelligence service: weekly brief, short podcast, Monday email and a private portal, built for law firms, accountants, advisors and more.">
+<meta name="theme-color" content="#2B45E0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Monday Brief">
+<meta property="og:description" content="Every client gets a personal briefing every Monday. Nobody on your team writes it.">
+<meta property="og:image" content="/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<style>
+:root {
+  --ground: #F6F7FB;
+  --surface: #FFFFFF;
+  --ink: #10163A;
+  --ink-2: #2A3260;
+  --slate: #5B6390;
+  --faint: #8A91B4;
+  --line: #DCE0EF;
+  --line-2: #B9C0DC;
+  --cobalt: #2B45E0;
+  --cobalt-deep: #1E33B8;
+  --on-cobalt: #FFFFFF;
+  --butter: #FFE17A;
+  --butter-soft: rgba(255, 225, 122, 0.55);
+  --coral: #FF6F5E;
+  --on-ink: #FFFFFF;
+  --frame: #DDE2F2;
+  --shadow: 0 1px 2px rgba(16, 22, 58, 0.06), 0 14px 36px -14px rgba(16, 22, 58, 0.22);
+  --pv-bg: #EFEFEE; --pv-card: #FFFFFF; --pv-border: #DCDCDA; --pv-border-2: #B9B9B6; --pv-text: #101010; --pv-muted: #5E5E5C;
+  --pv-faint: #8B8B88; --pv-accent: #0B0B0B; --pv-accent-ink: #FFFFFF; --pv-soft: rgba(11, 11, 11, 0.055);
+  --pv-b1: #E3E3E1; --pv-b2: #C9C9C6; --pv-b3: #9D9D9A; --pv-b4: #5E5E5C; --pv-b5: #101010;
+  --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --pv-sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --pv-serif: Newsreader, "Iowan Old Style", Charter, Georgia, serif;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0D1020; --surface: #151A2E; --ink: #E9ECF8; --ink-2: #C7CDE6; --slate: #98A0C4; --faint: #737B9E;
+    --line: #262D48; --line-2: #3A4368; --cobalt: #3B57F2; --cobalt-deep: #2A43D6; --on-cobalt: #FFFFFF;
+    --butter: #F5D75A; --butter-soft: rgba(245, 215, 90, 0.28); --coral: #FF8A7A; --on-ink: #0D1020;
+    --frame: #1B2140; --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 14px 36px -14px rgba(0, 0, 0, 0.7);
+    --pv-bg: #121212; --pv-card: #1A1A1A; --pv-border: #2E2E2E; --pv-border-2: #4A4A48; --pv-text: #ECECEA; --pv-muted: #A6A6A3;
+    --pv-faint: #7E7E7B; --pv-accent: #ECECEA; --pv-accent-ink: #0B0B0B; --pv-soft: rgba(236, 236, 234, 0.07);
+    --pv-b1: #2A2A2A; --pv-b2: #444442; --pv-b3: #6E6E6B; --pv-b4: #A6A6A3; --pv-b5: #ECECEA;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0D1020; --surface: #151A2E; --ink: #E9ECF8; --ink-2: #C7CDE6; --slate: #98A0C4; --faint: #737B9E;
+  --line: #262D48; --line-2: #3A4368; --cobalt: #3B57F2; --cobalt-deep: #2A43D6; --on-cobalt: #FFFFFF;
+  --butter: #F5D75A; --butter-soft: rgba(245, 215, 90, 0.28); --coral: #FF8A7A; --on-ink: #0D1020;
+  --frame: #1B2140; --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 14px 36px -14px rgba(0, 0, 0, 0.7);
+  --pv-bg: #121212; --pv-card: #1A1A1A; --pv-border: #2E2E2E; --pv-border-2: #4A4A48; --pv-text: #ECECEA; --pv-muted: #A6A6A3;
+  --pv-faint: #7E7E7B; --pv-accent: #ECECEA; --pv-accent-ink: #0B0B0B; --pv-soft: rgba(236, 236, 234, 0.07);
+  --pv-b1: #2A2A2A; --pv-b2: #444442; --pv-b3: #6E6E6B; --pv-b4: #A6A6A3; --pv-b5: #ECECEA;
+}
+
+:root {
+  --pv-accent: #2B45E0; --pv-accent-ink: #FFFFFF; --pv-soft: rgba(43, 69, 224, 0.09); --pv-tint: rgba(43, 69, 224, 0.05);
+  --pvb-quiet: #5B8DEF; --pvb-moderate: #2E9E7A; --pvb-active: #D9A200; --pvb-elevated: #E0702F; --pvb-critical: #D23B3B;
+  --pvc-gov: #3B5BDB; --pvc-media: #0E8C8C; --pvc-proc: #C48A00; --pvc-stake: #7C3AED; --pvc-comp: #C2410C;
+  --pvs-positive: #2E9E7A; --pvs-negative: #D23B3B; --pvs-mixed: #D9A200; --pvs-neutral: #8B8B88;
+  --pvu-now: #D23B3B; --pvu-soon: #D9A200; --pvu-later: #5E5E5C;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --pv-accent: #7FA3FF; --pv-accent-ink: #0B0B0B; --pv-soft: rgba(127, 163, 255, 0.14); --pv-tint: rgba(127, 163, 255, 0.08);
+  --pvb-quiet: #7FA3FF; --pvb-moderate: #4CC29A; --pvb-active: #E8BC2E; --pvb-elevated: #F08A4B; --pvb-critical: #F06060;
+  --pvc-gov: #8AA0FF; --pvc-media: #4FC3C3; --pvc-proc: #E8BC2E; --pvc-stake: #B48CFF; --pvc-comp: #F0905C;
+  --pvs-positive: #4CC29A; --pvs-negative: #F06060; --pvs-mixed: #E8BC2E; --pvs-neutral: #A6A6A3;
+  --pvu-now: #F06060; --pvu-soon: #E8BC2E; --pvu-later: #A6A6A3;
+  }
+}
+:root[data-theme="dark"] {
+  --pv-accent: #7FA3FF; --pv-accent-ink: #0B0B0B; --pv-soft: rgba(127, 163, 255, 0.14); --pv-tint: rgba(127, 163, 255, 0.08);
+  --pvb-quiet: #7FA3FF; --pvb-moderate: #4CC29A; --pvb-active: #E8BC2E; --pvb-elevated: #F08A4B; --pvb-critical: #F06060;
+  --pvc-gov: #8AA0FF; --pvc-media: #4FC3C3; --pvc-proc: #E8BC2E; --pvc-stake: #B48CFF; --pvc-comp: #F0905C;
+  --pvs-positive: #4CC29A; --pvs-negative: #F06060; --pvs-mixed: #E8BC2E; --pvs-neutral: #A6A6A3;
+  --pvu-now: #F06060; --pvu-soon: #E8BC2E; --pvu-later: #A6A6A3;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--ground); color: var(--ink); font-family: var(--display); font-size: 17px; line-height: 1.55; padding-inline: 20px; padding-block: 0 80px; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+p { margin: 0; }
+button, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.wrap { max-width: 1160px; margin: 0 auto; }
+.narrow { max-width: 720px; }
+.mono { font-family: var(--mono); }
+.rv { transition: transform 0.8s var(--ease), opacity 0.8s var(--ease); }
+.rv.pre { transform: translateY(24px); opacity: 0.35; }
+
+/* top bar */
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 18px; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--slate); }
+.topbar b { color: var(--ink); font-weight: 700; letter-spacing: 0.02em; }
+.topbar .mono { font-size: 12px; }
+
+/* bands */
+.band { margin-inline: -20px; padding-inline: 20px; }
+.band-cobalt { background: var(--cobalt); color: var(--on-cobalt); }
+.band-cobalt .topbar { border-bottom-color: rgba(255, 255, 255, 0.22); color: rgba(255, 255, 255, 0.78); }
+.band-cobalt .topbar b { color: #fff; }
+
+/* hero */
+.hero { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 48px; align-items: center; padding-block: 56px 64px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); display: inline-flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 10px; height: 10px; background: var(--butter); border: 1px solid var(--ink); }
+.hero .eyebrow { color: rgba(255, 255, 255, 0.82); }
+.hero .eyebrow::before { border-color: transparent; }
+h1 { font-size: clamp(40px, 6vw, 74px); line-height: 0.98; letter-spacing: -0.035em; font-weight: 800; margin-top: 18px; }
+.mark { color: var(--butter); position: relative; white-space: nowrap; }
+.mark::after { content: ""; position: absolute; left: 0.02em; right: 0.02em; bottom: 0; height: 0.075em; background: var(--butter); transform-origin: 0 50%; animation: sweep 0.8s var(--ease) 0.6s backwards; }
+@keyframes sweep { from { transform: scaleX(0); } }
+.hero-sub { font-size: 20px; line-height: 1.5; color: rgba(255, 255, 255, 0.86); max-width: 38ch; margin-top: 22px; }
+.cycle { display: grid; gap: 8px; margin-top: 22px; font-size: 18px; color: rgba(255, 255, 255, 0.75); }
+.cycle-btn { border: 0; background: #fff; color: var(--cobalt); padding: 3px 12px; font-weight: 700; cursor: pointer; border-radius: 2px; transition: transform 0.2s var(--ease); display: inline-grid; text-align: left; vertical-align: baseline; margin-left: 4px; }
+.cycle-btn:hover { transform: translateY(-1px); }
+.cycle-btn span { grid-area: 1 / 1; visibility: hidden; white-space: nowrap; }
+.cycle-btn span.on { visibility: visible; animation: wordin 0.45s var(--ease); }
+@keyframes wordin { from { transform: translateY(40%); opacity: 0; } }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; font-size: 15px; font-weight: 700; border: 1.5px solid var(--ink); background: var(--ink); color: var(--on-ink); text-decoration: none; cursor: pointer; transition: transform 0.18s var(--ease), background-color 0.2s, color 0.2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn.ghost { background: transparent; color: var(--ink); }
+.btn-cobalt { background: var(--cobalt); border-color: var(--cobalt); color: #fff; }
+.btn-butter { background: var(--butter); border-color: var(--butter); color: #10163A; }
+.cta-strip { margin-top: 36px; background: var(--surface); border: 1.5px solid var(--cobalt); border-radius: 12px; padding: 22px 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
+.cta-strip h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.15; }
+.cta-strip p { font-size: 15px; color: var(--slate); margin-top: 4px; max-width: 52ch; }
+.closing-cta { margin-top: 18px; }
+.fab { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 30; display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; background: var(--cobalt); color: #fff; font-weight: 700; font-size: 14px; text-decoration: none; box-shadow: 0 16px 32px -12px rgba(43, 69, 224, 0.7); transform: translateY(24px); opacity: 0; pointer-events: none; transition: transform 0.35s var(--ease), opacity 0.35s; }
+.fab.on { transform: none; opacity: 1; pointer-events: auto; }
+.fab:hover { background: var(--cobalt-deep); }
+.hero .btn { background: var(--butter); color: #10163A; border-color: var(--butter); }
+.hero .btn.ghost { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.7); }
+
+/* the Monday board */
+.board { background: var(--surface); color: var(--ink); border-radius: 12px; box-shadow: 0 34px 70px -28px rgba(0, 0, 0, 0.55); padding: 18px 22px 16px; display: grid; gap: 10px; animation: boardin 0.9s var(--ease) 0.2s backwards; }
+@keyframes boardin { from { transform: translateY(28px); opacity: 0; } }
+.board-top { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; border-bottom: 2px solid var(--ink); padding-bottom: 10px; }
+.board-day { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); }
+.board-clock { font-family: var(--mono); font-size: 32px; font-weight: 500; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; margin-left: auto; }
+.board-clock small { font-size: 13px; margin-left: 2px; color: var(--slate); letter-spacing: 0; }
+.board-live { border: 0; background: transparent; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--coral); cursor: pointer; padding: 2px 0; width: 100%; text-align: left; }
+.board-live.done { color: var(--slate); }
+.board-rows { list-style: none; margin: 0; padding: 0; display: grid; }
+.brow { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); min-height: 48px; transition: opacity 0.35s; }
+.brow:last-child { border-bottom: 0; }
+.brow[data-state="pending"] { opacity: 0.32; }
+.brow-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--line-2); display: grid; place-items: center; font-size: 9px; color: #fff; position: relative; transition: background-color 0.25s, border-color 0.25s; }
+.brow[data-state="running"] .brow-dot { border-color: var(--coral); background: var(--coral); }
+.brow[data-state="running"] .brow-dot::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--coral); animation: pulse 1.1s ease-out infinite; }
+@keyframes pulse { from { transform: scale(0.7); opacity: 1; } to { transform: scale(1.4); opacity: 0; } }
+.brow[data-state="done"] .brow-dot { background: var(--cobalt); border-color: var(--cobalt); }
+.brow[data-state="done"] .brow-dot::after { content: "✓"; }
+.brow-main b { display: block; font-size: 14px; font-weight: 700; line-height: 1.25; }
+.brow-main span { display: block; font-size: 12.5px; color: var(--slate); font-variant-numeric: tabular-nums; min-height: 1.3em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.brow-side { font-family: var(--mono); font-size: 12px; color: var(--slate); text-align: right; font-variant-numeric: tabular-nums; min-width: 64px; }
+.chip { display: inline-block; background: var(--butter); color: #10163A; font-weight: 700; padding: 2px 7px; font-size: 11px; border-radius: 2px; font-family: var(--display); animation: popin 0.35s var(--ease) backwards; }
+@keyframes popin { from { transform: scale(0.4); opacity: 0; } }
+.score { font-family: var(--display); font-size: 24px; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
+.wave { display: inline-flex; align-items: center; gap: 2px; height: 16px; vertical-align: middle; margin-right: 6px; }
+.wave i { width: 2px; background: var(--cobalt); border-radius: 1px; height: 30%; }
+.wave.on i { animation: wave 1.1s ease-in-out infinite; animation-delay: calc(var(--i) * -0.09s); }
+@keyframes wave { 0%, 100% { height: 25%; } 50% { height: 100%; } }
+.mailcard { display: inline-grid; gap: 1px; text-align: left; border: 1px solid var(--line); border-left: 3px solid var(--cobalt); padding: 5px 8px; border-radius: 3px; max-width: 210px; font-family: var(--display); animation: popin 0.4s var(--ease) backwards; }
+.mailcard b { font-size: 11.5px; line-height: 1.25; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--ink); }
+.mailcard span { font-size: 10.5px; color: var(--slate); }
+.board-foot { font-size: 13px; color: var(--slate); min-height: 1.4em; margin: 0; }
+.board-foot b { color: var(--ink); }
+
+/* sections */
+section { padding-block: 72px 0; scroll-margin-top: 20px; }
+.sec-top { display: grid; gap: 12px; margin-bottom: 30px; }
+h2 { font-size: clamp(30px, 4.2vw, 48px); line-height: 1.02; letter-spacing: -0.03em; font-weight: 800; }
+.lede { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 60ch; }
+
+/* deliverables */
+.gets { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 2px solid var(--ink); }
+.get { padding: 22px 22px 8px 0; display: grid; gap: 10px; align-content: start; }
+.get + .get { padding-left: 22px; border-left: 1px solid var(--line); }
+.get svg { width: 30px; height: 30px; }
+.get svg * { fill: none; stroke: var(--cobalt); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.get h3 { font-size: 20px; font-weight: 800; letter-spacing: -0.01em; }
+.get p { font-size: 15.5px; color: var(--ink-2); }
+.get .spec { font-family: var(--mono); font-size: 12px; color: var(--slate); }
+
+/* pick a client */
+.pick { margin-bottom: 14px; }
+.pick-k { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); margin-bottom: 8px; }
+.cards { display: flex; gap: 14px; overflow-x: auto; padding: 12px 6px 22px; scrollbar-width: none; }
+.cards::-webkit-scrollbar { display: none; }
+.card { flex: 0 0 236px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 8px; padding: 0; text-align: left; cursor: pointer; display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; transform: rotate(var(--r, 0deg)); transition: transform 0.35s var(--ease), box-shadow 0.35s, border-color 0.25s, opacity 0.3s; box-shadow: 0 1px 2px rgba(16, 22, 58, 0.08); position: relative; opacity: 0.9; }
+.card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: var(--shadow); opacity: 1; }
+.card[aria-checked="true"] { transform: rotate(0deg) translateY(-8px) scale(1.03); border-color: var(--cobalt); box-shadow: 0 0 0 2px var(--cobalt), var(--shadow); opacity: 1; }
+.card[aria-checked="true"]::after { content: ""; position: absolute; left: 50%; bottom: -14px; width: 12px; height: 12px; background: var(--cobalt); transform: translateX(-50%) rotate(45deg); }
+.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 10px 14px; background: var(--ground); color: var(--ink); border-bottom: 1px solid var(--line); transition: background-color 0.25s, color 0.25s; }
+.card[aria-checked="true"] .card-head { background: var(--cobalt); color: #fff; border-bottom-color: var(--cobalt); }
+.card-kind { font-size: 17px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.1; }
+.card-note { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; white-space: nowrap; }
+.card-body { padding: 10px 14px 12px; display: grid; gap: 2px; align-content: start; }
+.card-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cobalt); display: flex; align-items: center; gap: 6px; }
+.card-eyebrow::before { content: "↳"; font-size: 12px; }
+.card-org { font-size: 15px; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; margin-top: 4px; }
+.card-sub { font-size: 11px; color: var(--slate); line-height: 1.3; }
+.card-who { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-top: 1px solid var(--line); padding-top: 6px; margin-top: 8px; min-width: 0; }
+.card-who b { font-size: 11.5px; font-weight: 700; white-space: nowrap; }
+.card-who span { font-size: 10px; color: var(--slate); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-foot { font-size: 10.5px; font-weight: 700; background: var(--butter); color: #10163A; padding: 5px 14px; }
+.pick-note { font-size: 13.5px; color: var(--slate); }
+
+/* browser frame */
+.frame { background: var(--frame); border: 1px solid var(--line-2); box-shadow: var(--shadow); border-radius: 10px; overflow: hidden; }
+.frame-bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; }
+.dots { display: flex; gap: 6px; }
+.dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--line-2); }
+.url { flex: 1; min-width: 0; background: var(--surface); border-radius: 6px; padding: 5px 12px; font-family: var(--mono); font-size: 12px; color: var(--slate); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sample { font-family: var(--mono); font-size: 11px; font-weight: 500; background: var(--butter); color: var(--ink); padding: 3px 8px; white-space: nowrap; }
+
+/* ===== portal replica (mirrors src/portal.css + portal-color.css) ===== */
+.pv { background: var(--pv-bg); color: var(--pv-text); font-family: var(--pv-sans); font-size: 14.5px; line-height: 1.55; padding: 26px 28px 30px; }
+.pv button { font-family: var(--pv-sans); }
+.pv-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; padding-bottom: 16px; margin-bottom: 22px; border-bottom: 3px double var(--pv-accent); }
+.pv-ident { display: flex; gap: 14px; align-items: center; min-width: 0; }
+.pv-mono { width: 50px; height: 50px; flex: none; border-radius: 12px; display: grid; place-items: center; background: var(--pv-accent); color: var(--pv-accent-ink); font-family: var(--pv-serif); font-weight: 600; font-size: 19px; }
+.pv-brand { font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pv-accent); }
+.pv-org { font-family: var(--pv-serif); font-weight: 500; font-size: 28px; line-height: 1.1; }
+.pv-orgsub { font-size: 12.5px; color: var(--pv-muted); }
+.pv-nav { position: relative; display: flex; gap: 4px; padding: 3px; }
+.pv-tab { border: 0; background: transparent; padding: 7px 14px; font-size: 13.5px; font-weight: 600; cursor: pointer; color: var(--pv-muted); position: relative; z-index: 1; border-radius: 8px; transition: color 0.25s, background-color 0.2s; }
+.pv-tab:hover { color: var(--pv-accent); background: var(--pv-soft); }
+.pv-tab[aria-selected="true"] { color: var(--pv-accent-ink); }
+.pv-tab[aria-selected="true"]:hover { background: transparent; }
+.pv-tab-ind { position: absolute; top: 3px; bottom: 3px; left: 0; width: 0; border-radius: 8px; background: var(--pv-accent); transition: left 0.35s var(--ease), width 0.35s var(--ease); }
+.pv-body { animation: pvin 0.45s var(--ease); }
+.pv-body.swap { animation: pvswap 0.5s var(--ease); }
+@keyframes pvin { from { opacity: 0.4; } }
+@keyframes pvswap { from { opacity: 0; transform: translateY(10px); } }
+.pv-grid { display: grid; grid-template-columns: minmax(0, 1fr) 290px; gap: 22px; align-items: start; }
+.pv-card { background: var(--pv-card); border: 1px solid var(--pv-border); border-radius: 12px; }
+.pv-pad { padding: 16px 20px; }
+.pv-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pv-muted); margin: 22px 0 8px; }
+.pv-hero { padding: 20px 22px; border-top: 4px solid var(--pv-accent); }
+.pv-kicker { font-size: 10.5px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pv-muted); }
+.pv-date { font-family: var(--pv-serif); font-weight: 500; font-size: 26px; line-height: 1.15; margin-top: 4px; }
+.pv-period { font-size: 12.5px; color: var(--pv-muted); }
+.pv-summary { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 9px; counter-reset: b; }
+.pv-summary li { font-family: var(--pv-serif); font-size: 16.5px; line-height: 1.45; padding-left: 32px; position: relative; counter-increment: b; }
+.pv-summary li::before { content: counter(b); position: absolute; left: 0; top: 1px; width: 22px; height: 22px; border-radius: 50%; background: var(--pv-soft); color: var(--pv-accent); font: 700 11px/22px var(--pv-sans); text-align: center; }
+.pv-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.pv-btn { border: 1px solid var(--pv-border-2); background: var(--pv-card); color: var(--pv-text); padding: 7px 13px; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: 8px; transition: border-color 0.2s, background-color 0.2s; }
+.pv-btn:hover { border-color: var(--pv-accent); background: var(--pv-soft); }
+.pv-btn-primary { background: var(--pv-accent); color: var(--pv-accent-ink); border-color: var(--pv-accent); }
+.pv-btn-primary:hover { background: var(--pv-accent); opacity: 0.9; }
+.pv-item { padding: 14px 20px 14px 18px; border-top: 1px solid var(--pv-border); border-left: 4px solid var(--pv-border-2); transition: background-color 0.2s; }
+.pv-item:first-child { border-top: 0; border-radius: 12px 0 0 0; }
+.pv-item:last-child { border-radius: 0 0 0 12px; }
+.pv-item:hover { background: var(--pv-tint); }
+.pv-item.cat-gov { border-left-color: var(--pvc-gov); } .pv-item.cat-media { border-left-color: var(--pvc-media); } .pv-item.cat-proc { border-left-color: var(--pvc-proc); } .pv-item.cat-stake { border-left-color: var(--pvc-stake); } .pv-item.cat-comp { border-left-color: var(--pvc-comp); }
+.pv-tags { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin-bottom: 6px; }
+.pv-cat { font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; padding: 2px 8px; border-radius: 999px; background: var(--pv-muted); }
+.pv-cat.c-gov { background: var(--pvc-gov); } .pv-cat.c-media { background: var(--pvc-media); } .pv-cat.c-proc { background: var(--pvc-proc); } .pv-cat.c-stake { background: var(--pvc-stake); } .pv-cat.c-comp { background: var(--pvc-comp); }
+.pv-prio { font-size: 11px; font-weight: 700; color: var(--pvb-critical); }
+.pv-prio::before { content: "⚑ "; }
+.pv-pill { font-size: 10.5px; color: var(--pv-muted); border: 1px solid var(--pv-border-2); padding: 1px 7px; border-radius: 999px; }
+.pv-sent { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: capitalize; color: var(--pv-text); }
+.pv-sent::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--pvs-neutral); }
+.pv-sent.s-positive::before { background: var(--pvs-positive); } .pv-sent.s-negative::before { background: var(--pvs-negative); } .pv-sent.s-mixed::before { background: var(--pvs-mixed); }
+.pv-ihead { font-family: var(--pv-serif); font-size: 17px; font-weight: 500; line-height: 1.3; }
+.pv-item:first-child .pv-ihead { font-size: 19px; }
+.pv-imp { font-size: 13.5px; color: var(--pv-text); margin-top: 4px; }
+.pv-src { font-size: 11.5px; color: var(--pv-faint); margin-top: 4px; }
+.pv-imps { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.pv-imps li { font-size: 14px; padding-left: 12px; border-left: 3px solid var(--pv-accent); }
+.pv-rail { display: grid; gap: 14px; }
+.pv-rail .pv-card { padding: 16px 18px; }
+.pv-rt { font-size: 10.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pv-muted); margin-bottom: 10px; }
+.pv-big { display: flex; align-items: baseline; gap: 10px; }
+.pv-num { font-family: var(--pv-serif); font-size: 46px; font-weight: 600; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+.pv-band { font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; color: #fff; background: var(--pv-muted); }
+.b-quiet { background: var(--pvb-quiet) !important; } .b-moderate { background: var(--pvb-moderate) !important; } .b-active { background: var(--pvb-active) !important; } .b-elevated { background: var(--pvb-elevated) !important; } .b-critical { background: var(--pvb-critical) !important; }
+.pv-bandbar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; margin-top: 14px; }
+.pv-bandbar span { height: 8px; border-radius: 4px; opacity: 0.22; transition: opacity 0.4s, transform 0.3s var(--ease); }
+.pv-bandbar span:nth-child(1) { background: var(--pvb-quiet); } .pv-bandbar span:nth-child(2) { background: var(--pvb-moderate); } .pv-bandbar span:nth-child(3) { background: var(--pvb-active); } .pv-bandbar span:nth-child(4) { background: var(--pvb-elevated); } .pv-bandbar span:nth-child(5) { background: var(--pvb-critical); }
+.pv-bandbar span.on { opacity: 1; transform: scaleY(1.5); }
+.pv-bandlabels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; font-size: 8.5px; letter-spacing: 0.03em; text-transform: uppercase; color: var(--pv-faint); margin-top: 6px; text-align: center; }
+.pv-bandlabels span.on { color: var(--pv-text); font-weight: 700; }
+.pv-halves { display: grid; gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--pv-border); }
+.pv-half-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pv-muted); }
+.pv-half-row small { font-weight: 400; letter-spacing: 0; text-transform: none; }
+.pv-half-row b { font-family: var(--mono); font-size: 12.5px; color: var(--pv-text); letter-spacing: 0; text-transform: none; font-variant-numeric: tabular-nums; }
+.pv-half-track { height: 6px; border-radius: 3px; background: var(--pv-soft); margin-top: 4px; overflow: hidden; }
+.pv-half-track i { display: block; height: 100%; background: var(--pv-accent); border-radius: 3px; transition: width 0.8s var(--ease); }
+.pv-delta { font-size: 12.5px; margin-top: 12px; display: flex; align-items: center; gap: 8px; color: var(--pv-muted); }
+.pv-delta b { color: var(--pv-text); }
+.pv-delta .pv-trendpill { font-size: 11.5px; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--pv-soft); color: var(--pv-accent); }
+.pv-why { font-size: 12.5px; color: var(--pv-muted); margin-top: 8px; line-height: 1.45; }
+.pv-link { display: flex; justify-content: space-between; align-items: center; padding: 9px 10px; margin-top: 6px; border: 1px solid var(--pv-border); border-radius: 8px; font-size: 13px; font-weight: 600; transition: border-color 0.2s, background-color 0.2s; }
+.pv-link:hover { border-color: var(--pv-accent); background: var(--pv-soft); }
+.pv-link small { color: var(--pv-faint); font-weight: 500; }
+.pv-player { display: grid; grid-template-columns: 30px 1fr; gap: 10px; align-items: center; margin-top: 10px; }
+.pv-play { width: 30px; height: 30px; border-radius: 50%; border: 0; background: var(--pv-accent); cursor: pointer; display: grid; place-items: center; }
+.pv-play::after { content: ""; border-left: 8px solid var(--pv-accent-ink); border-top: 5px solid transparent; border-bottom: 5px solid transparent; margin-left: 2px; }
+.pv-play.on::after { border: 0; width: 8px; height: 10px; margin: 0; background: linear-gradient(90deg, var(--pv-accent-ink) 0 3px, transparent 3px 5px, var(--pv-accent-ink) 5px 8px); }
+.pv-ptrack { height: 5px; border-radius: 3px; background: var(--pv-soft); position: relative; overflow: hidden; }
+.pv-ptrack i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--pv-accent); width: 0; }
+.pv-ptime { font-size: 11px; color: var(--pv-muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+.pv-dl { display: grid; grid-template-columns: 46px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid var(--pv-border); align-items: center; }
+.pv-dl:first-of-type { border-top: 0; padding-top: 4px; }
+.pv-dld { text-align: center; line-height: 1; padding: 6px 0 7px; border-radius: 8px; color: #fff; background: var(--pvu-later); }
+.pv-dld b { display: block; font-size: 16px; }
+.pv-dld small { display: block; font-size: 9.5px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9; margin-top: 2px; }
+.pv-dld.urg-soon { background: var(--pvu-soon); }
+.pv-dld.urg-now { background: var(--pvu-now); }
+.pv-dlh { font-size: 13.5px; font-weight: 600; line-height: 1.35; }
+.pv-dls { font-size: 11.5px; color: var(--pv-muted); margin-top: 2px; }
+.pv-meter { display: grid; gap: 6px; min-width: 170px; }
+.pv-meter-track { height: 6px; border-radius: 3px; background: var(--pv-soft); overflow: hidden; }
+.pv-meter-track i { display: block; height: 100%; background: var(--pv-accent); border-radius: 3px; transition: width 0.8s var(--ease); }
+.pv-meter-k { font-size: 11px; color: var(--pv-muted); }
+.pv-hero-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: flex-start; }
+.pv-excerpt { font-family: var(--pv-serif); font-size: 16.5px; line-height: 1.45; margin-top: 12px; }
+.pv-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 14px; border-top: 1px solid var(--pv-border); }
+.pv-stat { padding: 10px 10px 0 0; }
+.pv-stat + .pv-stat { padding-left: 12px; border-left: 1px solid var(--pv-border); }
+.pv-stat b { display: block; font-family: var(--pv-serif); font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.pv-stat span { font-size: 11px; color: var(--pv-muted); }
+.pv-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.pv-two .pv-card { padding: 16px 18px; position: relative; }
+.pv-trend { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; align-items: end; height: 130px; margin-top: 8px; border-bottom: 1px solid var(--pv-border); }
+.pv-tbar { height: 100%; display: flex; align-items: flex-end; border: 0; background: transparent; padding: 0; cursor: pointer; }
+.pv-tbar i { display: block; width: 100%; background: var(--pv-accent); opacity: 0.35; border-radius: 3px 3px 0 0; height: var(--h); transition: opacity 0.2s; }
+.pv-tbar:last-child i, .pv-tbar:hover i, .pv-tbar:focus-visible i { opacity: 1; }
+.pv-trend.play .pv-tbar i { animation: tgrow 0.7s var(--ease) both; animation-delay: calc(var(--i) * 45ms); }
+@keyframes tgrow { from { height: 0; } }
+.pv-tx { display: flex; justify-content: space-between; font-size: 11px; color: var(--pv-faint); margin-top: 5px; }
+.pv-tip { position: absolute; background: var(--pv-text); color: var(--pv-card); font-size: 11.5px; padding: 4px 8px; border-radius: 4px; white-space: nowrap; pointer-events: none; transform: translate(-50%, -100%); }
+.pv-alert { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 12.5px; padding: 8px 10px; border-radius: 8px; background: var(--pv-tint); margin-bottom: 8px; }
+.pv-alert .pv-sev { font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 7px; border-radius: 999px; border: 1px solid var(--pvb-critical); color: var(--pvb-critical); }
+.pv-alert b { font-weight: 700; }
+.pv-sig { display: grid; grid-template-columns: minmax(0, 1fr) 70px 64px; gap: 8px; align-items: center; padding: 7px 0; border-top: 1px solid var(--pv-border); font-size: 12.5px; }
+.pv-sig:first-of-type { border-top: 0; }
+.pv-sig svg { width: 70px; height: 22px; }
+.pv-sig polyline { fill: none; stroke: var(--pv-accent); stroke-width: 1.5; stroke-dasharray: 200; stroke-dashoffset: 0; }
+.pv-sigs.play polyline { animation: draw 1.1s var(--ease) both; }
+@keyframes draw { from { stroke-dashoffset: 200; } }
+.pv-sig circle { fill: var(--pv-accent); }
+.pv-st { font-size: 11px; text-align: right; }
+.pv-st small { display: block; color: var(--pv-faint); font-weight: 400; }
+.pv-st.surging { display: inline-block; justify-self: end; font-weight: 700; background: var(--pvb-critical); color: #fff; padding: 2px 7px; border-radius: 4px; }
+.pv-st.surging small { color: rgba(255, 255, 255, 0.85); }
+.pv-st.rising { color: var(--pvb-elevated); font-weight: 700; }
+.pv-st.steady { color: var(--pv-muted); }
+.pv-st.quiet { color: var(--pv-faint); }
+.pv-row { display: grid; grid-template-columns: 90px 1fr auto; gap: 14px; padding: 12px 20px; border-top: 1px solid var(--pv-border); align-items: baseline; font-size: 13.5px; transition: background-color 0.2s; }
+.pv-row:first-child { border-top: 0; }
+.pv-row:hover { background: var(--pv-tint); }
+.pv-row-d { font-weight: 600; font-size: 13px; }
+.pv-row-d small { display: block; font-weight: 400; color: var(--pv-muted); font-size: 11px; }
+.pv-score-chip { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; color: #fff; background: var(--pv-muted); font-variant-numeric: tabular-nums; }
+.pv-ask { padding: 18px 20px; border-top: 4px solid var(--pv-accent); }
+.pv-ask-sub { font-size: 13px; color: var(--pv-muted); margin-top: 2px; }
+.pv-ask-row { display: flex; gap: 8px; margin-top: 12px; }
+.pv-input { flex: 1; min-width: 0; border: 1px solid var(--pv-border-2); border-radius: 8px; background: var(--pv-bg); padding: 8px 11px; font-size: 14px; font-family: var(--pv-sans); color: var(--pv-text); }
+.pv-input:focus { outline: 2px solid var(--pv-accent); outline-offset: 1px; }
+.pv-ask-status { font-size: 13px; color: var(--pv-muted); margin-top: 14px; display: flex; align-items: center; gap: 8px; }
+.pv-ask-status::before { content: ""; width: 12px; height: 12px; border: 2px solid var(--pv-soft); border-top-color: var(--pv-accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.pv-answer { margin-top: 14px; font-family: var(--pv-serif); font-size: 16px; line-height: 1.5; }
+.pv-answer p + p { margin-top: 8px; }
+.pv-answer p:first-child { font-weight: 600; }
+.pv-cite { font-family: var(--pv-sans); font-size: 10.5px; font-weight: 700; background: var(--pv-accent); color: var(--pv-accent-ink); padding: 0 4px; border-radius: 3px; margin-left: 1px; vertical-align: 2px; }
+.pv-caret { display: inline-block; width: 2px; height: 1em; background: var(--pv-accent); vertical-align: -2px; animation: blink 0.9s steps(1) infinite; }
+.pv-srcs { margin: 12px 0 0; padding: 10px 0 0; list-style: none; border-top: 1px solid var(--pv-border); display: grid; gap: 4px; font-size: 12.5px; }
+.pv-srcs-k { font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pv-muted); }
+.pv-demo-note { font-size: 11.5px; color: var(--pv-faint); margin-top: 8px; font-style: italic; }
+.pv-arc-count { font-size: 12px; color: var(--pv-muted); margin: 8px 0; }
+.pv-foot { font-size: 11.5px; color: var(--pv-faint); margin-top: 20px; }
+
+/* dossier beside the portal */
+.portal-split { display: grid; grid-template-columns: minmax(0, 1fr) 316px; gap: 24px; align-items: start; }
+.dossier-aside { position: sticky; top: 16px; }
+.dos-title { font-size: 19px; font-weight: 800; letter-spacing: -0.015em; line-height: 1.2; margin-bottom: 12px; }
+.dos-title span { color: var(--cobalt); }
+.dossier { display: grid; border-top: 2px solid var(--ink); }
+.dos { padding: 12px 0 12px; border-bottom: 1px solid var(--line); }
+.dos h3 { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); margin-bottom: 8px; }
+.dos ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.dos li { font-size: 14px; line-height: 1.4; padding-left: 16px; position: relative; }
+.dos li::before { content: ""; position: absolute; left: 0; top: 0.45em; width: 7px; height: 7px; background: var(--butter); border: 1px solid var(--cobalt); }
+.dos-value { margin-top: 14px; display: grid; gap: 8px; }
+.dos-value p { font-size: 16.5px; line-height: 1.4; font-weight: 600; letter-spacing: -0.005em; }
+.dos-note { font-size: 13px; color: var(--slate); }
+.fade { animation: fade 0.5s var(--ease); }
+@keyframes fade { from { opacity: 0; transform: translateY(8px); } }
+@media (max-width: 1100px) {
+  .portal-split { grid-template-columns: 1fr; }
+  .dossier-aside { position: static; }
+  .dos-title { margin-top: 26px; }
+  .dossier { grid-template-columns: repeat(3, 1fr); }
+  .dos { padding: 16px 22px 12px 0; border-bottom: 0; }
+  .dos + .dos { padding-left: 22px; border-left: 1px solid var(--line); }
+  .dos-value { grid-template-columns: 1fr auto; align-items: end; gap: 16px 24px; border-top: 1px solid var(--line); padding-top: 16px; }
+  .dos-value p { font-size: 20px; max-width: 46ch; }
+  .dos-note { max-width: 36ch; }
+}
+
+/* steps */
+.flow { display: grid; grid-template-columns: 340px 1fr; gap: 32px; align-items: start; }
+.flow-list { display: grid; gap: 0; border-top: 2px solid var(--ink); }
+.flow-step { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: baseline; text-align: left; padding: 14px 0 14px; border: 0; border-bottom: 1px solid var(--line); background: transparent; cursor: pointer; position: relative; color: var(--slate); transition: color 0.25s; }
+.flow-step b { font-size: 17px; font-weight: 700; line-height: 1.3; }
+.flow-step .n { font-family: var(--mono); font-size: 12px; }
+.flow-step[aria-selected="true"] { color: var(--ink); }
+.flow-step[aria-selected="true"] b { color: var(--cobalt); }
+.flow-step .bar { position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: var(--butter); transform-origin: 0 50%; transform: scaleX(0); }
+.flow-step[aria-selected="true"] .bar { transform: scaleX(1); }
+.flow.auto .flow-step[aria-selected="true"] .bar { animation: prog var(--dur, 5s) linear both; }
+@keyframes prog { from { transform: scaleX(0); } }
+.flow-panel { background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); padding: 30px 32px; min-height: 330px; }
+.fp-n { font-family: var(--mono); font-size: 12px; color: var(--slate); }
+.fp-t { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-top: 6px; }
+.fp-p { font-size: 17.5px; line-height: 1.55; color: var(--ink-2); margin-top: 12px; max-width: 54ch; }
+.fp-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.fp-chips span { font-family: var(--mono); font-size: 12px; border: 1px solid var(--line-2); padding: 4px 9px; }
+.fp-vis { margin-top: 22px; border-top: 1px dashed var(--line-2); padding-top: 18px; }
+
+/* benefits */
+.bens { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 2px solid var(--ink); }
+.ben { padding: 22px 24px 26px 0; border-bottom: 1px solid var(--line); }
+.ben:not(:nth-child(3n + 1)) { padding-left: 24px; border-left: 1px solid var(--line); }
+.ben h3 { font-size: 21px; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; }
+.ben p { font-size: 16px; color: var(--ink-2); margin-top: 8px; }
+.ben .k { font-family: var(--mono); font-size: 12px; color: var(--cobalt); display: block; margin-bottom: 10px; }
+
+/* console */
+.console { background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.con-tabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+.con-tab { border: 0; background: transparent; padding: 14px 18px; font-size: 14.5px; font-weight: 600; color: var(--slate); cursor: pointer; position: relative; }
+.con-tab::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: -1px; height: 3px; background: var(--cobalt); transform: scaleX(0); transition: transform 0.3s var(--ease); }
+.con-tab[aria-selected="true"] { color: var(--ink); }
+.con-tab[aria-selected="true"]::after { transform: scaleX(1); }
+.con-panel { padding: 24px 26px 28px; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 28px; align-items: start; }
+.con-panel h3 { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; }
+.con-panel p { font-size: 16px; color: var(--ink-2); margin-top: 8px; }
+.mini { border: 1px solid var(--line); font-size: 13.5px; }
+.mini-row { display: grid; grid-template-columns: 1.4fr 1fr auto; gap: 12px; padding: 9px 14px; border-top: 1px solid var(--line); align-items: center; }
+.mini-row:first-child { border-top: 0; background: var(--ground); font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); }
+.stat-ok, .stat-run, .stat-wait { font-family: var(--mono); font-size: 11.5px; padding: 2px 8px; white-space: nowrap; }
+.stat-ok { background: var(--cobalt); color: #fff; }
+.stat-run { background: var(--butter); color: var(--ink); }
+.stat-wait { border: 1px solid var(--line-2); color: var(--slate); }
+.heat { display: grid; grid-template-columns: 1.3fr repeat(8, 1fr); gap: 3px; font-size: 12.5px; align-items: center; }
+.heat span.c { height: 20px; background: var(--cobalt); }
+.heat .lab { color: var(--ink-2); padding-right: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.funnel-mini { display: grid; gap: 8px; }
+.fm-row { display: grid; grid-template-columns: 120px 1fr 44px; gap: 10px; align-items: center; font-size: 13.5px; }
+.fm-row i { display: block; height: 14px; background: var(--cobalt); }
+.fm-row span:last-child { font-family: var(--mono); font-size: 12.5px; text-align: right; }
+
+/* proof */
+.proof { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: start; }
+.nums { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 2px solid var(--ink); }
+.num { padding: 18px 18px 20px 0; border-bottom: 1px solid var(--line); }
+.num:nth-child(even) { padding-left: 18px; border-left: 1px solid var(--line); }
+.num b { display: block; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: var(--cobalt); }
+.num span { font-size: 15px; color: var(--ink-2); }
+.fine { font-size: 13px; color: var(--slate); margin-top: 12px; }
+.built { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.built li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; font-size: 16px; }
+.built li::before { content: "✓"; font-weight: 800; }
+
+/* start */
+.start { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; counter-reset: s; border-top: 2px solid var(--ink); padding: 0; margin: 0; list-style: none; }
+.start li { counter-increment: s; padding: 18px 18px 0 0; }
+.start li + li { padding-left: 18px; border-left: 1px solid var(--line); }
+.start li::before { content: counter(s); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--ink); font-family: var(--mono); font-size: 13px; margin-bottom: 12px; }
+.start li::before { border-color: var(--cobalt); color: var(--cobalt); }
+.start li:first-child::before { background: var(--butter); color: #10163A; border-color: var(--butter); }
+.start h3 { font-size: 17px; font-weight: 800; line-height: 1.25; }
+.start p { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
+
+/* closing */
+.band-close { margin-top: 90px; }
+.closing { padding-block: 56px 48px; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 32px; align-items: end; }
+.closing h2 { color: #fff; }
+.closing .hl { color: #10163A; background: var(--butter); padding-inline: 0.12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.closing p { font-size: 18px; color: rgba(255, 255, 255, 0.86); }
+.byline { margin-top: 18px; font-family: var(--mono); font-size: 14px; color: var(--butter); min-height: 1.5em; }
+.caret { display: inline-block; width: 2px; height: 1em; background: var(--butter); vertical-align: -2px; margin-left: 2px; animation: blink 0.9s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+/* footer + logo */
+.logo { width: 30px; height: 30px; flex: none; display: block; color: var(--cobalt); --logo-dot: rgba(255, 255, 255, 0.55); --logo-fold: rgba(255, 255, 255, 0.35); }
+.band-cobalt .logo { color: #fff; --logo-dot: rgba(43, 69, 224, 0.32); --logo-fold: rgba(43, 69, 224, 0.28); }
+.topbar-brand { display: inline-flex; align-items: center; gap: 10px; }
+.foot { margin-top: 0; background: #0B1030; color: rgba(255, 255, 255, 0.78); padding-block: 46px 26px; }
+.foot-top { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.14); }
+.foot-brand { display: flex; gap: 14px; align-items: flex-start; }
+.logo-lg { width: 52px; height: 52px; }
+.wordmark { font-size: 22px; font-weight: 800; color: #fff; letter-spacing: -0.02em; line-height: 1.1; margin-top: 4px; }
+.foot-tag { font-size: 14px; margin-top: 6px; max-width: 34ch; line-height: 1.5; }
+.foot-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.foot-cols h4 { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--butter); margin: 0 0 10px; }
+.foot-cols ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-size: 14px; line-height: 1.45; }
+.foot-cols a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.25); transition: color 0.2s, border-color 0.2s; }
+.foot-cols a:hover { color: #fff; border-color: var(--butter); }
+.foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; padding-top: 18px; font-size: 12.5px; color: rgba(255, 255, 255, 0.55); }
+
+/* the page cites itself */
+.cite { display: inline-block; border: 0; font: 700 10px/1 var(--mono); background: var(--butter); color: #10163A; padding: 2px 4px; margin-left: 3px; vertical-align: super; border-radius: 2px; cursor: help; text-decoration: none; transition: background-color 0.2s, color 0.2s; }
+.cite:hover, .cite:focus-visible { background: var(--cobalt); color: #fff; }
+.pop { position: fixed; z-index: 40; pointer-events: none; background: var(--ink); color: var(--on-ink); font-size: 13px; line-height: 1.4; padding: 8px 10px; border-radius: 6px; max-width: 280px; }
+.pop b { display: block; font-weight: 700; font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; margin-bottom: 2px; }
+
+/* 112 pages become 3 */
+.wall { display: grid; gap: 12px; }
+.wall-grid { display: grid; grid-template-columns: repeat(16, 1fr); gap: 4px; }
+.wall-grid i { display: block; aspect-ratio: 3 / 4; background: var(--line-2); border-radius: 1px; transition: background-color 0.5s, opacity 0.5s, transform 0.5s var(--ease); animation: wallin 0.4s var(--ease) backwards; animation-delay: calc(var(--i) * 6ms); }
+@keyframes wallin { from { transform: scale(0); } }
+.wall.dim .wall-grid i { opacity: 0.18; }
+.wall.dim .wall-grid i.keep { opacity: 1; background: var(--cobalt); transform: scale(1.3); }
+.wall.out .wall-grid i.top { background: var(--butter); box-shadow: 0 0 0 1.5px var(--cobalt); }
+.wall-out { display: grid; gap: 6px; }
+.wall-out span { font-size: 14px; font-weight: 700; line-height: 1.3; padding: 7px 10px; background: var(--butter); color: #10163A; border-left: 3px solid var(--cobalt); animation: fade 0.4s var(--ease) backwards; }
+.wall-cap { font-family: var(--mono); font-size: 12.5px; color: var(--slate); margin: 0; }
+.wall-cap b { color: var(--ink); font-weight: 700; }
+
+@media (max-width: 980px) {
+  .hero { grid-template-columns: 1fr; gap: 20px; padding-block: 40px 40px; }
+  .stack { height: 440px; max-width: 520px; }
+  .gets { grid-template-columns: 1fr 1fr; }
+  .get:nth-child(3) { padding-left: 0; border-left: 0; }
+  .get:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .pv-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .bens { grid-template-columns: 1fr 1fr; }
+  .ben:not(:nth-child(3n + 1)) { padding-left: 0; border-left: 0; }
+  .ben:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--line); }
+  .con-panel { grid-template-columns: 1fr; }
+  .proof { grid-template-columns: 1fr; }
+  .start { grid-template-columns: 1fr 1fr; }
+  .start li + li { padding-left: 0; border-left: 0; }
+  .start li:nth-child(even) { padding-left: 18px; border-left: 1px solid var(--line); }
+  .closing { grid-template-columns: 1fr; padding-block: 40px; }
+  .foot-top { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .topbar .mono { display: none; }
+  .stack { height: 400px; }
+  .sk-pdf { width: 230px; height: 330px; left: 0; padding: 16px; }
+  .sk-pdf h4 { font-size: 17px; }
+  .sk-audio { width: 220px; }
+  .sk-mail { width: 230px; top: 140px; }
+  .sk-dl { width: 210px; top: 290px; right: 0; }
+  .gets, .bens, .dossier, .nums, .start, .pv-two, .dos-value { grid-template-columns: 1fr; }
+  .get + .get, .dos + .dos, .num:nth-child(even), .ben:nth-child(even), .start li:nth-child(even) { padding-left: 0; border-left: 0; }
+  .get + .get, .dos + .dos { border-top: 1px solid var(--line); }
+  .pv { padding: 16px 14px 20px; }
+  .pv-org { font-size: 22px; }
+  .pv-stats { grid-template-columns: 1fr 1fr; }
+  .pv-stat:nth-child(3) { padding-left: 0; border-left: 0; }
+  .pv-row { grid-template-columns: 1fr; gap: 4px; padding: 12px 14px; }
+  .pv-item { padding: 12px 14px; }
+  .dos-value { grid-template-columns: 1fr; }
+  .dos-value p { font-size: 19px; }
+  .flow-panel { padding: 22px 18px; min-height: 0; }
+  .fp-t { font-size: 24px; }
+  .con-tab { padding: 12px 12px; font-size: 13.5px; }
+  .con-panel { padding: 18px 16px; }
+  .heat { grid-template-columns: 1fr repeat(8, 14px); }
+  .band-close { margin-top: 60px; }
+  .closing { padding-block: 32px; }
+  .foot-cols { grid-template-columns: 1fr; }
+  .foot { padding-block: 34px 22px; }
+  .url { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mb-logo" viewBox="0 0 48 48"><path d="M11 0h25l12 12v25a11 11 0 0 1-11 11H11A11 11 0 0 1 0 37V11A11 11 0 0 1 11 0z" fill="currentColor"/><path d="M36 0v8a4 4 0 0 0 4 4h8z" fill="var(--logo-fold)"/><circle cx="5.4" cy="17.8" r="1.9" fill="var(--butter)"/><circle cx="11.6" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="17.8" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="24.0" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="30.2" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="36.4" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="42.6" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="5.4" cy="24.0" r="1.9" fill="var(--butter)"/><circle cx="11.6" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="17.8" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="24.0" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="30.2" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="36.4" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="42.6" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="5.4" cy="30.2" r="1.9" fill="var(--butter)"/><circle cx="11.6" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="17.8" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="24.0" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="30.2" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="36.4" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="42.6" cy="30.2" r="1.9" fill="var(--logo-dot)"/></symbol></defs></svg>
+<div class="band band-cobalt">
+<div class="wrap">
+  <div class="topbar">
+    <span class="topbar-brand"><svg class="logo" aria-hidden="true"><use href="#mb-logo"/></svg><b>The Monday Brief</b> · an automated client-intelligence service</span>
+    <span class="mono">Case study · September 2026</span>
+  </div>
+  <header class="hero">
+    <div>
+      <span class="eyebrow">Built and running</span>
+      <h1>Every client gets a personal briefing <span class="mark">every Monday.</span> Nobody on your team writes it.</h1>
+      <p class="hero-sub">A system that finds what changed for each client this week, writes a designed report and a short podcast, and updates their private portal.</p>
+      <div class="cycle"><span>Built for a government-affairs firm.</span><span>Ready for <button class="cycle-btn" type="button" id="cycleBtn"></button></span></div>
+      <div class="hero-cta">
+        <a class="btn" href="https://cal.com/james-pinder/simple-automation-discovery" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
+        <a class="btn ghost" href="#portal">See the client portal ↓</a>
+      </div>
+    </div>
+    <div class="board" id="board" role="group" aria-label="One client's Monday morning, replayed">
+      <div class="board-top">
+        <span class="board-day">Monday 14 Sep · one client</span>
+        <span class="board-clock" id="bClock">09:00<small>:00</small></span>
+        <button class="board-live" type="button" id="bReplay">● replaying · click to restart</button>
+      </div>
+      <ol class="board-rows" id="bRows"></ol>
+      <p class="board-foot" id="bFoot"></p>
+    </div>
+  </header>
+</div>
+</div>
+<div class="wrap">
+
+  <section id="gets" style="padding-top:0">
+    <div class="gets">
+      <div class="get rv">
+        <svg viewBox="0 0 32 32"><path d="M8 3h11l6 6v20H8z"/><path d="M19 3v6h6"/><path d="M12 15h9M12 19h9M12 23h6"/></svg>
+        <h3>A weekly brief</h3>
+        <p>A designed report in your branding: what happened, why it matters to this client, and what they can still act on.</p>
+        <span class="spec">~8 pages <button type="button" class="cite" data-n="1">1</button> · every item cited <button type="button" class="cite" data-n="7">7</button></span>
+      </div>
+      <div class="get rv">
+        <svg viewBox="0 0 32 32"><path d="M6 17v-2a10 10 0 0 1 20 0v2"/><rect x="4" y="17" width="6" height="9" rx="2"/><rect x="22" y="17" width="6" height="9" rx="2"/></svg>
+        <h3>A short podcast</h3>
+        <p>Two hosts talk through the week for that client. Easy to take in on a commute, with a transcript alongside.</p>
+        <span class="spec">about 6 minutes <button type="button" class="cite" data-n="2">2</button></span>
+      </div>
+      <div class="get rv">
+        <svg viewBox="0 0 32 32"><rect x="4" y="7" width="24" height="18" rx="1"/><path d="M4 8l12 9 12-9"/></svg>
+        <h3>A Monday email</h3>
+        <p>The headlines in the inbox, with the brief and the episode attached, so nobody has to log in to stay informed.</p>
+        <span class="spec">lands Monday morning</span>
+      </div>
+      <div class="get rv">
+        <svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="20" rx="1"/><path d="M3 10h26M12 10v15"/><path d="M11 29h10"/></svg>
+        <h3>A private portal</h3>
+        <p>This week's highlights, every past brief, deadlines, trends, and a searchable archive they can ask questions of.</p>
+        <span class="spec">personal link, no password</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="portal">
+    <div class="sec-top rv">
+      <span class="eyebrow">The client portal</span>
+      <h2>See it for your practice</h2>
+      <p class="lede">This is the portal from the live build, filled with sample content. Pick your kind of firm; the card is one of its clients, and the portal below is what that client opens on Monday. Everything inside the frame is clickable.</p>
+    </div>
+    <div class="pick">
+      <p class="pick-k" id="pickLabel">Pick your kind of firm. Each card is one of their clients.</p>
+      <div class="cards" role="radiogroup" aria-labelledby="pickLabel" id="cards"></div>
+      <p class="pick-note">In the real system, a photo of a business card is enough to start a client's intake.</p>
+    </div>
+    <div class="portal-split">
+    <div class="frame">
+      <div class="frame-bar">
+        <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="url" id="pvUrl">clients.aldercrestlaw.com/portal</div>
+        <span class="sample">Sample data</span>
+      </div>
+      <div class="pv" id="pv">
+        <div class="pv-head">
+          <div class="pv-ident">
+            <div class="pv-mono" id="pvMono">BF</div>
+            <div>
+              <p class="pv-brand" id="pvBrand">Aldercrest Law · Client Briefings</p>
+              <h3 class="pv-org" id="pvOrg">Brightline Freight Co.</h3>
+              <p class="pv-orgsub" id="pvSub">Trucking &amp; warehousing · Ontario · Federal</p>
+            </div>
+          </div>
+          <div class="pv-nav" role="tablist" aria-label="Portal sections" id="pvNav">
+            <span class="pv-tab-ind" id="pvInd" aria-hidden="true"></span>
+            <button class="pv-tab" role="tab" type="button" data-tab="updates" aria-selected="true" aria-controls="pvBody" id="pvt-updates">Updates</button>
+            <button class="pv-tab" role="tab" type="button" data-tab="briefings" aria-selected="false" aria-controls="pvBody" id="pvt-briefings" tabindex="-1">Briefings</button>
+            <button class="pv-tab" role="tab" type="button" data-tab="research" aria-selected="false" aria-controls="pvBody" id="pvt-research" tabindex="-1">Research</button>
+          </div>
+        </div>
+        <div class="pv-body" id="pvBody" role="tabpanel" aria-labelledby="pvt-updates"></div>
+        <p class="pv-foot" id="pvFoot">Prepared by Aldercrest Law. Questions about your coverage? Reply to your update email.</p>
+      </div>
+    </div>
+
+    <aside class="dossier-aside" id="dossier" aria-label="How it is set up for this kind of firm"></aside>
+    </div>
+    <div class="cta-strip rv">
+      <div><h3>Want this running for your clients?</h3><p>A 20-minute call: we walk through the live demo and talk about what your clients would want to know.</p></div>
+      <a class="btn btn-cobalt" href="https://cal.com/james-pinder/simple-automation-discovery" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="sec-top rv">
+      <span class="eyebrow">How it works</span>
+      <h2>One questionnaire in, a briefing every week out</h2>
+    </div>
+    <div class="flow" id="flow">
+      <div class="flow-list" role="tablist" aria-label="Steps" id="flowList"></div>
+      <div class="flow-panel" role="tabpanel" id="flowPanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="sec-top rv">
+      <span class="eyebrow">Why firms want it</span>
+      <h2>Your expertise, delivered to every client, every week</h2>
+    </div>
+    <div class="bens">
+      <div class="ben rv"><span class="k">Relationship</span><h3>A reason to be in touch every week</h3><p>Clients hear from you between matters, filings and reviews, about things that affect them, not a generic newsletter.</p></div>
+      <div class="ben rv"><span class="k">New work</span><h3>You see the next job first</h3><p>A new rule, a court decision or a rezoning is often the start of a mandate. The brief puts it in front of you and your client at the same time.</p></div>
+      <div class="ben rv"><span class="k">Scale</span><h3>No extra hours per client</h3><p>Each brief is researched, written and recorded in about 11 minutes <button type="button" class="cite" data-n="3">3</button> with nobody involved. A hundred clients take about two hours on a Monday morning. <button type="button" class="cite" data-n="4">4</button></p></div>
+      <div class="ben rv"><span class="k">Presentation</span><h3>Looks like a premium service</h3><p>A designed report, a podcast and a private portal under your name. It's something clients can see and share, not just an email.</p></div>
+      <div class="ben rv"><span class="k">Trust</span><h3>Grounded in sources</h3><p>Every item links to where it came from. <button type="button" class="cite" data-n="7">7</button> Your team can review each brief before it goes out, and web context is always kept apart from monitoring.</p></div>
+      <div class="ben rv"><span class="k">Revenue</span><h3>A subscription you can sell</h3><p>Offer it as a paid tier or fold it into a retainer. The questionnaire can sit inside your checkout, so new subscribers start the same day.</p></div>
+    </div>
+  </section>
+
+  <section id="console">
+    <div class="sec-top rv">
+      <span class="eyebrow">Your side of it</span>
+      <h2>An operator console for the whole practice</h2>
+      <p class="lede">While clients see their own portal, your team sees everyone at once.</p>
+    </div>
+    <div class="console">
+      <div class="con-tabs" role="tablist" aria-label="Console views" id="conTabs">
+        <button class="con-tab" role="tab" type="button" aria-selected="true" data-c="runs" id="ct-runs" aria-controls="conPanel">This week's runs</button>
+        <button class="con-tab" role="tab" type="button" aria-selected="false" data-c="clients" id="ct-clients" aria-controls="conPanel" tabindex="-1">Clients &amp; briefings</button>
+        <button class="con-tab" role="tab" type="button" aria-selected="false" data-c="practice" id="ct-practice" aria-controls="conPanel" tabindex="-1">Practice intelligence</button>
+        <button class="con-tab" role="tab" type="button" aria-selected="false" data-c="intake" id="ct-intake" aria-controls="conPanel" tabindex="-1">Intake analytics</button>
+      </div>
+      <div class="con-panel" role="tabpanel" id="conPanel" aria-labelledby="ct-runs"></div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="proof">
+      <div class="rv">
+        <span class="eyebrow">Already running</span>
+        <h2 style="margin-top:12px">Built first for a government-affairs intelligence firm</h2>
+        <p class="lede" style="margin-top:14px">Their clients sign up through a questionnaire on the firm's website, in either of two languages, then receive a brief and a podcast every week and read everything in the portal shown above.</p>
+        <ul class="built">
+          <li>Multi-step intake questionnaire, with drafts saved as clients go</li>
+          <li>Weekly research, analysis and activity scoring for each client</li>
+          <li>Designed PDF brief, two-host podcast and summary email</li>
+          <li>Private client portal with archive search and Ask</li>
+          <li>Operator console with run tracking and cross-client insight</li>
+        </ul>
+      </div>
+      <div class="rv">
+        <div class="nums">
+          <div class="num"><b>~11 min <button type="button" class="cite" data-n="3">3</button></b><span>to research, write and record one client's brief, with nobody involved</span></div>
+          <div class="num"><b>~2 hours <button type="button" class="cite" data-n="4">4</button></b><span>for 100 clients on a Monday morning, running ten at a time</span></div>
+          <div class="num"><b>8 pages <button type="button" class="cite" data-n="1">1</button></b><span>typical designed brief, plus a 6-minute episode</span></div>
+          <div class="num"><b>A few dollars <button type="button" class="cite" data-n="5">5</button></b><span>running cost per client, per week</span></div>
+        </div>
+        <p class="fine">Hover a numbered mark to see where the figure comes from. The portal on this page uses sample content; firm and client names are made up.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="start">
+    <div class="sec-top rv">
+      <span class="eyebrow">Getting started</span>
+      <h2>From first call to first Monday</h2>
+    </div>
+    <ol class="start">
+      <li class="rv"><h3>Walk through the live demo</h3><p>See the portal, a real brief and an episode, and talk through your clients.</p></li>
+      <li class="rv"><h3>Decide what clients need to know</h3><p>Shape the questionnaire, the topics and the sources around your practice.</p></li>
+      <li class="rv"><h3>Make it yours</h3><p>Your name, colours and tone on the brief, the email and the portal.</p></li>
+      <li class="rv"><h3>Pilot with a few clients</h3><p>Run it for a handful, review every brief, and tune what gets kept.</p></li>
+      <li class="rv"><h3>Roll it out</h3><p>New clients start from the questionnaire. Every Monday runs on its own.</p></li>
+    </ol>
+  </section>
+
+</div>
+<div class="band band-cobalt band-close">
+<div class="wrap">
+  <div class="closing rv">
+    <h2>Your clients already want to know <span class="hl">what changed this week.</span></h2>
+    <div>
+      <p>This tells them every Monday, in your name, without adding a single hour to your team's week.</p>
+      <div class="closing-cta"><a class="btn btn-butter" href="https://cal.com/james-pinder/simple-automation-discovery" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a></div>
+      <p class="byline" id="byline" aria-label="Written by: nobody on your team."><span id="bylineTxt"></span><span class="caret" aria-hidden="true"></span></p>
+    </div>
+  </div>
+</div>
+</div>
+<footer class="band foot">
+<div class="wrap">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <svg class="logo logo-lg" aria-hidden="true"><use href="#mb-logo"/></svg>
+      <div>
+        <div class="wordmark">The Monday Brief</div>
+        <p class="foot-tag">Every client, briefed every Monday. Nobody on your team writes it.</p>
+      </div>
+    </div>
+    <nav class="foot-cols" aria-label="Footer">
+      <div><h4>What clients get</h4><ul><li>A weekly brief</li><li>A short podcast</li><li>A Monday email</li><li>A private portal</li></ul></div>
+      <div><h4>On this page</h4><ul><li><a href="#portal">The client portal</a></li><li><a href="#how">How it works</a></li><li><a href="#why">Why firms want it</a></li><li><a href="#console">Your side of it</a></li><li><a href="#start">Getting started</a></li></ul></div>
+      <div><h4>Next step</h4><ul><li><a href="https://cal.com/james-pinder/simple-automation-discovery" target="_blank" rel="noopener">Book a 20-minute walkthrough</a></li><li><a href="#portal">See the client portal</a></li><li>First built for a government-affairs intelligence firm, running since 2026</li></ul></div>
+    </nav>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 The Monday Brief</span>
+    <span>Sample firms, clients and headlines on this page are fictional. Timings were measured on real client runs.</span>
+  </div>
+</div>
+</footer>
+
+<div class="pop" id="pop" hidden></div>
+<a class="fab" id="fab" href="https://cal.com/james-pinder/simple-automation-discovery" target="_blank" rel="noopener">Book a walkthrough →</a>
+
+<script>
+(function () {
+  var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function onView(el, fn, margin, threshold) {
+    if (!el) return;
+    if (!("IntersectionObserver" in window)) { fn(); return; }
+    var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { io.disconnect(); fn(); } }); }, { rootMargin: margin || "0px 0px -10% 0px", threshold: threshold || 0.01 });
+    io.observe(el);
+  }
+  function store(k, v) { try { if (v === undefined) return window.localStorage.getItem(k); window.localStorage.setItem(k, v); } catch (e) { return null; } }
+  function restart(el, cls) { if (RM || !el) return; el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+
+  var WEEKS = ["13 Jul", "20 Jul", "27 Jul", "3 Aug", "10 Aug", "17 Aug", "24 Aug", "31 Aug", "7 Sep", "14 Sep"];
+  var BANDS = ["quiet", "moderate", "active", "elevated", "critical"];
+  function bandOf(s) { return s <= 19 ? 0 : s <= 39 ? 1 : s <= 59 ? 2 : s <= 79 ? 3 : 4; }
+  function cap(w) { return w.charAt(0).toUpperCase() + w.slice(1); }
+
+  var V = {
+    law: {
+      chip: "Law firm", noun: "law firms", firm: "Aldercrest Law", domain: "clients.aldercrestlaw.com", product: "Client Briefings",
+      org: "Brightline Freight Co.", sub: "Trucking & warehousing · Ontario · Federal", mono: "BF", contact: "Dana Whitfield", title: "VP Operations",
+      summary: ["A federal proposal would require electronic driver logs for regional fleets from next spring.", "An appeal court narrowed when carriers can treat owner-operators as independent contractors.", "The comment period on the draft warehouse racking standard closes in 12 days."],
+      items: [
+        { cat: "Regulation", prio: true, theme: "Transport rules", sent: "negative", head: "Federal regulator proposes electronic logging for regional fleets", imp: "Brightline's 40 regional trucks would need certified devices and driver training before the compliance date.", src: "Federal gazette · 11 Sep" },
+        { cat: "Court decision", prio: true, theme: "Contractor status", sent: "negative", head: "Appeal court narrows the independent-contractor test for owner-operators", imp: "The ruling weighs control over routes heavily. The three owner-operator agreements should be reviewed before renewal.", src: "Court of Appeal · 10 Sep" },
+        { cat: "Enforcement", prio: false, theme: "Workplace safety", sent: "neutral", head: "Inspectors fine two warehouse operators over racking checks", imp: "The same inspection gap would expose the main distribution centre; an internal audit now is inexpensive.", src: "Labour ministry bulletin · 9 Sep" }
+      ],
+      imps: ["Budget for logging devices in the first quarter, before vendor lead times grow.", "Owner-operator agreements are the highest-risk documents this quarter."],
+      score: 62, delta: 18, volume: 28, consequence: 34, why: "A proposed rule and an appellate decision both land directly on core operations.",
+      deadlines: [{ d: "28", m: "Sep", head: "Draft warehouse racking safety standard", type: "Comment period", left: "12 days left", urg: "soon" }, { d: "15", m: "Oct", head: "Electronic logging implementation timeline", type: "Consultation", left: "29 days left", urg: "later" }],
+      counts: [14, "Regulation", 5, "Courts", 4, "Enforcement", 5],
+      trend: [22, 28, 25, 31, 30, 38, 35, 41, 44, 62],
+      earlier: [["7 Sep", "Quiet week: one tribunal decision on overtime averaging, with no direct impact.", 44], ["31 Aug", "New fuel-tax reporting guidance; the filing change applies from next quarter.", 41], ["24 Aug", "Truck-route bylaw reviews opened in two delivery areas.", 35]],
+      signals: [["Transport rules", true, [2, 3, 2, 4, 3, 5, 6, 9], "Surging"], ["Contractor status", true, [1, 1, 2, 1, 2, 2, 3, 4], "Rising"], ["Workplace safety", false, [2, 2, 1, 2, 2, 1, 2, 2], "Steady"]],
+      archive: [["14 Sep", "Regulation", "Federal regulator proposes electronic logging for regional fleets", "Transport rules"], ["14 Sep", "Court decision", "Appeal court narrows the independent-contractor test for owner-operators", "Contractor status"], ["31 Aug", "Guidance", "Fuel-tax reporting guidance changes the quarterly filing format", "Transport rules"], ["17 Aug", "Enforcement", "Carrier penalised for misclassified drivers after an audit", "Contractor status"], ["18 Mar", "Tribunal", "Tribunal upholds a contractor model where drivers choose their routes", "Contractor status"]],
+      ask: { q: "Has anything changed on driver classification this year?", a: ["Yes, and two decisions point in different directions.", "In March, a tribunal upheld a carrier's contractor model because drivers chose their own routes [1]. Last week's appeal decision goes the other way where the carrier sets routes and schedules [2], which is closer to how Brightline operates. An August audit penalty against another carrier shows regulators are already testing this [3]."], src: ["Tribunal upholds a contractor model where drivers choose their routes · 18 Mar", "Appeal court narrows the independent-contractor test for owner-operators · 10 Sep", "Carrier penalised for misclassified drivers after an audit · 17 Aug"] },
+      dossier: {
+        ask: ["What the business does and where it operates", "Active matters and areas of legal risk", "Regulators, courts and tribunals that matter", "Key contracts, counterparties and competitors", "What the brief is for: board updates, compliance, early warning"],
+        watch: ["New and proposed legislation and regulations", "Court and tribunal decisions", "Regulator guidance and enforcement actions", "Consultations and comment periods, with closing dates", "Litigation involving competitors and counterparties"],
+        sections: ["Legislation & regulation", "Court & tribunal decisions", "Enforcement & guidance", "Deadlines you can act on", "What it means for you"],
+        value: "Clients hear from the firm every week, not only when there's a bill. A new rule or ruling often signals the next mandate, and the firm sees it first.",
+        note: "Briefs are information, not legal advice. A lawyer can review each one before it's sent."
+      }
+    },
+    accounting: {
+      chip: "Accounting firm", noun: "accounting firms", firm: "Fernbrook CPA", domain: "portal.fernbrookcpa.com", product: "Client Briefings",
+      org: "Oakview Dental Group", sub: "Dental clinics · 4 locations · Provincial", mono: "OD", contact: "Dr. Priya Raman", title: "Managing Partner",
+      summary: ["Updated tax agency guidance changes how fee-split associates are assessed for payroll.", "The province raised its employer health tax exemption from January.", "The window to elect quarterly instalments closes on 30 September."],
+      items: [
+        { cat: "Guidance", prio: true, theme: "Payroll & contractors", sent: "negative", head: "Tax agency updates guidance on associates paid by fee split", imp: "Oakview's 11 associate agreements fit the contractor pattern, but scheduling rules at two clinics could draw questions.", src: "Tax agency · 11 Sep" },
+        { cat: "Legislation", prio: true, theme: "Employer taxes", sent: "positive", head: "Province raises the employer health tax exemption threshold", imp: "A modest annual saving across the group; payroll settings need updating in January.", src: "Provincial budget update · 10 Sep" },
+        { cat: "Deadline", prio: false, theme: "Instalments", sent: "neutral", head: "Quarterly instalment election window closes 30 September", imp: "Electing in would smooth cash flow ahead of the clinic expansion planned for spring.", src: "Tax agency notice · 8 Sep" }
+      ],
+      imps: ["Review associate scheduling at two clinics before year-end.", "Decide on the instalment election this month."],
+      score: 48, delta: 9, volume: 22, consequence: 26, why: "One guidance change with real exposure; the rest is housekeeping with dates attached.",
+      deadlines: [{ d: "30", m: "Sep", head: "Quarterly instalment election", type: "Filing election", left: "14 days left", urg: "soon" }, { d: "31", m: "Oct", head: "Draft rules on digital receipts for health practices", type: "Consultation", left: "45 days left", urg: "later" }],
+      counts: [11, "Tax changes", 3, "Guidance", 5, "Deadlines", 3],
+      trend: [30, 26, 34, 29, 31, 36, 33, 40, 39, 48],
+      earlier: [["7 Sep", "Payroll remittance reminders; no rule changes affecting dental practices.", 39], ["31 Aug", "Consultation opened on digital receipts for health practices.", 40], ["24 Aug", "Proposed changes to small-business deduction thresholds, not yet final.", 33]],
+      signals: [["Payroll & contractors", true, [1, 1, 2, 1, 2, 3, 3, 5], "Rising"], ["Employer taxes", true, [1, 0, 1, 1, 1, 2, 1, 3], "Steady"], ["Health sector rules", false, [0, 1, 0, 1, 1, 0, 1, 1], "Quiet"]],
+      archive: [["14 Sep", "Guidance", "Tax agency updates guidance on associates paid by fee split", "Payroll & contractors"], ["14 Sep", "Legislation", "Province raises the employer health tax exemption threshold", "Employer taxes"], ["31 Aug", "Consultation", "Consultation opens on digital receipts for health practices", "Health sector rules"], ["24 Aug", "Legislation", "Small-business deduction thresholds proposed for change", "Employer taxes"], ["6 Jul", "Audit", "Audit programme targets contractor classification in health services", "Payroll & contractors"]],
+      ask: { q: "What do we need to decide before year-end?", a: ["Two decisions and one review.", "Decide on the quarterly instalment election by 30 September [1]. Update payroll for the new employer health tax threshold in January [2]. And review associate scheduling at the two clinics flagged by the new fee-split guidance [3], ideally before year-end filings."], src: ["Quarterly instalment election window closes 30 September · 8 Sep", "Province raises the employer health tax exemption threshold · 10 Sep", "Tax agency updates guidance on associates paid by fee split · 11 Sep"] },
+      dossier: {
+        ask: ["Entity structure, year-end and where they file", "Payroll, contractors and benefits setup", "Planned changes: expansion, sale or succession", "Tax areas they care about most", "Who reads the brief: owner, controller or board"],
+        watch: ["Tax agency guidance, rulings and notices", "Budget measures and new legislation", "Filing deadlines and election windows", "Sector rules that affect deductions and payroll", "Audit and enforcement trends"],
+        sections: ["Tax & legislation", "Guidance & rulings", "Deadlines & elections", "Sector watch", "What it means for you"],
+        value: "Turns a once-a-year relationship into a weekly one, and surfaces advisory work before the client thinks to ask.",
+        note: "Every point links to its source, and a partner can review each brief before it goes out."
+      }
+    },
+    wealth: {
+      chip: "Wealth advisors", noun: "wealth advisors", firm: "Stonebridge Private Wealth", domain: "clients.stonebridgewealth.com", product: "Client Briefings",
+      org: "The Okafor Family", sub: "Retirement & estate planning · Household of four", mono: "OF", contact: "Grace Okafor", title: "Client since 2019",
+      summary: ["Rate-cut expectations moved again, and November's bond ladder rollover still looks well timed.", "A proposed change to how gains on family property are taxed could affect the cottage plan.", "One spouse's retirement account has to be converted before the end of this year."],
+      items: [
+        { cat: "Markets", prio: true, theme: "Fixed income", sent: "positive", head: "Central bank signals a slower path for rate cuts", imp: "Keeps yields higher into November, when $180,000 of the family's bond ladder rolls over.", src: "Central bank statement · 10 Sep" },
+        { cat: "Tax", prio: true, theme: "Estate planning", sent: "negative", head: "Finance department consults on taxing gains on family property", imp: "If adopted, transferring the cottage before the change could reduce tax on the gain.", src: "Finance department · 9 Sep" },
+        { cat: "Holdings", prio: false, theme: "Companies you own", sent: "positive", head: "Two of the family's larger holdings raise dividends", imp: "Adds roughly $2,400 a year of income; no change to the plan needed.", src: "Company releases · 11 Sep" }
+      ],
+      imps: ["Model the cottage transfer under both tax scenarios before the consultation closes.", "No action on the bond ladder until the November rollover."],
+      score: 41, delta: 6, volume: 19, consequence: 22, why: "One proposal touches the estate plan; markets moved in the family's favour.",
+      deadlines: [{ d: "25", m: "Sep", head: "Charitable giving plan for this tax year", type: "Planning deadline", left: "9 days left", urg: "soon" }, { d: "15", m: "Oct", head: "Consultation on taxing gains on family property", type: "Consultation", left: "29 days left", urg: "later" }, { d: "30", m: "Nov", head: "Retirement account conversion for Grace", type: "Planning deadline", left: "75 days left", urg: "later" }],
+      counts: [9, "Markets", 4, "Tax & rules", 2, "Holdings", 3],
+      trend: [28, 31, 27, 35, 30, 33, 29, 36, 35, 41],
+      earlier: [["7 Sep", "Markets steady; no rule changes affecting the plan.", 35], ["31 Aug", "Next year's pension contribution limits announced.", 36], ["24 Aug", "Dividend change at one holding; income forecast updated.", 29]],
+      signals: [["Fixed income", true, [2, 2, 3, 2, 3, 3, 4, 5], "Rising"], ["Estate planning", true, [0, 1, 0, 0, 1, 0, 1, 3], "Surging"], ["Companies you own", false, [3, 2, 3, 3, 2, 3, 3, 3], "Steady"]],
+      archive: [["14 Sep", "Tax", "Finance department consults on taxing gains on family property", "Estate planning"], ["14 Sep", "Markets", "Central bank signals a slower path for rate cuts", "Fixed income"], ["31 Aug", "Rules", "Next year's pension contribution limits announced", "Estate planning"], ["20 Jul", "Planning", "Options for transferring the cottage: now, in stages, or at death", "Estate planning"], ["13 Jul", "Holdings", "Bond ladder rollover schedule reviewed against rate outlook", "Fixed income"]],
+      ask: { q: "How would the property tax proposal affect our cottage plan?", a: ["It could raise the tax on transferring the cottage later.", "The proposal would change how gains on family property are taxed, with a consultation open until 15 October [1]. Your plan transfers the cottage in 2029, so the gain would fall under the new rules if they pass. In July we laid out the alternatives, transferring now or in stages, and their trade-offs [2]."], src: ["Finance department consults on taxing gains on family property · 9 Sep", "Options for transferring the cottage: now, in stages, or at death · 20 Jul"] },
+      dossier: {
+        ask: ["Household goals and time horizon", "Accounts, holdings and income sources", "Estate and succession plans", "Tax situation and residency", "Topics they want to hear about"],
+        watch: ["Interest rate and market moves that touch their holdings", "Tax, pension and estate rule changes", "News on companies they own", "Deadlines tied to their accounts", "Consultations that could change their plan"],
+        sections: ["Markets & your holdings", "Tax & rules", "Planning deadlines", "What it means for you"],
+        value: "Clients hear from their advisor every week about their own money, not a market newsletter everyone gets. The podcast fits a commute.",
+        note: "Every point is cited, and compliance can review each brief before it's sent."
+      }
+    },
+    realestate: {
+      chip: "Commercial real estate", noun: "commercial brokerages", firm: "Granite Row Commercial", domain: "clients.graniterow.com", product: "Client Briefings",
+      org: "Bayline Industrial Partners", sub: "Industrial landlord · 14 buildings · 3 municipalities", mono: "BI", contact: "Marcus Bellamy", title: "Asset Manager",
+      summary: ["Council approved a rezoning study for the east industrial corridor, where Bayline owns three buildings.", "Regional industrial vacancy rose for a third straight quarter.", "A public meeting on the corridor study is set for 2 October."],
+      items: [
+        { cat: "Zoning", prio: true, theme: "Planning & zoning", sent: "mixed", head: "Council approves a rezoning study for the east industrial corridor", imp: "Three Bayline buildings sit inside the study area. Mixed-use permissions could lift land value but squeeze logistics tenants.", src: "City council minutes · 10 Sep" },
+        { cat: "Market", prio: true, theme: "Leasing market", sent: "negative", head: "Industrial vacancy rises for a third straight quarter", imp: "Expect more pressure on renewal rents at the two buildings with leases ending next year.", src: "Regional market report · 11 Sep" },
+        { cat: "Infrastructure", prio: false, theme: "Nearby projects", sent: "positive", head: "Highway interchange upgrade near Eastgate moves to tender", imp: "Better truck access in two to three years, with construction disruption for Eastgate tenants first.", src: "Regional transportation notice · 8 Sep" }
+      ],
+      imps: ["Speak at, or submit to, the 2 October public meeting.", "Start renewal talks early at the two buildings with leases ending next year."],
+      score: 57, delta: 15, volume: 24, consequence: 33, why: "A zoning study inside the portfolio's main corridor, plus softening lease demand.",
+      deadlines: [{ d: "2", m: "Oct", head: "Public meeting on the east corridor rezoning study", type: "Public meeting", left: "16 days left", urg: "soon" }, { d: "31", m: "Dec", head: "Current development charge rates for permits filed this year", type: "Filing deadline", left: "106 days left", urg: "later" }],
+      counts: [12, "Planning", 4, "Market", 5, "Near sites", 3],
+      trend: [31, 29, 35, 33, 38, 36, 40, 39, 42, 57],
+      earlier: [["7 Sep", "Two comparable warehouses sold; pricing held steady.", 42], ["31 Aug", "New development charge schedule published for next year.", 39], ["24 Aug", "Tenant expansion announced in the west corridor.", 40]],
+      signals: [["Planning & zoning", true, [1, 1, 2, 1, 1, 2, 2, 6], "Surging"], ["Leasing market", true, [3, 3, 4, 3, 4, 4, 5, 5], "Rising"], ["Nearby projects", false, [1, 2, 1, 1, 2, 1, 2, 2], "Steady"]],
+      archive: [["14 Sep", "Zoning", "Council approves a rezoning study for the east industrial corridor", "Planning & zoning"], ["14 Sep", "Market", "Industrial vacancy rises for a third straight quarter", "Leasing market"], ["14 Sep", "Infrastructure", "Highway interchange upgrade near Eastgate moves to tender", "Nearby projects"], ["7 Sep", "Market", "Two comparable warehouses sell at steady pricing", "Leasing market"], ["31 Aug", "Planning", "Development charge schedule published for next year", "Planning & zoning"]],
+      ask: { q: "What's changing around our Eastgate property?", a: ["Two things, both close by.", "The rezoning study covers the corridor Eastgate sits in, with a public meeting on 2 October [1]. Separately, the nearby highway interchange upgrade has moved to tender [2], which improves truck access later but means construction first. Leasing demand in the area has softened for three quarters [3]."], src: ["Council approves a rezoning study for the east industrial corridor · 10 Sep", "Highway interchange upgrade near Eastgate moves to tender · 8 Sep", "Industrial vacancy rises for a third straight quarter · 11 Sep"] },
+      dossier: {
+        ask: ["Properties, addresses and asset types", "Tenants and lease expiries", "Markets and submarkets they care about", "Planned acquisitions, sales and developments", "Comparable owners and competitors"],
+        watch: ["Council, planning and zoning decisions", "Development charges and property tax changes", "Leasing, sales and vacancy news", "Infrastructure projects near their sites", "New supply and competitor deals"],
+        sections: ["Planning & zoning", "Market moves", "Near your properties", "Meetings & deadlines", "What it means for you"],
+        value: "Every owner client gets intelligence tied to their own addresses, and the brokerage hears about a rezoning or a new competitor before anyone calls.",
+        note: "Sources are cited on every item, and a broker can review each brief before it's sent."
+      }
+    },
+    govaffairs: {
+      chip: "Government affairs", chipNote: "the original", noun: "government-affairs firms", firm: "Parliament Row Advisory", domain: "portal.parliamentrow.com", product: "Intelligence Briefings",
+      org: "Northwind Transit Group", sub: "Transit electrification · Provincial · Federal", mono: "NT", contact: "Lena Tremblay", title: "Director, Public Affairs",
+      summary: ["Fleet electrification funding surged: 8 items this week against a usual 3.", "The regional transit authority previewed changes to vehicle procurement rules.", "A consultation on depot charging standards closes in 18 days."],
+      items: [
+        { cat: "Government", prio: true, theme: "Fleet electrification funding", sent: "positive", head: "Province signals a second intake for zero-emission bus funding", imp: "Northwind's 2027 replacement order could qualify if the application is ready before the intake opens.", src: "Provincial transport ministry · 12 Sep" },
+        { cat: "Government", prio: false, theme: "Procurement rule changes", sent: "positive", head: "Transit authority previews changes to vehicle procurement rules", imp: "Local-content scoring would favour Northwind's assembly partner in the next tender.", src: "Regional transit authority · 10 Sep" },
+        { cat: "Media", prio: false, theme: "Ridership recovery", sent: "negative", head: "Ridership recovery slows on suburban routes", imp: "Weaker ridership numbers could be used to argue for delaying fleet orders at budget time.", src: "Regional daily · 9 Sep" }
+      ],
+      imps: ["Prepare the funding application now; the intake window may be short.", "Brief the assembly partner on local-content scoring before the tender."],
+      score: 60, delta: 40, volume: 27, consequence: 33, why: "Funding activity surged while procurement rules started moving at the same time.",
+      deadlines: [{ d: "4", m: "Oct", head: "Consultation on depot charging standards", type: "Consultation", left: "18 days left", urg: "soon" }, { d: "30", m: "Oct", head: "Pre-budget submissions", type: "Budget stage", left: "44 days left", urg: "later" }],
+      counts: [19, "Media", 6, "Government", 9, "Stakeholder", 4],
+      trend: [26, 17, 39, 36, 33, 20, 26, 53, 20, 60],
+      earlier: [["7 Sep", "5 items across 3 threads, 3 of them from government.", 20], ["31 Aug", "Procurement review previewed; 11 items across 3 threads.", 53], ["24 Aug", "Depot charging capacity in the news; 13 items.", 26]],
+      signals: [["Fleet electrification funding", true, [5, 1, 1, 3, 3, 4, 2, 8], "Surging"], ["Procurement rule changes", false, [2, 2, 0, 2, 3, 3, 0, 5], "Surging"], ["Ridership recovery", false, [3, 2, 1, 0, 0, 2, 2, 4], "Rising"], ["Depot charging capacity", true, [0, 2, 3, 3, 3, 1, 1, 0], "Quiet"]],
+      archive: [["14 Sep", "Government", "Province signals a second intake for zero-emission bus funding", "Fleet electrification funding"], ["14 Sep", "Government", "Transit authority previews changes to vehicle procurement rules", "Procurement rule changes"], ["31 Aug", "Government", "Procurement review announced ahead of the next budget cycle", "Procurement rule changes"], ["24 Aug", "Media", "Depot charging capacity questioned as fleets grow", "Depot charging capacity"], ["20 Jul", "Stakeholder", "Industry association calls for faster electrification funding", "Fleet electrification funding"]],
+      ask: { q: "What's happened on fleet funding in the last three months?", a: ["Activity picked up sharply in the last month.", "An industry association pushed for faster funding in July [1]. Mentions stayed low through August, then jumped to 8 items this week against a usual 3, led by the province signalling a second funding intake [2]."], src: ["Industry association calls for faster electrification funding · 20 Jul", "Province signals a second intake for zero-emission bus funding · 12 Sep"] },
+      dossier: {
+        ask: ["Organization, sector and what it does", "Jurisdictions and languages to watch", "Priority themes, plus themes to monitor", "Programs, funds, bills and regulations of interest", "What the report is for: executives, advocacy, submissions"],
+        watch: ["Government announcements, programs and budgets", "Bills, regulations and consultations", "Procurement notices and tenders", "Media coverage and stakeholder opinion", "Competitor and counterpart moves"],
+        sections: ["Media coverage", "Government & regulatory", "Stakeholder opinion", "Stakeholder intelligence", "Strategic synopsis"],
+        value: "This is the original build: a government-affairs intelligence firm briefs each of its clients weekly on the policy moves that affect them.",
+        note: "Same structure as the live product, shown here with a made-up client."
+      }
+    }
+  };
+  var ORDER = ["law", "accounting", "wealth", "realestate", "govaffairs"];
+
+  var cur = "law", tab = "updates";
+  var fromHash = (location.hash || "").replace("#", "");
+  if (V[fromHash]) cur = fromHash;
+  else { var saved = store("mb-vertical"); if (saved && V[saved]) cur = saved; }
+
+  /* ---------- the page cites itself ---------- */
+  var SOURCES = [
+    "Brief length: the two briefs produced on 14 September 2026 ran to 8 pages each.",
+    "Episode length: the audio file produced on 14 September 2026 runs about 6 minutes.",
+    "Unattended run time: 11 minutes 9 seconds from start to saved brief for one client on 14 September 2026, with no one involved.",
+    "Estimate: 100 briefs at about 11 minutes each, run ten at a time, come to about 2 hours.",
+    "Running cost per brief, measured on the September 2026 test runs. Exact figures on request.",
+    "Search step, 14 September 2026: 12 searches, 120 results, 112 different pages, 15 kept in the brief, 3 headlines in the email.",
+    "Every item in a brief carries the address of its source. The report builder refuses to produce a page without one."
+  ];
+  var pop = $("#pop");
+  function showAt(x, y, html) {
+    pop.innerHTML = html; pop.hidden = false;
+    var w = pop.offsetWidth, h = pop.offsetHeight;
+    pop.style.left = Math.min(Math.max(8, x + 12), window.innerWidth - w - 8) + "px";
+    var top = y - h - 12; pop.style.top = (top < 8 ? y + 18 : top) + "px";
+  }
+  function hidePop() { pop.hidden = true; }
+  function wireCites(root) {
+    $$(".cite", root).forEach(function (a) {
+      if (a.getAttribute("data-wired")) return;
+      a.setAttribute("data-wired", "1");
+      var n = +a.getAttribute("data-n"), html = "<b>Source " + n + "</b>" + esc(SOURCES[n - 1] || "");
+      a.setAttribute("aria-label", "Source " + n + ": " + (SOURCES[n - 1] || ""));
+      a.addEventListener("pointermove", function (e) { showAt(e.clientX, e.clientY, html); });
+      a.addEventListener("pointerleave", hidePop);
+      a.addEventListener("focus", function () { var r = a.getBoundingClientRect(); showAt(r.left, r.top, html); });
+      a.addEventListener("blur", hidePop);
+    });
+  }
+  wireCites(document);
+  window.addEventListener("scroll", hidePop, { passive: true });
+  function citeHtml(n) { return ' <button type="button" class="cite" data-n="' + n + '">' + n + "</button>"; }
+
+  /* ---------- reveal ---------- */
+  if (!RM) {
+    $$(".rv").forEach(function (el) {
+      if (el.getBoundingClientRect().top > window.innerHeight) { el.classList.add("pre"); onView(el, function () { el.classList.remove("pre"); }, "0px 0px -6% 0px"); }
+    });
+  }
+
+  /* ---------- hero word cycle ---------- */
+  var cycleBtn = $("#cycleBtn"), cycleIdx = ORDER.indexOf(cur), cycleTimer = 0, cyclePaused = false;
+  var cycleSpans = ORDER.map(function (k) { var sp = document.createElement("span"); sp.textContent = V[k].noun; cycleBtn.appendChild(sp); return sp; });
+  function setCycle(i) {
+    cycleIdx = (i + ORDER.length) % ORDER.length;
+    cycleSpans.forEach(function (sp, j) { sp.classList.remove("on"); if (j === cycleIdx) { if (!RM) void sp.offsetWidth; sp.classList.add("on"); } });
+    cycleBtn.setAttribute("aria-label", "Show the portal for " + V[ORDER[cycleIdx]].noun);
+  }
+  setCycle(cycleIdx);
+  if (!RM) {
+    cycleTimer = setInterval(function () { if (!cyclePaused) setCycle(cycleIdx + 1); }, 2600);
+    cycleBtn.addEventListener("mouseenter", function () { cyclePaused = true; });
+    cycleBtn.addEventListener("mouseleave", function () { cyclePaused = false; });
+    cycleBtn.addEventListener("focus", function () { cyclePaused = true; });
+    cycleBtn.addEventListener("blur", function () { cyclePaused = false; });
+  }
+  cycleBtn.addEventListener("click", function () {
+    setVertical(ORDER[cycleIdx], true);
+    $("#portal").scrollIntoView({ behavior: RM ? "auto" : "smooth", block: "start" });
+  });
+
+  /* ---------- the Monday board ---------- */
+  var ROWS = [
+    { k: "search", t: "Searching this week's sources", a: 0, b: 0.5 },
+    { k: "read", t: "Reading every page", a: 0.5, b: 8.4 },
+    { k: "score", t: "Scoring the week", a: 8.4, b: 8.7 },
+    { k: "brief", t: "Building the brief", a: 8.7, b: 8.9 },
+    { k: "pod", t: "Recording the episode", a: 8.9, b: 11.0 },
+    { k: "send", t: "Sending it", a: 11.0, b: 11.2 }
+  ];
+  var END = 11.2, MS_PER_MIN = 1050, HOLD = 4200;
+  var bRows = $("#bRows"), bClock = $("#bClock"), bFoot = $("#bFoot"), bLive = $("#bReplay");
+  var bRaf = 0, bT0 = 0, bEls = [], bDone = null;
+  function pad2(n) { return (n < 10 ? "0" : "") + n; }
+  function mmss(sec) { sec = Math.max(0, Math.floor(sec)); return Math.floor(sec / 60) + ":" + pad2(sec % 60); }
+  function waveBars(n) { var o = ""; for (var i = 0; i < n; i++) o += '<i style="--i:' + i + '"></i>'; return o; }
+  function buildBoard() {
+    bRows.innerHTML = ROWS.map(function (r) {
+      return '<li class="brow" data-k="' + r.k + '" data-state="pending"><span class="brow-dot" aria-hidden="true"></span><div class="brow-main"><b>' + esc(r.t) + '</b><span class="brow-sub"></span></div><div class="brow-side"></div></li>';
+    }).join("");
+    bEls = $$(".brow", bRows).map(function (li) { return { li: li, sub: $(".brow-sub", li), side: $(".brow-side", li), st: "", lastSub: null, lastSide: null }; });
+    bFoot.innerHTML = ""; bDone = null;
+  }
+  function frac(T, r) { return Math.max(0, Math.min(1, (T - r.a) / (r.b - r.a))); }
+  function paintBoard(T) {
+    var d = V[cur], total = Math.floor((540 + T) * 60);
+    bClock.innerHTML = pad2(Math.floor(total / 3600)) + ":" + pad2(Math.floor(total / 60) % 60) + "<small>:" + pad2(total % 60) + "</small>";
+    ROWS.forEach(function (r, i) {
+      var e = bEls[i], f = frac(T, r), st = T >= r.b ? "done" : T >= r.a ? "running" : "pending", sub = "", side = "", first = d.contact.split(" ")[0];
+      if (r.k === "search") { sub = st === "pending" ? "12 searches, trusted sources only" : st === "done" ? "120 results · 112 different pages" : Math.round(120 * f) + " results from 12 searches"; side = st === "pending" ? "" : "09:00"; }
+      else if (r.k === "read") { sub = st === "pending" ? "112 pages, every one of them" : st === "done" ? "112 read · 15 kept for " + d.org : Math.round(112 * f) + " of 112 pages read"; side = st === "done" ? "09:08" : st === "running" ? Math.round(f * 100) + "%" : ""; }
+      else if (r.k === "score") { var sc = Math.round(d.score * (st === "done" ? 1 : f)); sub = st === "pending" ? "activity level, 0 to 100" : "volume " + d.volume + " · consequence " + d.consequence; side = st === "pending" ? "" : '<span class="score">' + sc + "</span>" + (st === "done" ? ' <span class="chip">' + cap(BANDS[bandOf(d.score)]) + "</span>" : ""); }
+      else if (r.k === "brief") { sub = st === "pending" ? "a PDF in " + d.firm + "'s branding" : "8 pages · every item cited"; side = st === "done" ? '<span class="chip">PDF ready</span>' : st === "running" ? "rendering…" : ""; }
+      else if (r.k === "pod") { sub = st === "pending" ? "two hosts, about six minutes" : st === "done" ? "6:01 · transcript attached" : "recording… " + mmss(361 * f); side = st === "pending" ? "" : '<span class="wave' + (st === "running" ? " on" : "") + '">' + waveBars(9) + "</span>" + (st === "done" ? "6:01" : ""); }
+      else if (r.k === "send") { sub = st === "pending" ? "to " + d.contact + ", " + d.title.toLowerCase() : st === "done" ? "in " + first + "'s inbox, with the PDF and the episode" : "sending…"; side = st === "done" ? '<span class="mailcard"><b>3 things that matter this week</b><span>to ' + esc(d.contact) + "</span></span>" : ""; }
+      if (e.st !== st) { e.st = st; e.li.setAttribute("data-state", st); }
+      if (e.lastSub !== sub) { e.lastSub = sub; e.sub.textContent = sub; }
+      if (e.lastSide !== side) { e.lastSide = side; e.side.innerHTML = side; }
+    });
+    var done = T >= END;
+    if (bDone !== done) {
+      bDone = done;
+      bFoot.innerHTML = done ? "<b>Done at 09:11.</b> Nobody on your team touched it." : "";
+      bLive.textContent = done ? "● done · click to replay" : "● replaying · click to restart";
+      bLive.classList.toggle("done", done);
+    }
+  }
+  function stopMonday() { if (bRaf) cancelAnimationFrame(bRaf); bRaf = 0; }
+  function startMonday() {
+    stopMonday(); buildBoard();
+    if (RM) { paintBoard(END); return; }
+    bT0 = performance.now();
+    (function f(now) {
+      var T = (now - bT0) / MS_PER_MIN;
+      if (T >= END + HOLD / MS_PER_MIN) { bT0 = now; T = 0; }
+      paintBoard(Math.min(T, END));
+      bRaf = requestAnimationFrame(f);
+    })(bT0);
+  }
+  bLive.addEventListener("click", function () { startMonday(); });
+
+  /* ---------- pick a client ---------- */
+  var cards = $("#cards"), ROT = ["-2.5deg", "1.5deg", "-1deg", "2deg", "-1.5deg"];
+  ORDER.forEach(function (k, i) {
+    var d = V[k], b = document.createElement("button");
+    b.type = "button"; b.className = "card"; b.setAttribute("role", "radio"); b.setAttribute("data-v", k); b.style.setProperty("--r", ROT[i]);
+    b.setAttribute("aria-label", d.org + ", a client of " + d.firm + " (" + d.chip + ")");
+    b.innerHTML = '<div class="card-head"><span class="card-kind">' + esc(d.chip) + '</span>' + (d.chipNote ? '<span class="card-note">' + esc(d.chipNote) + "</span>" : "") + '</div><div class="card-body"><span class="card-eyebrow">One of their clients</span><div class="card-org">' + esc(d.org) + '</div><div class="card-sub">' + esc(d.sub) + '</div><div class="card-who"><b>' + esc(d.contact) + "</b><span>" + esc(d.title) + '</span></div></div><div class="card-foot">Client of ' + esc(d.firm) + "</div>";
+    b.addEventListener("click", function () { setVertical(k, true); });
+    b.addEventListener("keydown", function (e) {
+      var j = null;
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") j = (i + 1) % ORDER.length;
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") j = (i + ORDER.length - 1) % ORDER.length;
+      if (j !== null) { e.preventDefault(); setVertical(ORDER[j], true); $('.card[data-v="' + ORDER[j] + '"]').focus(); }
+    });
+    cards.appendChild(b);
+  });
+
+  function setVertical(k, animate) {
+    cur = k;
+    store("mb-vertical", k);
+    $$(".card").forEach(function (b) { var on = b.getAttribute("data-v") === k; b.setAttribute("aria-checked", String(on)); b.tabIndex = on ? 0 : -1; if (on && animate && cards.scrollWidth > cards.clientWidth) b.scrollIntoView({ inline: "center", block: "nearest", behavior: RM ? "auto" : "smooth" }); });
+    startMonday();
+    renderPortalHead();
+    renderTab(animate);
+    renderDossier(animate);
+  }
+
+  /* ---------- portal ---------- */
+  var pvBody = $("#pvBody"), pvInd = $("#pvInd"), audioTimer = 0;
+  function renderPortalHead() {
+    var d = V[cur];
+    $("#pvMono").textContent = d.mono;
+    $("#pvBrand").textContent = d.firm + " · " + d.product;
+    $("#pvOrg").textContent = d.org;
+    $("#pvSub").textContent = d.sub;
+    $("#pvUrl").textContent = d.domain + "/portal";
+    $("#pvFoot").textContent = "Prepared by " + d.firm + ". Questions about your coverage? Reply to your update email.";
+  }
+  function moveInd() {
+    var t = $('.pv-tab[data-tab="' + tab + '"]');
+    if (!t) return;
+    pvInd.style.left = t.offsetLeft + "px";
+    pvInd.style.width = t.offsetWidth + "px";
+  }
+  function spark(series) {
+    var max = Math.max.apply(null, series.concat([1])), w = 70, h = 22;
+    var pts = series.map(function (v, i) { return (i / (series.length - 1) * w).toFixed(1) + "," + (h - 3 - v / max * (h - 6)).toFixed(1); });
+    var last = pts[pts.length - 1].split(",");
+    return '<svg viewBox="0 0 70 22" aria-hidden="true"><polyline points="' + pts.join(" ") + '"/><circle cx="' + last[0] + '" cy="' + last[1] + '" r="2.2"/></svg>';
+  }
+  var CATC = { "Regulation": "gov", "Legislation": "gov", "Guidance": "gov", "Government": "gov", "Tax": "gov", "Zoning": "gov", "Court decision": "stake", "Enforcement": "comp", "Holdings": "comp", "Deadline": "proc", "Infrastructure": "proc", "Markets": "media", "Market": "media", "Media": "media" };
+  function itemHtml(it) {
+    var ck = CATC[it.cat] || "gov";
+    return '<div class="pv-item cat-' + ck + '"><div class="pv-tags"><span class="pv-cat c-' + ck + '">' + esc(it.cat) + "</span>" + (it.prio ? '<span class="pv-prio">priority theme</span>' : "") + '<span class="pv-pill">' + esc(it.theme) + '</span><span class="pv-sent s-' + esc(it.sent) + '">' + esc(it.sent) + '</span></div><p class="pv-ihead">' + esc(it.head) + '</p><p class="pv-imp">' + esc(it.imp) + '</p><p class="pv-src">' + esc(it.src) + "</p></div>";
+  }
+  function updatesHtml(d) {
+    var b = bandOf(d.score);
+    return '<div class="pv-grid"><div class="pv-main">' +
+      '<div class="pv-card pv-hero"><p class="pv-kicker">This week</p><h4 class="pv-date">Monday, 14 September 2026</h4><span class="pv-period">Monitoring period 7–14 Sep</span>' +
+      '<ul class="pv-summary">' + d.summary.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>" +
+      '<div class="pv-actions"><button class="pv-btn pv-btn-primary" type="button" data-go="briefings">Read the full briefing</button><button class="pv-btn" type="button" data-go="research">Ask about it</button></div></div>' +
+      '<p class="pv-label">What matters now</p><div class="pv-card">' + d.items.map(itemHtml).join("") + "</div>" +
+      '<p class="pv-label">What it means for you</p><div class="pv-card pv-pad"><ul class="pv-imps">' + d.imps.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul></div>" +
+      '</div><aside class="pv-rail">' +
+      '<div class="pv-card"><p class="pv-rt">Activity level · 0–100</p><div class="pv-big"><span class="pv-num" id="pvNum">' + d.score + '</span><span class="pv-band b-' + BANDS[b] + '">' + cap(BANDS[b]) + "</span></div>" +
+      '<div class="pv-bandbar">' + BANDS.map(function (x, i) { return '<span class="' + (i === b ? "on" : "") + '"></span>'; }).join("") + "</div>" +
+      '<div class="pv-bandlabels">' + BANDS.map(function (x, i) { return '<span class="' + (i === b ? "on" : "") + '">' + x + "</span>"; }).join("") + "</div>" +
+      '<div class="pv-halves"><div><div class="pv-half-row"><span>Volume <small style="color:var(--pv-faint)">how much happened</small></span><b>' + d.volume + '/50</b></div><div class="pv-half-track"><i data-w="' + d.volume * 2 + '"></i></div></div>' +
+      '<div><div class="pv-half-row"><span>Consequence <small style="color:var(--pv-faint)">how much it matters</small></span><b>' + d.consequence + '/50</b></div><div class="pv-half-track"><i data-w="' + d.consequence * 2 + '"></i></div></div></div>' +
+      '<p class="pv-delta"><span class="pv-trendpill">↗ Rising</span><span><b>+' + d.delta + "</b> vs last week</span></p><p class=\"pv-why\">" + esc(d.why) + "</p></div>" +
+      '<div class="pv-card"><p class="pv-rt">This week\'s briefing</p><div class="pv-link">PDF report<small>8 pages</small></div><div class="pv-link">Podcast episode<small>6:01</small></div>' +
+      '<div class="pv-player"><button class="pv-play" type="button" id="pvPlay" aria-label="Play sample episode"></button><div><div class="pv-ptrack"><i id="pvProg"></i></div><div class="pv-ptime" id="pvTime">0:00 / 6:01</div></div></div></div>' +
+      '<div class="pv-card"><p class="pv-rt">Deadlines you can still act on</p>' + d.deadlines.map(function (x) { return '<div class="pv-dl"><div class="pv-dld urg-' + x.urg + '"><b>' + esc(x.d) + "</b><small>" + esc(x.m) + '</small></div><div><p class="pv-dlh">' + esc(x.head) + '</p><p class="pv-dls">' + esc(x.type) + " · " + esc(x.left) + "</p></div></div>"; }).join("") + "</div>" +
+      "</aside></div>";
+  }
+  function briefingsHtml(d) {
+    var b = bandOf(d.score), max = 100;
+    var alerts = d.signals.filter(function (s) { return s[3] === "Surging"; }).slice(0, 1).map(function (s) {
+      var prev = s[2].slice(0, -1), avg = Math.round(prev.reduce(function (a, c) { return a + c; }, 0) / prev.length);
+      return '<div class="pv-alert"><span class="pv-sev">Surge</span><b>' + esc(s[0]) + "</b><span>" + s[2][s[2].length - 1] + " items this week vs a usual " + Math.max(1, avg) + "</span></div>";
+    }).join("");
+    return '<div class="pv-card pv-hero"><div class="pv-hero-top"><div><p class="pv-kicker">Latest briefing</p><h4 class="pv-date">Monday, 14 September 2026</h4><span class="pv-period">Monitoring period 7–14 Sep</span></div>' +
+      '<div class="pv-meter"><div class="pv-big"><span class="pv-num" style="font-size:34px">' + d.score + '</span><span class="pv-band b-' + BANDS[b] + '">' + cap(BANDS[b]) + '</span></div><div class="pv-meter-track"><i data-w="' + d.score + '"></i></div><span class="pv-meter-k">Activity level · 0–100</span></div></div>' +
+      '<p class="pv-excerpt">' + esc(d.summary[0]) + "</p>" +
+      '<div class="pv-stats"><div class="pv-stat"><b>' + d.counts[0] + '</b><span>Items tracked</span></div><div class="pv-stat"><b>' + d.counts[2] + "</b><span>" + esc(d.counts[1]) + '</span></div><div class="pv-stat"><b>' + d.counts[4] + "</b><span>" + esc(d.counts[3]) + '</span></div><div class="pv-stat"><b>' + d.counts[6] + "</b><span>" + esc(d.counts[5]) + "</span></div></div>" +
+      '<div class="pv-actions"><button class="pv-btn pv-btn-primary" type="button">Read the briefing</button><button class="pv-btn" type="button">Download PDF</button></div></div>' +
+      '<div class="pv-two"><div class="pv-card" id="pvTrendCard"><p class="pv-rt">Activity level by week</p><div class="pv-trend" id="pvTrend">' +
+      d.trend.map(function (v, i) { return '<button class="pv-tbar" type="button" style="--i:' + i + '" data-tip="' + WEEKS[i] + " · activity " + v + " · " + cap(BANDS[bandOf(v)]) + '" aria-label="Week of ' + WEEKS[i] + ", activity " + v + '"><i style="--h:' + Math.max(3, v / max * 100) + '%"></i></button>'; }).join("") +
+      '</div><div class="pv-tx"><span>' + WEEKS[0] + "</span><span>" + WEEKS[9] + '</span></div><div class="pv-tip" id="pvTip" hidden></div></div>' +
+      '<div class="pv-card pv-sigs" id="pvSigs"><p class="pv-rt">Theme signals</p>' + alerts +
+      d.signals.map(function (s) { return '<div class="pv-sig"><span>' + esc(s[0]) + (s[1] ? ' <span class="pv-prio" style="font-size:9.5px">priority</span>' : "") + "</span>" + spark(s[2]) + '<span class="pv-st ' + s[3].toLowerCase() + '">' + s[3] + "<small>" + s[2][s[2].length - 1] + " this week</small></span></div>"; }).join("") +
+      "</div></div>" +
+      '<p class="pv-label">Earlier briefings</p><div class="pv-card">' + d.earlier.map(function (r) { return '<div class="pv-row"><div class="pv-row-d">' + esc(r[0]) + " 2026<small>weekly</small></div><div>" + esc(r[1]) + '</div><span class="pv-score-chip b-' + BANDS[bandOf(r[2])] + '">' + r[2] + "</span></div>"; }).join("") + "</div>";
+  }
+  function researchHtml(d) {
+    return '<div class="pv-card pv-ask"><p class="pv-kicker">Ask your archive</p><p class="pv-ask-sub">Ask a question of everything tracked for you. Answers cite the items they come from.</p>' +
+      '<form class="pv-ask-row" id="pvAskForm"><input class="pv-input" id="pvAskQ" type="text" readonly value="' + esc(d.ask.q) + '" aria-label="Sample question"><button class="pv-btn pv-btn-primary" type="submit">Ask</button></form>' +
+      '<div id="pvAskOut"></div></div>' +
+      '<p class="pv-label">Everything tracked for you</p>' +
+      '<div class="pv-ask-row" style="margin-top:0"><input class="pv-input" id="pvArcQ" type="search" placeholder="Search headlines and themes…" aria-label="Search the archive"></div>' +
+      '<p class="pv-arc-count" id="pvArcCount"></p><div class="pv-card" id="pvArcList"></div>';
+  }
+  function paintArchive() {
+    var d = V[cur], q = ($("#pvArcQ").value || "").trim().toLowerCase();
+    var rows = d.archive.filter(function (r) { return !q || (r[2] + " " + r[3] + " " + r[1]).toLowerCase().indexOf(q) !== -1; });
+    $("#pvArcCount").textContent = rows.length + " of " + d.archive.length + " items shown · sample archive";
+    $("#pvArcList").innerHTML = rows.length ? rows.map(function (r) { return '<div class="pv-row"><div class="pv-row-d">' + esc(r[0]) + "<small>" + esc(r[1]) + '</small></div><div><span class="pv-ihead" style="font-size:15.5px">' + esc(r[2]) + '</span></div><span class="pv-pill">' + esc(r[3]) + "</span></div>"; }).join("") : '<div class="pv-row"><div></div><div style="color:var(--pv-muted)">No items match that search.</div><span></span></div>';
+  }
+  var askTimer = 0;
+  function runAsk() {
+    var d = V[cur], out = $("#pvAskOut");
+    clearInterval(askTimer);
+    out.innerHTML = '<p class="pv-ask-status">Reading the archive…</p>';
+    var html = function (typed, done) {
+      var paras = d.ask.a.map(function (p) { return p; });
+      var body;
+      if (done) body = paras.map(function (p) { return "<p>" + esc(p).replace(/\[(\d)\]/g, '<span class="pv-cite">$1</span>') + "</p>"; }).join("");
+      else body = "<p>" + esc(typed).replace(/\n\n/g, "</p><p>") + '<span class="pv-caret"></span></p>';
+      return '<div class="pv-answer">' + body + "</div>" + (done ? '<ul class="pv-srcs"><li class="pv-srcs-k">From this client\'s monitoring</li>' + d.ask.src.map(function (s, i) { return '<li><span class="pv-cite">' + (i + 1) + "</span> " + esc(s) + "</li>"; }).join("") + '</ul><p class="pv-demo-note">Sample answer. The live portal answers from each client\'s real archive.</p>' : "");
+    };
+    var full = d.ask.a.join("\n\n");
+    if (RM) { out.innerHTML = html(full, true); return; }
+    setTimeout(function () {
+      if (V[cur] !== d || !$("#pvAskOut")) return;
+      var i = 0;
+      askTimer = setInterval(function () {
+        i += 4;
+        var o = $("#pvAskOut");
+        if (!o || V[cur] !== d) { clearInterval(askTimer); return; }
+        if (i >= full.length) { clearInterval(askTimer); o.innerHTML = html(full, true); return; }
+        o.innerHTML = html(full.slice(0, i), false);
+      }, 18);
+    }, 900);
+  }
+  function wireBody() {
+    $$("[data-go]", pvBody).forEach(function (b) { b.addEventListener("click", function () { setTab(b.getAttribute("data-go"), true); }); });
+    $$("[data-w]", pvBody).forEach(function (i) {
+      var w = i.getAttribute("data-w") + "%";
+      if (RM) { i.style.width = w; return; }
+      i.style.width = "0";
+      requestAnimationFrame(function () { requestAnimationFrame(function () { i.style.width = w; }); });
+    });
+    var num = $("#pvNum");
+    if (num && !RM) {
+      var target = +num.textContent, t0 = performance.now();
+      (function f(now) { var p = Math.min(1, (now - t0) / 700); num.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); })(t0);
+    }
+    var play = $("#pvPlay");
+    if (play) {
+      clearInterval(audioTimer);
+      var sec = 0, total = 361;
+      play.addEventListener("click", function () {
+        if (play.classList.toggle("on")) {
+          play.setAttribute("aria-label", "Pause sample episode");
+          audioTimer = setInterval(function () {
+            sec = (sec + 3) % total;
+            var p = $("#pvProg"), tt = $("#pvTime");
+            if (!p) { clearInterval(audioTimer); return; }
+            p.style.width = (sec / total * 100) + "%";
+            tt.textContent = Math.floor(sec / 60) + ":" + String(sec % 60).padStart(2, "0") + " / 6:01 · sample";
+          }, 100);
+        } else { play.setAttribute("aria-label", "Play sample episode"); clearInterval(audioTimer); }
+      });
+    }
+    var trend = $("#pvTrend");
+    if (trend) {
+      restart(trend, "play");
+      var tip = $("#pvTip"), card = $("#pvTrendCard");
+      $$(".pv-tbar", trend).forEach(function (bar) {
+        var show = function () {
+          tip.textContent = bar.getAttribute("data-tip"); tip.hidden = false;
+          var r = bar.getBoundingClientRect(), c = card.getBoundingClientRect();
+          var x = Math.min(Math.max(r.left - c.left + r.width / 2, 70), c.width - 70);
+          tip.style.left = x + "px"; tip.style.top = (r.top - c.top + r.height - (bar.firstChild.getBoundingClientRect().height) - 6) + "px";
+        };
+        bar.addEventListener("mouseenter", show); bar.addEventListener("focus", show);
+        bar.addEventListener("mouseleave", function () { tip.hidden = true; }); bar.addEventListener("blur", function () { tip.hidden = true; });
+      });
+    }
+    restart($("#pvSigs"), "play");
+    var askForm = $("#pvAskForm");
+    if (askForm) {
+      askForm.addEventListener("submit", function (e) { e.preventDefault(); runAsk(); });
+      $("#pvArcQ").addEventListener("input", paintArchive);
+      paintArchive();
+    }
+  }
+  function renderTab(animate) {
+    var d = V[cur];
+    clearInterval(audioTimer); clearInterval(askTimer);
+    pvBody.innerHTML = tab === "updates" ? updatesHtml(d) : tab === "briefings" ? briefingsHtml(d) : researchHtml(d);
+    pvBody.setAttribute("aria-labelledby", "pvt-" + tab);
+    if (animate) restart(pvBody, "swap");
+    wireBody();
+  }
+  function setTab(t, animate) {
+    tab = t;
+    $$(".pv-tab").forEach(function (b) { var on = b.getAttribute("data-tab") === t; b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1; });
+    moveInd();
+    renderTab(animate);
+  }
+  $$(".pv-tab").forEach(function (b, i, all) {
+    b.addEventListener("click", function () { setTab(b.getAttribute("data-tab"), true); });
+    b.addEventListener("keydown", function (e) {
+      var j = null;
+      if (e.key === "ArrowRight") j = (i + 1) % all.length;
+      if (e.key === "ArrowLeft") j = (i + all.length - 1) % all.length;
+      if (j !== null) { e.preventDefault(); all[j].focus(); setTab(all[j].getAttribute("data-tab"), true); }
+    });
+  });
+  window.addEventListener("resize", moveInd);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveInd);
+
+  /* ---------- dossier ---------- */
+  function renderDossier(animate) {
+    var d = V[cur], x = d.dossier, list = function (a) { return "<ul>" + a.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>"; };
+    var el = $("#dossier");
+    el.innerHTML = '<p class="dos-title">How it\'s set up for <span>' + esc(d.chip.toLowerCase().replace(/^a /, "")) + (d.chipNote ? "" : "s") + '</span></p><div class="dossier"><div class="dos"><h3>What the questionnaire asks</h3>' + list(x.ask) + '</div><div class="dos"><h3>What gets watched every week</h3>' + list(x.watch) + '</div><div class="dos"><h3>What the brief covers</h3>' + list(x.sections) + "</div></div>" +
+      '<div class="dos-value"><p>' + esc(x.value) + '</p><span class="dos-note">' + esc(x.note) + "</span></div>";
+    if (animate) restart(el, "fade");
+  }
+
+  /* ---------- how it works ---------- */
+  var STEPS = [
+    { t: "The client fills in one questionnaire", p: "A short, multi-step form on your website. It asks what the business does, where it operates, what to watch and what the brief is for. Drafts save as they go, and it can connect to your checkout so answers arrive with the order.", chips: ["6 steps + review", "Multilingual", "Can connect to checkout"], vis: "form" },
+    { t: "A monitoring profile is built", p: "The answers become a profile for that client: the topics, names, sources and targeted searches to run every week. It's written once, and your team can adjust it at any time.", chips: ["Written once, reused weekly", "Editable by your team"], vis: "profile" },
+    { t: "Every Monday, the research runs", p: "Software runs each client's searches across news, government, courts or markets, whatever fits your practice, limited to the past week and to trusted sources. It casts a wide net quickly and cheaply.", chips: ["Past week only", "Trusted sources first", "About 30 seconds"], vis: "search" },
+    { t: "AI reads it and decides what matters", p: "AI reads every source, keeps what matters to that client, explains why, flags deadlines they can still act on, and scores how active the week was from 0 to 100.", chips: ["Activity score 0–100", "Deadlines flagged", "Every item cited"], vis: "funnel" },
+    { t: "The brief, podcast and email are produced", p: "A designed PDF in your branding, a two-host audio episode and a summary email. Your team can review before anything goes out, or let it send on its own.", chips: ["~8-page PDF", "~6-minute episode", "Optional review"], vis: "outputs" },
+    { t: "The client's portal updates", p: "Each client's private portal shows this week's highlights, every past brief, trends, deadlines and a searchable archive with Ask, which answers from their own history with sources.", chips: ["Personal link, no password", "Ask with citations"], vis: "portal" }
+  ];
+  function visHtml(kind) {
+    if (kind === "form") return '<div class="funnel-mini">' + ["You", "Organization", "Where", "Themes", "Focus", "Objective"].map(function (s, i) { return '<div class="fm-row"><span>' + (i + 1) + ". " + s + '</span><i style="width:' + (100 - i * 6) + '%"></i><span>✓</span></div>'; }).join("") + "</div>";
+    if (kind === "profile") return '<div class="mini"><div class="mini-row"><span>Search</span><span>Scope</span><span>Type</span></div><div class="mini-row"><span>proposed rules · logging · regional fleets</span><span>federal regulator</span><span class="stat-wait">rules</span></div><div class="mini-row"><span>contractor test · owner-operators</span><span>courts &amp; tribunals</span><span class="stat-wait">courts</span></div><div class="mini-row"><span>warehouse safety · inspections</span><span>provincial ministry</span><span class="stat-wait">enforcement</span></div></div>';
+    if (kind === "search") return '<div class="funnel-mini"><div class="fm-row"><span>Searches run</span><i style="width:10%"></i><span>12</span></div><div class="fm-row"><span>Results found</span><i style="width:100%"></i><span>120</span></div><div class="fm-row"><span>Unique pages</span><i style="width:93%"></i><span>112</span></div></div>';
+    if (kind === "funnel") { var g = ""; for (var w = 0; w < 112; w++) g += '<i style="--i:' + w + '"></i>'; return '<div class="wall" id="wall"><div class="wall-grid" aria-hidden="true">' + g + '</div><div class="wall-out" id="wallOut"></div><p class="wall-cap" id="wallCap">Reading 112 pages…</p></div>'; }
+    if (kind === "outputs") return '<div class="mini"><div class="mini-row"><span>Output</span><span>Detail</span><span>Status</span></div><div class="mini-row"><span>PDF brief</span><span>8 pages</span><span class="stat-ok">ready</span></div><div class="mini-row"><span>Podcast episode</span><span>6:01</span><span class="stat-ok">ready</span></div><div class="mini-row"><span>Summary email</span><span>Mon 09:14</span><span class="stat-run">sending</span></div></div>';
+    return '<div class="mini"><div class="mini-row"><span>Portal section</span><span>What\'s new</span><span></span></div><div class="mini-row"><span>Updates</span><span>3 items, 2 deadlines</span><span class="stat-ok">live</span></div><div class="mini-row"><span>Briefings</span><span>week 10 added</span><span class="stat-ok">live</span></div><div class="mini-row"><span>Research &amp; Ask</span><span>15 items indexed</span><span class="stat-ok">live</span></div></div>';
+  }
+  var flow = $("#flow"), flowList = $("#flowList"), flowPanel = $("#flowPanel"), stepIdx = 0, stepTimer = 0, stepHover = false, DUR = 5200;
+  var stepBtns = STEPS.map(function (s, i) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "flow-step"; b.setAttribute("role", "tab"); b.id = "fs-" + i; b.setAttribute("aria-controls", "flowPanel");
+    b.innerHTML = '<span class="n">0' + (i + 1) + "</span><b>" + esc(s.t) + '</b><span class="bar"></span>';
+    b.addEventListener("click", function () { setStep(i, true); schedule(); });
+    b.addEventListener("keydown", function (e) {
+      var j = null;
+      if (e.key === "ArrowDown" || e.key === "ArrowRight") j = (i + 1) % STEPS.length;
+      if (e.key === "ArrowUp" || e.key === "ArrowLeft") j = (i + STEPS.length - 1) % STEPS.length;
+      if (j !== null) { e.preventDefault(); stepBtns[j].focus(); setStep(j, true); schedule(); }
+    });
+    flowList.appendChild(b);
+    return b;
+  });
+  var wallTimers = [];
+  function playWall() {
+    wallTimers.forEach(clearTimeout); wallTimers = [];
+    var wall = $("#wall"); if (!wall) return;
+    var d = V[cur], KEEP = [3, 9, 14, 22, 27, 35, 41, 48, 56, 63, 70, 77, 85, 94, 105], TOP = [22, 56, 85];
+    var cells = $$(".wall-grid i", wall), out = $("#wallOut"), cap = $("#wallCap");
+    KEEP.forEach(function (n) { cells[n].classList.add("keep"); });
+    TOP.forEach(function (n) { cells[n].classList.add("top"); });
+    function phase2() { if (!wall.isConnected) return; wall.classList.add("dim"); cap.innerHTML = "112 read → <b>15 kept</b> for the brief" + citeHtml(6); wireCites(cap); }
+    function phase3() {
+      if (!wall.isConnected) return;
+      wall.classList.add("out");
+      out.innerHTML = d.items.slice(0, 3).map(function (it, k) { return '<span style="animation-delay:' + (k * 120) + 'ms">' + esc(it.head) + "</span>"; }).join("");
+      cap.innerHTML = "112 read → 15 kept → <b>3 in the Monday email</b>" + citeHtml(6); wireCites(cap);
+    }
+    if (RM) { phase2(); phase3(); return; }
+    wallTimers.push(setTimeout(phase2, 1500), setTimeout(phase3, 2700));
+  }
+  function setStep(i, animate) {
+    stepIdx = i;
+    stepBtns.forEach(function (b, j) { var on = j === i; b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1; });
+    var s = STEPS[i];
+    flowPanel.setAttribute("aria-labelledby", "fs-" + i);
+    flowPanel.innerHTML = '<div class="fade"><span class="fp-n">Step ' + (i + 1) + " of " + STEPS.length + '</span><h3 class="fp-t">' + esc(s.t) + '</h3><p class="fp-p">' + esc(s.p) + '</p><div class="fp-chips">' + s.chips.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") + '</div><div class="fp-vis">' + visHtml(s.vis) + "</div></div>";
+    if (s.vis === "funnel") playWall();
+    if (flow.classList.contains("auto")) {
+      var bar = $(".bar", stepBtns[i]);
+      if (bar) { bar.style.animation = "none"; void bar.offsetWidth; bar.style.animation = ""; }
+    }
+  }
+  function schedule() {
+    clearTimeout(stepTimer);
+    if (RM || !flow.classList.contains("auto") || stepHover) return;
+    stepTimer = setTimeout(function () { setStep((stepIdx + 1) % STEPS.length, true); schedule(); }, DUR);
+  }
+  flow.style.setProperty("--dur", DUR + "ms");
+  setStep(0, false);
+  if (!RM) {
+    onView(flow, function () { flow.classList.add("auto"); setStep(0, true); schedule(); }, "0px 0px -20% 0px");
+    flow.addEventListener("mouseenter", function () { stepHover = true; clearTimeout(stepTimer); flow.classList.remove("auto"); });
+    flow.addEventListener("mouseleave", function () { stepHover = false; flow.classList.add("auto"); setStep(stepIdx, true); schedule(); });
+  }
+
+  /* ---------- console ---------- */
+  var CON = {
+    runs: ["Every Monday at a glance", "See which clients' briefs have landed and which are still running, open the step-by-step record for any client, and re-run a step or resend a brief with one click.",
+      '<div class="mini"><div class="mini-row"><span>Client</span><span>Stage</span><span>Status</span></div><div class="mini-row"><span>Brightline Freight Co.</span><span>Delivered 09:14</span><span class="stat-ok">done</span></div><div class="mini-row"><span>Oakview Dental Group</span><span>Delivered 09:12</span><span class="stat-ok">done</span></div><div class="mini-row"><span>Bayline Industrial</span><span>Recording podcast</span><span class="stat-run">running</span></div><div class="mini-row"><span>The Okafor Family</span><span>Queued, batch 2</span><span class="stat-wait">waiting</span></div></div>'],
+    clients: ["Every client and every brief", "Open any client's portal exactly as they see it, copy their personal link, send their weekly update, and find any past brief or PDF in seconds.",
+      '<div class="mini"><div class="mini-row"><span>Client</span><span>Briefs</span><span>Latest</span></div><div class="mini-row"><span>Brightline Freight Co.</span><span>10 weeks</span><span class="stat-wait">62 · elevated</span></div><div class="mini-row"><span>Oakview Dental Group</span><span>10 weeks</span><span class="stat-wait">48 · active</span></div><div class="mini-row"><span>Bayline Industrial</span><span>10 weeks</span><span class="stat-wait">57 · active</span></div><div class="mini-row"><span>The Okafor Family</span><span>10 weeks</span><span class="stat-wait">41 · active</span></div></div>'],
+    practice: ["Patterns across all clients", "Which themes are heating up across the whole book, which deadlines are open for several clients at once, and which names keep coming up. Useful for newsletters, events and business development.",
+      '<div class="heat" aria-label="Theme heat, last 8 weeks"><span class="lab">Transport rules</span>' + [0.2, 0.3, 0.2, 0.4, 0.3, 0.5, 0.6, 1].map(function (o) { return '<span class="c" style="opacity:' + o + '"></span>'; }).join("") + '<span class="lab">Contractor status</span>' + [0.15, 0.15, 0.3, 0.15, 0.3, 0.3, 0.45, 0.6].map(function (o) { return '<span class="c" style="opacity:' + o + '"></span>'; }).join("") + '<span class="lab">Planning &amp; zoning</span>' + [0.15, 0.15, 0.3, 0.15, 0.15, 0.3, 0.3, 0.9].map(function (o) { return '<span class="c" style="opacity:' + o + '"></span>'; }).join("") + '<span class="lab">Payroll rules</span>' + [0.15, 0.15, 0.3, 0.15, 0.3, 0.45, 0.45, 0.7].map(function (o) { return '<span class="c" style="opacity:' + o + '"></span>'; }).join("") + "</div>"],
+    intake: ["Where sign-ups drop off", "See how many people start the questionnaire, where they stop, and which step to simplify, so more prospects become subscribers.",
+      '<div class="funnel-mini"><div class="fm-row"><span>Started</span><i style="width:100%"></i><span>100%</span></div><div class="fm-row"><span>Organization</span><i style="width:84%"></i><span>84%</span></div><div class="fm-row"><span>Themes</span><i style="width:66%"></i><span>66%</span></div><div class="fm-row"><span>Focus</span><i style="width:61%"></i><span>61%</span></div><div class="fm-row"><span>Submitted</span><i style="width:55%"></i><span>55%</span></div></div><p class="fine" style="margin-top:8px">Illustrative figures.</p>']
+  };
+  var conPanel = $("#conPanel");
+  function setCon(k, animate) {
+    $$(".con-tab").forEach(function (b) { var on = b.getAttribute("data-c") === k; b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1; });
+    conPanel.setAttribute("aria-labelledby", "ct-" + k);
+    conPanel.innerHTML = '<div class="' + (animate ? "fade" : "") + '"><h3>' + esc(CON[k][0]) + "</h3><p>" + esc(CON[k][1]) + '</p></div><div class="' + (animate ? "fade" : "") + '">' + CON[k][2] + "</div>";
+  }
+  $$(".con-tab").forEach(function (b, i, all) {
+    b.addEventListener("click", function () { setCon(b.getAttribute("data-c"), true); });
+    b.addEventListener("keydown", function (e) {
+      var j = null;
+      if (e.key === "ArrowRight") j = (i + 1) % all.length;
+      if (e.key === "ArrowLeft") j = (i + all.length - 1) % all.length;
+      if (j !== null) { e.preventDefault(); all[j].focus(); setCon(all[j].getAttribute("data-c"), true); }
+    });
+  });
+  setCon("runs", false);
+
+  /* ---------- floating CTA ---------- */
+  var fab = $("#fab"), heroSeen = true, closeSeen = false;
+  function fabUpdate() { fab.classList.toggle("on", !heroSeen && !closeSeen); }
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (en) { en.forEach(function (e) { heroSeen = e.isIntersecting; }); fabUpdate(); }, { threshold: 0.05 }).observe($(".hero"));
+    new IntersectionObserver(function (en) { en.forEach(function (e) { closeSeen = e.isIntersecting; }); fabUpdate(); }, { threshold: 0.05 }).observe($(".band-close"));
+  }
+
+  /* ---------- typed byline ---------- */
+  var bylineEl = $("#bylineTxt"), BY = "Written by: nobody on your team.";
+  onView($("#byline"), function () {
+    if (RM) { bylineEl.textContent = BY; return; }
+    var k = 0, t = setInterval(function () { k++; bylineEl.textContent = BY.slice(0, k); if (k >= BY.length) clearInterval(t); }, 48);
+  }, "0px 0px -10% 0px");
+
+  /* ---------- boot ---------- */
+  setVertical(cur, false);
+  moveInd();
+  window.addEventListener("hashchange", function () { var h = location.hash.replace("#", ""); if (V[h]) { setVertical(h, true); } });
+})();
+</script>
+
+</body>
+</html>
