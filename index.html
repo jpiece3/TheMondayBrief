@@ -148,6 +148,30 @@ button, input { font: inherit; color: inherit; }
 @media (max-width: 640px) { .site-head { padding-top: 10px; } .site-head-in { height: 54px; padding: 0 7px 0 14px; gap: 10px; } }
 @media (max-width: 440px) { .brand-word { display: none; } }
 
+/* header menu (tablet and phone) */
+.menu-btn { display: none; position: relative; flex: none; width: 42px; height: 42px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--line-2) 70%, transparent); background: color-mix(in srgb, var(--surface) 70%, transparent); cursor: pointer; }
+.menu-btn span { position: absolute; left: 50%; top: 50%; width: 16px; height: 1.6px; margin: -0.8px 0 0 -8px; border-radius: 2px; background: var(--ink); transition: transform 0.28s var(--ease); }
+.menu-btn span:first-child { transform: translateY(-4px); }
+.menu-btn span:last-child { transform: translateY(4px); }
+.site-head.menu-open .menu-btn span:first-child { transform: rotate(45deg); }
+.site-head.menu-open .menu-btn span:last-child { transform: rotate(-45deg); }
+.menu-panel { pointer-events: auto; position: absolute; left: 0; right: 0; top: calc(100% + 8px); max-width: 1080px; margin: 0 auto; display: grid; gap: 6px; padding: 12px; border-radius: 22px; background: color-mix(in srgb, var(--surface) 92%, transparent); -webkit-backdrop-filter: saturate(1.6) blur(18px); backdrop-filter: saturate(1.6) blur(18px); border: 1px solid color-mix(in srgb, var(--line-2) 70%, transparent); box-shadow: 0 18px 40px -18px rgba(30, 37, 54, 0.35); transform-origin: 50% 0; animation: menuin 0.26s var(--ease); }
+@keyframes menuin { from { opacity: 0; transform: translateY(-6px) scale(0.98); } }
+.menu-next { display: flex; align-items: center; gap: 10px; padding: 6px 10px 12px; border-bottom: 1px solid var(--line); font-size: 13.5px; color: var(--slate); }
+.menu-next b { color: var(--ink); font-weight: 600; }
+.menu-links { display: grid; }
+.menu-links a { display: flex; justify-content: space-between; align-items: center; min-height: 50px; padding: 0 12px; border-radius: 14px; color: var(--ink); text-decoration: none; font-size: 17px; font-weight: 500; }
+.menu-links a::after { content: "→"; color: var(--faint); transition: transform 0.2s var(--ease); }
+.menu-links a:hover, .menu-links a:focus-visible { background: var(--accent-soft); }
+.menu-links a:hover::after { transform: translateX(3px); color: var(--accent); }
+.site-head .menu-cta { justify-content: center; width: 100%; padding: 14px 16px; border-radius: 999px; margin-top: 4px; }
+@media (max-width: 1120px) { .menu-btn { display: block; } }
+@media (max-width: 900px) { .nb-long { display: none; } .nb-short { display: inline; } }
+@media (min-width: 1121px) { .menu-panel { display: none !important; } }
+@media (max-width: 640px) { .nextbrief { display: none; } .site-head .head-cta { margin-left: auto; } .brand-word { font-size: 17px; } }
+@media (max-width: 440px) { .brand-word { display: inline; } }
+@media (max-width: 380px) { .site-head .head-cta { display: none; } .menu-btn { margin-left: auto; } }
+
 /* hero */
 .hero { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 48px; align-items: center; padding-block: 56px 64px; }
 .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); display: inline-flex; align-items: center; gap: 10px; }
@@ -165,6 +189,7 @@ h1 { font-family: var(--pv-serif); font-size: clamp(40px, 5.8vw, 72px); line-hei
 .cycle-btn span.on { visibility: visible; animation: wordin 0.45s var(--ease); }
 @keyframes wordin { from { transform: translateY(40%); opacity: 0; } }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+@media (max-width: 560px) { .hero-cta .btn { flex: 1 1 100%; justify-content: center; } }
 .proof-line { margin-top: 20px; font-size: 14.5px; line-height: 1.6; color: var(--slate); text-wrap: pretty; }
 .proof-price { font-weight: 600; color: var(--accent); background: var(--accent-tint); padding: 1px 7px; border-radius: 5px; white-space: nowrap; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 8px; font-size: 15px; font-weight: 600; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink); text-decoration: none; cursor: pointer; transition: transform 0.18s var(--ease), background-color 0.2s, color 0.2s; }
@@ -485,6 +510,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 /* console */
 .console { background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: 14px; overflow: hidden; }
 .con-tabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+@media (max-width: 640px) { .con-tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; } .con-tabs::-webkit-scrollbar { display: none; } .con-tab { flex: none; } }
 .con-tab { border: 0; background: transparent; padding: 14px 18px; font-size: 14.5px; font-weight: 600; color: var(--slate); cursor: pointer; position: relative; }
 .con-tab::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: -1px; height: 3px; background: var(--accent); transform: scaleX(0); transition: transform 0.3s var(--ease); }
 .con-tab[aria-selected="true"] { color: var(--ink); }
@@ -545,6 +571,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .caret { display: inline-block; width: 2px; height: 1em; background: var(--accent); vertical-align: -2px; margin-left: 2px; animation: blink 0.9s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 .closing-side { display: grid; gap: 20px; justify-items: start; }
+@media (max-width: 560px) { .closing-side .btn { justify-self: stretch; justify-content: center; } }
 .closing-side p { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
 .foot { border-top: 1px solid var(--line); padding-block: 48px calc(30px + env(safe-area-inset-bottom, 0px)); color: var(--ink-2); }
 .foot-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 40px; }
@@ -650,6 +677,17 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
       <a href="#why">Why it works</a>
     </nav>
     <a class="btn btn-accent head-cta" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener"><span class="cta-long">Book a walkthrough</span><span class="cta-short">Book a call</span></a>
+    <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="menuPanel" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+  <div class="menu-panel" id="menuPanel" hidden>
+    <div class="menu-next"><span class="week" id="nbWeek2" aria-hidden="true"></span><span>Next briefs land <b id="nbWhen2">Monday, 09:00</b> <span id="nbIn2"></span></span></div>
+    <nav class="menu-links" aria-label="Page sections">
+      <a href="#portal">The client portal</a>
+      <a href="#how">How it works</a>
+      <a href="#why">Why firms want it</a>
+      <a href="#start">Getting started</a>
+    </nav>
+    <a class="btn btn-accent menu-cta" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
   </div>
 </header>
 <div class="band band-soft" id="top">
@@ -822,7 +860,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
           <div class="num"><b>8 pages <button type="button" class="cite" data-n="1">1</button></b><span>typical designed brief, plus a 6-minute episode</span></div>
           <div class="num"><b>A few dollars <button type="button" class="cite" data-n="5">5</button></b><span>running cost per client, per week</span></div>
         </div>
-        <p class="fine">Hover a numbered mark to see where the figure comes from. The portal on this page uses sample content; firm and client names are made up.</p>
+        <p class="fine">Hover over or tap a numbered mark to see where the figure comes from. The portal on this page uses sample content; firm and client names are made up.</p>
       </div>
     </div>
   </section>
@@ -879,6 +917,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 <script>
 (function () {
   var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var NO_HOVER = window.matchMedia && window.matchMedia("(hover: none)").matches;
   function $(s, r) { return (r || document).querySelector(s); }
   function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
   function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -1065,10 +1104,12 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
       a.addEventListener("pointerleave", hidePop);
       a.addEventListener("focus", function () { var r = a.getBoundingClientRect(); showAt(r.left, r.top, html); });
       a.addEventListener("blur", hidePop);
+      a.addEventListener("click", function (e) { e.stopPropagation(); var r = a.getBoundingClientRect(); if (pop.hidden) showAt(r.left, r.top, html); else hidePop(); });
     });
   }
   wireCites(document);
   window.addEventListener("scroll", hidePop, { passive: true });
+  document.addEventListener("click", function (e) { if (!pop.hidden && !(e.target.closest && e.target.closest(".cite"))) hidePop(); });
   function citeHtml(n) { return ' <button type="button" class="cite" data-n="' + n + '">' + n + "</button>"; }
 
   /* ---------- reveal ---------- */
@@ -1482,12 +1523,12 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   }
   function schedule() {
     clearTimeout(stepTimer);
-    if (RM || !flow.classList.contains("auto") || stepHover) return;
+    if (RM || NO_HOVER || !flow.classList.contains("auto") || stepHover) return;
     stepTimer = setTimeout(function () { setStep((stepIdx + 1) % STEPS.length, true); schedule(); }, DUR);
   }
   flow.style.setProperty("--dur", DUR + "ms");
   setStep(0, false);
-  if (!RM) {
+  if (!RM && !NO_HOVER) {
     onView(flow, function () { flow.classList.add("auto"); setStep(0, true); schedule(); }, "0px 0px -20% 0px");
     flow.addEventListener("mouseenter", function () { stepHover = true; clearTimeout(stepTimer); flow.classList.remove("auto"); });
     flow.addEventListener("mouseleave", function () { stepHover = false; flow.classList.add("auto"); setStep(stepIdx, true); schedule(); });
@@ -1545,7 +1586,27 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     nbIn.textContent = "· in " + inTxt;
     nbShort.textContent = "Mon 09:00 · " + inTxt;
   }
-  tickHead(); setInterval(tickHead, 30000);
+  var nbWeek2 = $("#nbWeek2"), nbWhen2 = $("#nbWhen2"), nbIn2 = $("#nbIn2");
+  nbWeek2.innerHTML = nbWeek.innerHTML;
+  var weekDots2 = $$("i", nbWeek2);
+  function tick() {
+    tickHead();
+    nbWhen2.textContent = nbWhen.textContent; nbIn2.textContent = nbIn.textContent;
+    weekDots2.forEach(function (el, i) { el.className = weekDots[i].className; });
+  }
+  tick(); setInterval(tick, 30000);
+  var menuBtn = $("#menuBtn"), menuPanel = $("#menuPanel");
+  function setMenu(open) {
+    menuPanel.hidden = !open;
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    head.classList.toggle("menu-open", open);
+  }
+  menuBtn.addEventListener("click", function () { setMenu(menuPanel.hidden); });
+  $$("a", menuPanel).forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !menuPanel.hidden) { setMenu(false); menuBtn.focus(); } });
+  document.addEventListener("click", function (e) { if (!menuPanel.hidden && !head.contains(e.target)) setMenu(false); });
+  window.addEventListener("resize", function () { if (window.innerWidth > 1120 && !menuPanel.hidden) setMenu(false); });
   function headScroll() { head.classList.toggle("scrolled", (window.scrollY || document.documentElement.scrollTop) > 8); }
   window.addEventListener("scroll", headScroll, { passive: true }); headScroll();
 
