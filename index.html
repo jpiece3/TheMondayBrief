@@ -165,6 +165,8 @@ h1 { font-family: var(--pv-serif); font-size: clamp(40px, 5.8vw, 72px); line-hei
 .cycle-btn span.on { visibility: visible; animation: wordin 0.45s var(--ease); }
 @keyframes wordin { from { transform: translateY(40%); opacity: 0; } }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.proof-line { margin-top: 20px; font-size: 14.5px; line-height: 1.6; color: var(--slate); text-wrap: pretty; }
+.proof-price { font-weight: 600; color: var(--accent); background: var(--accent-tint); padding: 1px 7px; border-radius: 5px; white-space: nowrap; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 8px; font-size: 15px; font-weight: 600; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink); text-decoration: none; cursor: pointer; transition: transform 0.18s var(--ease), background-color 0.2s, color 0.2s; }
 .btn:hover { transform: translateY(-2px); }
 .btn.ghost { background: transparent; color: var(--ink); }
@@ -651,11 +653,12 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
       <span class="eyebrow">Real-world signals, turned into action</span>
       <h1>The signals your clients need, turned into action <span class="mark">every Monday.</span></h1>
       <p class="hero-sub">Every week, Monday Briefs reads about 50,000 words for each of your clients<button type="button" class="cite" data-n="8">8</button> from the news, government sites, blogs, posts and podcasts, keeps what matters, and turns it into a short report, a podcast and a private portal. Nobody on your team writes it.</p>
-      <div class="cycle"><span>Built for a government-affairs firm.</span><span>Ready for <button class="cycle-btn" type="button" id="cycleBtn"></button></span></div>
+      <div class="cycle"><span>Ready for <button class="cycle-btn" type="button" id="cycleBtn"></button></span></div>
       <div class="hero-cta">
         <a class="btn" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
         <a class="btn ghost" href="#portal">See the client portal ↓</a>
       </div>
+      <p class="proof-line">The government-affairs firm we built it for charges its clients <span class="proof-price">$300 a month</span>.<button type="button" class="cite" data-n="9">9</button></p>
     </div>
     <div class="board" id="board" role="group" aria-label="One client's Monday morning, replayed">
       <div class="board-top">
@@ -1038,7 +1041,8 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     "Running cost per brief, measured on the September 2026 test runs. Exact figures on request.",
     "Search step, 14 September 2026: 12 searches, 120 results, 112 different pages, 15 kept in the brief, 3 headlines in the email.",
     "Every item in a brief carries the address of its source. The report builder refuses to produce a page without one.",
-    "Reading volume: on the 14 September 2026 runs the AI read about 46,000 and 53,000 words of source material for two clients (88 and 112 sources). At 250 words a minute, that is more than three hours of reading per client."
+    "Reading volume: on the 14 September 2026 runs the AI read about 46,000 and 53,000 words of source material for two clients (88 and 112 sources). At 250 words a minute, that is more than three hours of reading per client.",
+    "Price the original government-affairs firm charges its own clients for their weekly brief, podcast and portal, per the firm, September 2026."
   ];
   var pop = $("#pop");
   function showAt(x, y, html) {
