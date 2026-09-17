@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Monday Briefs</title>
-<meta name="description" content="Every client gets a personal briefing every Monday, and nobody on your team writes it. An automated client-intelligence service: weekly brief, short podcast, Monday email and a private portal, built for law firms, accountants, advisors and more.">
+<meta name="description" content="The signals your clients need, turned into action every Monday: a short report, a podcast and a private portal for each client, built from the news, government sites, blogs and posts that matter to them. Nobody on your team writes it.">
 <meta name="theme-color" content="#F7F8FA">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Monday Briefs">
-<meta property="og:description" content="Every client gets a personal briefing every Monday. Nobody on your team writes it.">
+<meta property="og:description" content="The signals your clients need, turned into action every Monday. Nobody on your team writes it.">
 <meta property="og:url" content="https://mondaybriefs.com/">
 <meta property="og:site_name" content="Monday Briefs">
 <meta property="og:image" content="https://mondaybriefs.com/og.png">
@@ -450,6 +450,9 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .flow { display: grid; grid-template-columns: 340px 1fr; gap: 32px; align-items: start; }
 .flow-list { display: grid; gap: 0; border-top: 1px solid var(--line-2); }
 .flow-step { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: baseline; text-align: left; padding: 14px 0 14px; border: 0; border-bottom: 1px solid var(--line); background: transparent; cursor: pointer; position: relative; color: var(--slate); transition: color 0.25s; }
+.flow-step .fs-t { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.who { display: inline-block; font-family: var(--mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.03em; line-height: 1.5; padding: 0 6px; border-radius: 4px; border: 1px solid var(--line-2); color: var(--slate); white-space: nowrap; }
+.who-ai { background: var(--accent-tint); border-color: transparent; color: var(--accent); }
 .flow-step b { font-size: 17px; font-weight: 700; line-height: 1.3; }
 .flow-step .n { font-family: var(--mono); font-size: 12px; }
 .flow-step[aria-selected="true"] { color: var(--ink); }
@@ -645,9 +648,9 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 <div class="wrap">
   <header class="hero">
     <div>
-      <span class="eyebrow">Built and running</span>
-      <h1>Every client gets a personal briefing <span class="mark">every Monday.</span> Nobody on your team writes it.</h1>
-      <p class="hero-sub">A system that finds what changed for each client this week, writes a designed report and a short podcast, and updates their private portal.</p>
+      <span class="eyebrow">Real-world signals, turned into action</span>
+      <h1>The signals your clients need, turned into action <span class="mark">every Monday.</span></h1>
+      <p class="hero-sub">Monday Briefs reads the news, government sites, blogs and posts for each of your clients, keeps what matters, and turns it into a short report, a podcast and a private portal. Nobody on your team writes it.</p>
       <div class="cycle"><span>Built for a government-affairs firm.</span><span>Ready for <button class="cycle-btn" type="button" id="cycleBtn"></button></span></div>
       <div class="hero-cta">
         <a class="btn" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
@@ -749,6 +752,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     <div class="sec-top rv">
       <span class="eyebrow">How it works</span>
       <h2>One questionnaire in, a briefing every week out</h2>
+      <p class="lede">AI makes the judgment calls: what matters, what it means and what to do. Plain software does everything else, so every point traces back to a source.</p>
     </div>
     <div class="flow" id="flow">
       <div class="flow-list" role="tablist" aria-label="Steps" id="flowList"></div>
@@ -762,12 +766,12 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
       <h2>Your expertise, delivered to every client, every week</h2>
     </div>
     <div class="bens">
-      <div class="ben rv"><span class="k">Relationship</span><h3>A reason to be in touch every week</h3><p>Clients hear from you between matters, filings and reviews, about things that affect them, not a generic newsletter.</p></div>
-      <div class="ben rv"><span class="k">New work</span><h3>You see the next job first</h3><p>A new rule, a court decision or a rezoning is often the start of a mandate. The brief puts it in front of you and your client at the same time.</p></div>
-      <div class="ben rv"><span class="k">Scale</span><h3>No extra hours per client</h3><p>Each brief is researched, written and recorded in about 11 minutes <button type="button" class="cite" data-n="3">3</button> with nobody involved. A hundred clients take about two hours on a Monday morning. <button type="button" class="cite" data-n="4">4</button></p></div>
+      <div class="ben rv"><span class="k">Relationship</span><h3>Instant value, every week</h3><p>Your clients get something useful from you every Monday, about their own business, without having to ask.</p></div>
+      <div class="ben rv"><span class="k">New work</span><h3>A reason for clients to call you</h3><p>A new rule, a deadline, a competitor's move: the brief puts it in front of your client and gives them a reason to pick up the phone.</p></div>
+      <div class="ben rv"><span class="k">Effort</span><h3>Nothing extra for you to do</h3><p>We run it. Each brief is researched, written and recorded in about 11 minutes <button type="button" class="cite" data-n="3">3</button> with nobody involved. Your part is telling clients it exists.</p></div>
       <div class="ben rv"><span class="k">Presentation</span><h3>Looks like a premium service</h3><p>A designed report, a podcast and a private portal under your name. It's something clients can see and share, not just an email.</p></div>
       <div class="ben rv"><span class="k">Trust</span><h3>Grounded in sources</h3><p>Every item links to where it came from. <button type="button" class="cite" data-n="7">7</button> Your team can review each brief before it goes out, and web context is always kept apart from monitoring.</p></div>
-      <div class="ben rv"><span class="k">Revenue</span><h3>A subscription you can sell</h3><p>Offer it as a paid tier or fold it into a retainer. The questionnaire can sit inside your checkout, so new subscribers start the same day.</p></div>
+      <div class="ben rv"><span class="k">Revenue</span><h3>Sell it, include it or upsell it</h3><p>Charge for it as a subscription, include it to justify your fee, make it the first step on your offer ladder, or offer it as a premium tier. The questionnaire can sit inside your checkout.</p></div>
     </div>
   </section>
 
@@ -822,7 +826,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     <ol class="start">
       <li class="rv"><h3>Walk through the live demo</h3><p>See the portal, a real brief and an episode, and talk through your clients.</p></li>
       <li class="rv"><h3>Decide what clients need to know</h3><p>Shape the questionnaire, the topics and the sources around your practice.</p></li>
-      <li class="rv"><h3>Make it yours</h3><p>Your name, colours and tone on the brief, the email and the portal.</p></li>
+      <li class="rv"><h3>We build it for you</h3><p>Your questionnaire, client database and signal sources, plus branded reports and a portal.</p></li>
       <li class="rv"><h3>Pilot with a few clients</h3><p>Run it for a handful, review every brief, and tune what gets kept.</p></li>
       <li class="rv"><h3>Roll it out</h3><p>New clients start from the questionnaire. Every Monday runs on its own.</p></li>
     </ol>
@@ -837,7 +841,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
       <p class="byline" id="byline" aria-label="Written by: nobody on your team."><span id="bylineTxt"></span><span class="caret" aria-hidden="true"></span></p>
     </div>
     <div class="closing-side">
-      <p>This tells them every Monday, in your name, without adding a single hour to your team's week.</p>
+      <p>Simple, short and useful. Stay top of mind with every client and earn more from the relationships you already have, without adding work to your week.</p>
       <a class="btn btn-accent" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
     </div>
   </div>
@@ -1371,13 +1375,14 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 
   /* ---------- how it works ---------- */
   var STEPS = [
-    { t: "The client fills in one questionnaire", p: "A short, multi-step form on your website. It asks what the business does, where it operates, what to watch and what the brief is for. Drafts save as they go, and it can connect to your checkout so answers arrive with the order.", chips: ["6 steps + review", "Multilingual", "Can connect to checkout"], vis: "form" },
-    { t: "A monitoring profile is built", p: "The answers become a profile for that client: the topics, names, sources and targeted searches to run every week. It's written once, and your team can adjust it at any time.", chips: ["Written once, reused weekly", "Editable by your team"], vis: "profile" },
-    { t: "Every Monday, the research runs", p: "Software runs each client's searches across news, government, courts or markets, whatever fits your practice, limited to the past week and to trusted sources. It casts a wide net quickly and cheaply.", chips: ["Past week only", "Trusted sources first", "About 30 seconds"], vis: "search" },
-    { t: "AI reads it and decides what matters", p: "AI reads every source, keeps what matters to that client, explains why, flags deadlines they can still act on, and scores how active the week was from 0 to 100.", chips: ["Activity score 0–100", "Deadlines flagged", "Every item cited"], vis: "funnel" },
-    { t: "The brief, podcast and email are produced", p: "A designed PDF in your branding, a two-host audio episode and a summary email. Your team can review before anything goes out, or let it send on its own.", chips: ["~8-page PDF", "~6-minute episode", "Optional review"], vis: "outputs" },
-    { t: "The client's portal updates", p: "Each client's private portal shows this week's highlights, every past brief, trends, deadlines and a searchable archive with Ask, which answers from their own history with sources.", chips: ["Personal link, no password", "Ask with citations"], vis: "portal" }
+    { who: "Software", t: "We build your questionnaire", p: "Your clients answer a few questions about their business, where they operate and what they care about. It sits on your website, saves as they go, and can connect to your checkout.", chips: ["6 short steps", "Your branding", "Can connect to checkout"], vis: "form" },
+    { who: "AI", t: "Each client gets a signal profile", p: "AI turns the answers into a profile: the themes to follow and the specific sources worth watching for that client. It tells the research where to look and what counts, and your team can adjust it any time.", chips: ["Themes and trusted sources", "Custom per client", "Editable"], vis: "profile" },
+    { who: "Software", t: "The research runs on its own", p: "Every week, scripts search the news, government sites, blogs and public posts for each client. Search works by meaning, so \u201cvariance approved for the east lot\u201d still reaches a client watching \u201crezoning\u201d. Podcasts, paid databases and your own systems can be added when your clients need them.", chips: ["Past week only", "Matches by meaning", "About 30 seconds"], vis: "search" },
+    { who: "AI", t: "AI decides what matters", p: "AI reads everything collected for that client, often more than a hundred sources a week, and keeps only the signals worth their attention. Every item is logged with its source, so it can be searched and tracked later.", chips: ["100+ sources read", "Every item logged", "Every item cited"], vis: "funnel" },
+    { who: "AI + software", t: "The brief, podcast and portal update", p: "AI writes the brief and the podcast script. Software builds the branded report, records the episode, sends the Monday email and updates the portal. Your team can review before anything goes out.", chips: ["~8-page brief", "~6-minute episode", "Optional review"], vis: "outputs" },
+    { who: "AI", t: "Your client knows what to do next", p: "Each brief ends with suggested actions, the deadlines still open, and whether anything needs doing yet. It gives your client a reason to call you.", chips: ["Suggested actions", "Open deadlines", "A reason to call you"], vis: "portal" }
   ];
+  function whoTag(s) { return '<span class="who' + (s.who.indexOf("AI") === 0 ? " who-ai" : "") + '">' + esc(s.who) + "</span>"; }
   function visHtml(kind) {
     if (kind === "form") return '<div class="funnel-mini">' + ["You", "Organization", "Where", "Themes", "Focus", "Objective"].map(function (s, i) { return '<div class="fm-row"><span>' + (i + 1) + ". " + s + '</span><i style="width:' + (100 - i * 6) + '%"></i><span>✓</span></div>'; }).join("") + "</div>";
     if (kind === "profile") return '<div class="mini"><div class="mini-row"><span>Search</span><span>Scope</span><span>Type</span></div><div class="mini-row"><span>proposed rules · logging · regional fleets</span><span>federal regulator</span><span class="stat-wait">rules</span></div><div class="mini-row"><span>contractor test · owner-operators</span><span>courts &amp; tribunals</span><span class="stat-wait">courts</span></div><div class="mini-row"><span>warehouse safety · inspections</span><span>provincial ministry</span><span class="stat-wait">enforcement</span></div></div>';
@@ -1390,7 +1395,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   var stepBtns = STEPS.map(function (s, i) {
     var b = document.createElement("button");
     b.type = "button"; b.className = "flow-step"; b.setAttribute("role", "tab"); b.id = "fs-" + i; b.setAttribute("aria-controls", "flowPanel");
-    b.innerHTML = '<span class="n">0' + (i + 1) + "</span><b>" + esc(s.t) + '</b><span class="bar"></span>';
+    b.innerHTML = '<span class="n">0' + (i + 1) + '</span><span class="fs-t"><b>' + esc(s.t) + "</b>" + whoTag(s) + '</span><span class="bar"></span>';
     b.addEventListener("click", function () { setStep(i, true); schedule(); });
     b.addEventListener("keydown", function (e) {
       var j = null;
@@ -1424,7 +1429,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     stepBtns.forEach(function (b, j) { var on = j === i; b.setAttribute("aria-selected", String(on)); b.tabIndex = on ? 0 : -1; });
     var s = STEPS[i];
     flowPanel.setAttribute("aria-labelledby", "fs-" + i);
-    flowPanel.innerHTML = '<div class="fade"><span class="fp-n">Step ' + (i + 1) + " of " + STEPS.length + '</span><h3 class="fp-t">' + esc(s.t) + '</h3><p class="fp-p">' + esc(s.p) + '</p><div class="fp-chips">' + s.chips.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") + '</div><div class="fp-vis">' + visHtml(s.vis) + "</div></div>";
+    flowPanel.innerHTML = '<div class="fade"><span class="fp-n">Step ' + (i + 1) + " of " + STEPS.length + " · " + whoTag(s) + '</span><h3 class="fp-t">' + esc(s.t) + '</h3><p class="fp-p">' + esc(s.p) + '</p><div class="fp-chips">' + s.chips.map(function (c) { return "<span>" + esc(c) + "</span>"; }).join("") + '</div><div class="fp-vis">' + visHtml(s.vis) + "</div></div>";
     if (s.vis === "funnel") playWall();
     if (flow.classList.contains("auto")) {
       var bar = $(".bar", stepBtns[i]);
