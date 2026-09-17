@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Monday Briefs</title>
-<meta name="description" content="The signals your clients need, turned into action every Monday: a short report, a podcast and a private portal for each client, built from the news, government sites, blogs and posts that matter to them. Nobody on your team writes it.">
+<meta name="description" content="Every week, Monday Briefs reads about 50,000 words for each of your clients from the news, government sites, blogs, posts and podcasts, and turns what matters into a short report, a podcast and a private portal. Nobody on your team writes it.">
 <meta name="theme-color" content="#F7F8FA">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -650,7 +650,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     <div>
       <span class="eyebrow">Real-world signals, turned into action</span>
       <h1>The signals your clients need, turned into action <span class="mark">every Monday.</span></h1>
-      <p class="hero-sub">Monday Briefs reads the news, government sites, blogs and posts for each of your clients, keeps what matters, and turns it into a short report, a podcast and a private portal. Nobody on your team writes it.</p>
+      <p class="hero-sub">Every week, Monday Briefs reads about 50,000 words for each of your clients<button type="button" class="cite" data-n="8">8</button> from the news, government sites, blogs, posts and podcasts, keeps what matters, and turns it into a short report, a podcast and a private portal. Nobody on your team writes it.</p>
       <div class="cycle"><span>Built for a government-affairs firm.</span><span>Ready for <button class="cycle-btn" type="button" id="cycleBtn"></button></span></div>
       <div class="hero-cta">
         <a class="btn" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
@@ -1037,7 +1037,8 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     "Estimate: 100 briefs at about 11 minutes each, run ten at a time, come to about 2 hours.",
     "Running cost per brief, measured on the September 2026 test runs. Exact figures on request.",
     "Search step, 14 September 2026: 12 searches, 120 results, 112 different pages, 15 kept in the brief, 3 headlines in the email.",
-    "Every item in a brief carries the address of its source. The report builder refuses to produce a page without one."
+    "Every item in a brief carries the address of its source. The report builder refuses to produce a page without one.",
+    "Reading volume: on the 14 September 2026 runs the AI read about 46,000 and 53,000 words of source material for two clients (88 and 112 sources). At 250 words a minute, that is more than three hours of reading per client."
   ];
   var pop = $("#pop");
   function showAt(x, y, html) {
@@ -1377,8 +1378,8 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   var STEPS = [
     { who: "Software", t: "We build your questionnaire", p: "Your clients answer a few questions about their business, where they operate and what they care about. It sits on your website, saves as they go, and can connect to your checkout.", chips: ["6 short steps", "Your branding", "Can connect to checkout"], vis: "form" },
     { who: "AI", t: "Each client gets a signal profile", p: "AI turns the answers into a profile: the themes to follow and the specific sources worth watching for that client. It tells the research where to look and what counts, and your team can adjust it any time.", chips: ["Themes and trusted sources", "Custom per client", "Editable"], vis: "profile" },
-    { who: "Software", t: "The research runs on its own", p: "Every week, scripts search the news, government sites, blogs and public posts for each client. Search works by meaning, so \u201cvariance approved for the east lot\u201d still reaches a client watching \u201crezoning\u201d. Podcasts, paid databases and your own systems can be added when your clients need them.", chips: ["Past week only", "Matches by meaning", "About 30 seconds"], vis: "search" },
-    { who: "AI", t: "AI decides what matters", p: "AI reads everything collected for that client, often more than a hundred sources a week, and keeps only the signals worth their attention. Every item is logged with its source, so it can be searched and tracked later.", chips: ["100+ sources read", "Every item logged", "Every item cited"], vis: "funnel" },
+    { who: "Software", t: "The research runs on its own", p: "Every week, scripts search the news, government sites, blogs, public posts and podcasts for each client. Podcast audio is transcribed, so an interview is searched the same way as an article. Search works by meaning, so \u201cvariance approved for the east lot\u201d still reaches a client watching \u201crezoning\u201d. Paid databases and your own systems can be added when your clients need them.", chips: ["Past week only", "Podcasts transcribed", "Matches by meaning"], vis: "search" },
+    { who: "AI", t: "AI decides what matters", p: "AI reads everything collected for that client, about 50,000 words a week, more than three hours of reading, and keeps only the signals worth their attention. Every item is logged with its source, so it can be searched and tracked later.", chips: ["~50,000 words read", "Every item logged", "Every item cited"], vis: "funnel" },
     { who: "AI + software", t: "The brief, podcast and portal update", p: "AI writes the brief and the podcast script. Software builds the branded report, records the episode, sends the Monday email and updates the portal. Your team can review before anything goes out.", chips: ["~8-page brief", "~6-minute episode", "Optional review"], vis: "outputs" },
     { who: "AI", t: "Your client knows what to do next", p: "Each brief ends with suggested actions, the deadlines still open, and whether anything needs doing yet. It gives your client a reason to call you.", chips: ["Suggested actions", "Open deadlines", "A reason to call you"], vis: "portal" }
   ];
