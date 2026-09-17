@@ -7,6 +7,7 @@
 <meta name="description" content="Every week, Monday Briefs reads about 50,000 words for each of your clients from the news, government sites, blogs, posts and podcasts, and turns what matters into a short report, a podcast and a private portal. Nobody on your team writes it.">
 <meta name="theme-color" content="#F7F8FA">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Monday Briefs">
@@ -92,7 +93,6 @@ img { max-width: 100%; }
   --pvs-positive: #4CC29A; --pvs-negative: #F06060; --pvs-mixed: #E8BC2E; --pvs-neutral: #A6A6A3;
   --pvu-now: #F06060; --pvu-soon: #E8BC2E; --pvu-later: #A6A6A3;
   }
-  :root:not([data-theme="light"]) .logo { --logo-dot: rgba(18, 21, 28, 0.5); --logo-fold: rgba(18, 21, 28, 0.3); }
 }
 :root[data-theme="dark"] {
   --pv-accent: #8C9DF0; --pv-accent-ink: #12151C; --pv-soft: rgba(140, 157, 240, 0.14); --pv-tint: rgba(140, 157, 240, 0.08);
@@ -101,7 +101,6 @@ img { max-width: 100%; }
   --pvs-positive: #4CC29A; --pvs-negative: #F06060; --pvs-mixed: #E8BC2E; --pvs-neutral: #A6A6A3;
   --pvu-now: #F06060; --pvu-soon: #E8BC2E; --pvu-later: #A6A6A3;
 }
-:root[data-theme="dark"] .logo { --logo-dot: rgba(18, 21, 28, 0.5); --logo-fold: rgba(18, 21, 28, 0.3); }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -126,8 +125,9 @@ button, input { font: inherit; color: inherit; }
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; padding-top: 12px; pointer-events: none; }
 .site-head.scrolled .site-head-in { background: color-mix(in srgb, var(--surface) 80%, transparent); border-color: color-mix(in srgb, var(--line-2) 70%, transparent); box-shadow: 0 12px 32px -16px rgba(30, 37, 54, 0.28); }
 .site-head-in { pointer-events: auto; max-width: 1080px; margin: 0 auto; height: 60px; padding: 0 9px 0 18px; display: flex; align-items: center; gap: 16px; border-radius: 999px; background: color-mix(in srgb, var(--surface) 62%, transparent); -webkit-backdrop-filter: saturate(1.6) blur(18px); backdrop-filter: saturate(1.6) blur(18px); border: 1px solid color-mix(in srgb, var(--line-2) 55%, transparent); box-shadow: 0 1px 2px rgba(30, 37, 54, 0.04); transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; }
-.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-size: 15.5px; flex: none; }
-.brand b { font-weight: 700; letter-spacing: -0.01em; }
+.brand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); text-decoration: none; flex: none; }
+.brand .mb-mark { height: 21px; width: 27px; }
+.brand-word { font-family: var(--pv-sans); font-size: 18px; font-weight: 600; letter-spacing: -0.024em; line-height: 1; white-space: nowrap; }
 .nextbrief { display: inline-flex; align-items: center; gap: 10px; padding: 5px 12px 5px 10px; border: 1px solid color-mix(in srgb, var(--line-2) 70%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--surface) 50%, transparent); font-size: 12.5px; color: var(--slate); white-space: nowrap; min-width: 0; }
 .nextbrief b { color: var(--ink); font-weight: 600; }
 .week { display: inline-grid; grid-template-columns: repeat(7, 6px); gap: 3px; flex: none; }
@@ -146,7 +146,7 @@ button, input { font: inherit; color: inherit; }
 @media (max-width: 1120px) { .site-nav { display: none; } .nextbrief { margin-right: auto; } }
 @media (max-width: 640px) { .nb-long { display: none; } .nb-short { display: inline; } .cta-long { display: none; } .cta-short { display: inline; } }
 @media (max-width: 640px) { .site-head { padding-top: 10px; } .site-head-in { height: 54px; padding: 0 7px 0 14px; gap: 10px; } }
-@media (max-width: 440px) { .brand b { display: none; } }
+@media (max-width: 440px) { .brand-word { display: none; } }
 
 /* hero */
 .hero { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 48px; align-items: center; padding-block: 56px 64px; }
@@ -529,9 +529,12 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .start h3 { font-size: 17px; font-weight: 700; line-height: 1.25; }
 .start p { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
 
-/* logo */
-.logo { width: 30px; height: 30px; flex: none; display: block; color: var(--accent); --logo-dot: rgba(255, 255, 255, 0.55); --logo-fold: rgba(255, 255, 255, 0.35); }
-.logo-lg { width: 52px; height: 52px; }
+/* logo: design handoff 1B, "Fifty Thousand to One" */
+.mb-mark { --mb-dot: #4C5CC9; --mb-o1: 0.32; --mb-o2: 0.56; --mb-o3: 0.86; --mb-s1: 0.40; --mb-s2: 0.72; display: block; flex: none; overflow: visible; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .mb-mark { --mb-dot: #8E9BEA; --mb-o1: 0.5; --mb-o2: 0.72; --mb-o3: 1; --mb-s1: 0.58; --mb-s2: 0.88; } }
+:root[data-theme="dark"] .mb-mark { --mb-dot: #8E9BEA; --mb-o1: 0.5; --mb-o2: 0.72; --mb-o3: 1; --mb-s1: 0.58; --mb-s2: 0.88; }
+.foot-lockup { display: inline-flex; align-items: center; gap: 13px; }
+.foot-lockup .mb-mark { height: 30px; width: 37px; }
 
 /* ending: closing call and footer on one sheet */
 .ending { margin-top: 96px; background: var(--surface); border-top: 1px solid var(--line); }
@@ -545,9 +548,9 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .closing-side p { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
 .foot { border-top: 1px solid var(--line); padding-block: 48px calc(30px + env(safe-area-inset-bottom, 0px)); color: var(--ink-2); }
 .foot-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 40px; }
-.foot-brand { display: flex; gap: 14px; align-items: flex-start; }
-.wordmark { font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin-top: 4px; }
-.foot-tag { font-size: 14px; margin-top: 6px; max-width: 30ch; line-height: 1.5; color: var(--slate); }
+.foot-brand { display: grid; gap: 12px; justify-items: start; }
+.wordmark { font-family: var(--pv-sans); font-size: 26px; font-weight: 600; letter-spacing: -0.024em; line-height: 1; color: var(--ink); white-space: nowrap; }
+.foot-tag { font-size: 14px; max-width: 34ch; line-height: 1.5; color: var(--slate); margin: 0; }
 .foot-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
 .foot-cols h4 { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin: 0 0 12px; }
 .foot-cols ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; font-size: 14.5px; }
@@ -632,10 +635,10 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mb-logo" viewBox="0 0 48 48"><path d="M11 0h25l12 12v25a11 11 0 0 1-11 11H11A11 11 0 0 1 0 37V11A11 11 0 0 1 11 0z" fill="currentColor"/><path d="M36 0v8a4 4 0 0 0 4 4h8z" fill="var(--logo-fold)"/><circle cx="5.4" cy="17.8" r="1.9" fill="var(--butter)"/><circle cx="11.6" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="17.8" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="24.0" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="30.2" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="36.4" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="42.6" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="5.4" cy="24.0" r="1.9" fill="var(--butter)"/><circle cx="11.6" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="17.8" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="24.0" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="30.2" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="36.4" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="42.6" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="5.4" cy="30.2" r="1.9" fill="var(--butter)"/><circle cx="11.6" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="17.8" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="24.0" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="30.2" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="36.4" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="42.6" cy="30.2" r="1.9" fill="var(--logo-dot)"/></symbol></defs></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mb-mark" viewBox="0 0 42 34"><g style="fill: var(--mb-dot)"><circle cx="2" cy="2" r="2" style="opacity: var(--mb-o1)"/><circle cx="2" cy="12" r="2" style="opacity: var(--mb-o1)"/><circle cx="2" cy="22" r="2" style="opacity: var(--mb-o1)"/><circle cx="2" cy="32" r="2" style="opacity: var(--mb-o1)"/><circle cx="12" cy="7" r="2" style="opacity: var(--mb-o2)"/><circle cx="12" cy="17" r="2" style="opacity: var(--mb-o2)"/><circle cx="12" cy="27" r="2" style="opacity: var(--mb-o2)"/><circle cx="22" cy="12" r="2" style="opacity: var(--mb-o3)"/><circle cx="22" cy="22" r="2" style="opacity: var(--mb-o3)"/></g><rect x="31" y="10" width="11" height="14" rx="2.5" fill="#F0C24A"/></symbol><symbol id="mb-mark-sm" viewBox="0 0 31 24"><g style="fill: var(--mb-dot)"><circle cx="2" cy="2" r="2" style="opacity: var(--mb-s1)"/><circle cx="2" cy="12" r="2" style="opacity: var(--mb-s1)"/><circle cx="2" cy="22" r="2" style="opacity: var(--mb-s1)"/><circle cx="12" cy="7" r="2" style="opacity: var(--mb-s2)"/><circle cx="12" cy="17" r="2" style="opacity: var(--mb-s2)"/></g><rect x="21" y="5" width="10" height="14" rx="2.5" fill="#F0C24A"/></symbol></defs></svg>
 <header class="site-head" id="siteHead">
   <div class="site-head-in">
-    <a class="brand" href="#top" aria-label="Monday Briefs, back to top"><svg class="logo" aria-hidden="true"><use href="#mb-logo"/></svg><b>Monday Briefs</b></a>
+    <a class="brand" href="#top" aria-label="Monday Briefs, back to top"><svg class="mb-mark mb-mark-sm" viewBox="0 0 31 24" aria-hidden="true"><use href="#mb-mark-sm"/></svg><span class="brand-word">Monday Briefs</span></a>
     <span class="nextbrief" title="When the next briefs land, in your time zone">
       <span class="week" id="nbWeek" aria-hidden="true"></span>
       <span class="nb-long">Next briefs land <b id="nbWhen">Monday, 09:00</b> <span id="nbIn"></span></span>
@@ -854,11 +857,8 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   <footer class="foot">
     <div class="foot-top">
       <div class="foot-brand">
-        <svg class="logo logo-lg" aria-hidden="true"><use href="#mb-logo"/></svg>
-        <div>
-          <div class="wordmark">Monday Briefs</div>
-          <p class="foot-tag">Every client, briefed every Monday. Nobody on your team writes it.</p>
-        </div>
+        <span class="foot-lockup"><svg class="mb-mark" viewBox="0 0 42 34" aria-hidden="true"><use href="#mb-mark"/></svg><span class="wordmark">Monday Briefs</span></span>
+        <p class="foot-tag">Every client, briefed every Monday. Nobody on your team writes it.</p>
       </div>
       <nav class="foot-cols" aria-label="Footer">
         <div><h4>What clients get</h4><ul><li><a href="#gets">A weekly brief</a></li><li><a href="#gets">A short podcast</a></li><li><a href="#gets">A Monday email</a></li><li><a href="#portal">A private portal</a></li></ul></div>
