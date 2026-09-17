@@ -240,10 +240,10 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .card[aria-checked="true"]::after { content: ""; position: absolute; left: 50%; bottom: -14px; width: 12px; height: 12px; background: var(--accent); transform: translateX(-50%) rotate(45deg); }
 .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 10px 14px; background: var(--ground); color: var(--ink); border-bottom: 1px solid var(--line); border-radius: 7px 7px 0 0; transition: background-color 0.25s, color 0.25s; }
 .card[aria-checked="true"] .card-head { background: var(--accent); color: var(--on-accent); border-bottom-color: var(--accent); }
-.card-kind { font-size: 17px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; }
+.card-kind { font-size: 17px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
 .card-note { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; white-space: nowrap; }
 .card-body { padding: 10px 14px 12px; display: grid; gap: 2px; align-content: start; }
-.card-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 6px; }
+.card-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 6px; white-space: nowrap; }
 .card-eyebrow::before { content: "↳"; font-size: 12px; }
 .card-org { font-size: 15px; font-weight: 700; line-height: 1.15; letter-spacing: -0.01em; margin-top: 4px; }
 .card-sub { font-size: 11px; color: var(--slate); line-height: 1.3; }
@@ -1165,7 +1165,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     var d = V[k], b = document.createElement("button");
     b.type = "button"; b.className = "card"; b.setAttribute("role", "radio"); b.setAttribute("data-v", k);
     b.setAttribute("aria-label", d.org + ", a client of " + d.firm + " (" + d.chip + ")");
-    b.innerHTML = '<div class="card-head"><span class="card-kind">' + esc(d.chip) + '</span>' + (d.chipNote ? '<span class="card-note">' + esc(d.chipNote) + "</span>" : "") + '</div><div class="card-body"><span class="card-eyebrow">One of their clients</span><div class="card-org">' + esc(d.org) + '</div><div class="card-sub">' + esc(d.sub) + '</div><div class="card-who"><b>' + esc(d.contact) + "</b><span>" + esc(d.title) + '</span></div></div><div class="card-foot">Client of ' + esc(d.firm) + "</div>";
+    b.innerHTML = '<div class="card-head"><span class="card-kind">' + esc(d.chip) + '</span></div><div class="card-body"><span class="card-eyebrow">One of their clients</span><div class="card-org">' + esc(d.org) + '</div><div class="card-sub">' + esc(d.sub) + '</div><div class="card-who"><b>' + esc(d.contact) + "</b><span>" + esc(d.title) + '</span></div></div><div class="card-foot">Client of ' + esc(d.firm) + "</div>";
     b.addEventListener("click", function () { setVertical(k, true); });
     b.addEventListener("mouseenter", function () { cardHover = i; layoutCards(); });
     b.addEventListener("focus", function () { cardHover = i; layoutCards(); });
