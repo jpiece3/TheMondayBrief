@@ -105,7 +105,7 @@ img { max-width: 100%; }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { background: var(--ground); color: var(--ink); font-family: var(--display); font-size: 17px; line-height: 1.55; padding-inline: 20px; padding-block: 0 80px; -webkit-font-smoothing: antialiased; }
+body { background: var(--ground); color: var(--ink); font-family: var(--display); font-size: 17px; line-height: 1.55; padding-inline: 20px; padding-block: 0; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
 p { margin: 0; }
 button, input { font: inherit; color: inherit; }
@@ -117,15 +117,35 @@ button, input { font: inherit; color: inherit; }
 .rv.pre { transform: translateY(24px); opacity: 0.35; }
 
 /* top bar */
-.topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-block: 18px; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--slate); }
-.topbar b { color: var(--ink); font-weight: 700; letter-spacing: 0.02em; }
-.topbar .mono { font-size: 12px; }
 
 /* bands */
 .band { margin-inline: -20px; padding-inline: 20px; }
 .band-soft { background: transparent; color: var(--ink); }
-.band-soft .topbar { border-bottom-color: var(--line); color: var(--slate); }
-.band-soft .topbar b { color: var(--ink); }
+
+/* sticky header: frosted, with the next Monday */
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; margin-inline: -20px; padding-inline: 20px; background: color-mix(in srgb, var(--ground) 58%, transparent); -webkit-backdrop-filter: saturate(1.6) blur(16px); backdrop-filter: saturate(1.6) blur(16px); border-bottom: 1px solid transparent; transition: border-color 0.3s, background-color 0.3s; }
+.site-head.scrolled { border-bottom-color: color-mix(in srgb, var(--line) 85%, transparent); background: color-mix(in srgb, var(--ground) 72%, transparent); }
+.site-head-in { max-width: 1160px; margin: 0 auto; height: 64px; display: flex; align-items: center; gap: 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-size: 15.5px; flex: none; }
+.brand b { font-weight: 700; letter-spacing: -0.01em; }
+.nextbrief { display: inline-flex; align-items: center; gap: 10px; padding: 5px 12px 5px 10px; border: 1px solid color-mix(in srgb, var(--line-2) 70%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--surface) 50%, transparent); font-size: 12.5px; color: var(--slate); white-space: nowrap; min-width: 0; }
+.nextbrief b { color: var(--ink); font-weight: 600; }
+.week { display: inline-grid; grid-template-columns: repeat(7, 6px); gap: 3px; flex: none; }
+.week i { width: 6px; height: 6px; border-radius: 50%; background: var(--line-2); transition: background-color 0.3s, box-shadow 0.3s; }
+.week i.past { background: color-mix(in srgb, var(--accent) 38%, var(--surface)); }
+.week i.today { background: var(--accent); box-shadow: 0 0 0 2px var(--accent-tint); }
+.week i[data-d="0"] { background: var(--butter); }
+.site-head.landing .week i[data-d="0"] { animation: dotpulse 1.3s ease-out infinite; }
+@keyframes dotpulse { from { box-shadow: 0 0 0 0 var(--butter); } to { box-shadow: 0 0 0 7px transparent; } }
+.nb-short, .cta-short { display: none; }
+.site-nav { margin-left: auto; display: flex; gap: 2px; flex: none; }
+.site-nav a { color: var(--ink-2); text-decoration: none; font-size: 14px; white-space: nowrap; padding: 6px 10px; border-radius: 8px; transition: background-color 0.2s, color 0.2s; }
+.site-nav a:hover, .site-nav a:focus-visible { background: var(--accent-soft); color: var(--accent); }
+.head-cta { padding: 8px 14px; font-size: 14px; flex: none; }
+.head-cta:hover { transform: none; background: var(--accent-deep); border-color: var(--accent-deep); }
+@media (max-width: 1120px) { .site-nav { display: none; } .nextbrief { margin-right: auto; } }
+@media (max-width: 640px) { .nb-long { display: none; } .nb-short { display: inline; } .cta-long { display: none; } .cta-short { display: inline; } }
+@media (max-width: 440px) { .brand b { display: none; } .site-head-in { gap: 10px; } }
 
 /* hero */
 .hero { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 48px; align-items: center; padding-block: 56px 64px; }
@@ -151,10 +171,6 @@ h1 { font-size: clamp(38px, 5.6vw, 68px); line-height: 1.02; letter-spacing: -0.
 .cta-strip { margin-top: 36px; background: var(--accent-tint); border: 0; border-radius: 14px; padding: 22px 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
 .cta-strip h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.15; }
 .cta-strip p { font-size: 15px; color: var(--slate); margin-top: 4px; max-width: 52ch; }
-.closing-cta { margin-top: 18px; }
-.fab { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 30; display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; background: var(--accent); color: var(--on-accent); font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 10px 24px -12px rgba(30, 37, 54, 0.35); transform: translateY(24px); opacity: 0; pointer-events: none; transition: transform 0.35s var(--ease), opacity 0.35s; }
-.fab.on { transform: none; opacity: 1; pointer-events: auto; }
-.fab:hover { background: var(--accent-deep); }
 .hero .btn { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
 .hero .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line-2); }
 
@@ -194,7 +210,7 @@ h1 { font-size: clamp(38px, 5.6vw, 68px); line-height: 1.02; letter-spacing: -0.
 .board-foot b { color: var(--ink); }
 
 /* sections */
-section { padding-block: 72px 0; scroll-margin-top: 20px; }
+section { padding-block: 72px 0; scroll-margin-top: 80px; }
 .sec-top { display: grid; gap: 12px; margin-bottom: 30px; }
 h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.08; letter-spacing: -0.025em; font-weight: 700; }
 .lede { font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 60ch; }
@@ -504,30 +520,39 @@ h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.08; letter-spacing: -0.
 .start h3 { font-size: 17px; font-weight: 700; line-height: 1.25; }
 .start p { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
 
-/* closing */
-.band-close { margin-top: 90px; }
-.closing { padding: 52px 48px; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 32px; align-items: end; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+/* logo */
+.logo { width: 30px; height: 30px; flex: none; display: block; color: var(--accent); --logo-dot: rgba(255, 255, 255, 0.55); --logo-fold: rgba(255, 255, 255, 0.35); }
+.logo-lg { width: 52px; height: 52px; }
+
+/* ending: closing call and footer on one sheet */
+.ending { margin-top: 96px; background: var(--surface); border-top: 1px solid var(--line); }
+.closing { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 28px 64px; align-items: end; padding-block: 76px 64px; }
 .closing h2 { color: var(--ink); }
 .closing .hl { color: var(--accent); }
-.closing p { font-size: 18px; color: var(--ink-2); }
-.byline { margin-top: 18px; font-family: var(--mono); font-size: 14px; color: var(--slate); min-height: 1.5em; }
+.byline { margin-top: 18px; font-family: var(--mono); font-size: 13px; color: var(--slate); min-height: 1.5em; }
 .caret { display: inline-block; width: 2px; height: 1em; background: var(--accent); vertical-align: -2px; margin-left: 2px; animation: blink 0.9s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-/* footer + logo */
-.logo { width: 30px; height: 30px; flex: none; display: block; color: var(--accent); --logo-dot: rgba(255, 255, 255, 0.55); --logo-fold: rgba(255, 255, 255, 0.35); }
-.topbar-brand { display: inline-flex; align-items: center; gap: 10px; }
-.foot { margin-top: 0; background: var(--surface); color: var(--ink-2); border-top: 1px solid var(--line); padding-block: 46px 26px; }
-.foot-top { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
+.closing-side { display: grid; gap: 20px; justify-items: start; }
+.closing-side p { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
+.foot { border-top: 1px solid var(--line); padding-block: 48px calc(30px + env(safe-area-inset-bottom, 0px)); color: var(--ink-2); }
+.foot-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 40px; }
 .foot-brand { display: flex; gap: 14px; align-items: flex-start; }
-.logo-lg { width: 52px; height: 52px; }
-.wordmark { font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin-top: 4px; }
-.foot-tag { font-size: 14px; margin-top: 6px; max-width: 34ch; line-height: 1.5; }
-.foot-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.foot-cols h4 { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); margin: 0 0 10px; }
-.foot-cols ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; font-size: 14px; line-height: 1.45; }
-.foot-cols a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-2); transition: color 0.2s, border-color 0.2s; }
-.foot-cols a:hover { color: var(--ink); border-color: var(--accent); }
-.foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; padding-top: 18px; font-size: 12.5px; color: var(--faint); }
+.wordmark { font-size: 20px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1.1; margin-top: 4px; }
+.foot-tag { font-size: 14px; margin-top: 6px; max-width: 30ch; line-height: 1.5; color: var(--slate); }
+.foot-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.foot-cols h4 { font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); margin: 0 0 12px; }
+.foot-cols ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; font-size: 14.5px; }
+.foot-cols a { color: var(--ink-2); text-decoration: none; transition: color 0.2s; }
+.foot-cols a:hover, .foot-cols a:focus-visible { color: var(--accent); }
+.foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--faint); }
+@media (max-width: 860px) {
+  .ending { margin-top: 64px; }
+  .closing { grid-template-columns: 1fr; gap: 22px; align-items: start; padding-block: 52px 44px; }
+  .foot-top { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 540px) {
+  .foot-cols { grid-template-columns: 1fr 1fr; }
+}
 
 /* the page cites itself */
 .cite { display: inline-block; border: 0; font: 600 10px/1 var(--mono); background: var(--accent-tint); color: var(--accent); padding: 2px 4px; margin-left: 3px; vertical-align: super; border-radius: 2px; cursor: help; text-decoration: none; transition: background-color 0.2s, color 0.2s; }
@@ -564,12 +589,9 @@ h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.08; letter-spacing: -0.
   .start { grid-template-columns: 1fr 1fr; }
   .start li + li { padding-left: 0; border-left: 0; }
   .start li:nth-child(even) { padding-left: 18px; border-left: 1px solid var(--line); }
-  .closing { grid-template-columns: 1fr; padding: 36px 28px; }
-  .foot-top { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
-  .topbar .mono { display: none; }
   .stack { height: 400px; }
   .sk-pdf { width: 230px; height: 330px; left: 0; padding: 16px; }
   .sk-pdf h4 { font-size: 17px; }
@@ -592,10 +614,6 @@ h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.08; letter-spacing: -0.
   .con-tab { padding: 12px 12px; font-size: 13.5px; }
   .con-panel { padding: 18px 16px; }
   .heat { grid-template-columns: 1fr repeat(8, 14px); }
-  .band-close { margin-top: 60px; }
-  .closing { padding: 28px 20px; }
-  .foot-cols { grid-template-columns: 1fr; }
-  .foot { padding-block: 34px 22px; }
   .url { font-size: 11px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -606,12 +624,24 @@ h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.08; letter-spacing: -0.
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="mb-logo" viewBox="0 0 48 48"><path d="M11 0h25l12 12v25a11 11 0 0 1-11 11H11A11 11 0 0 1 0 37V11A11 11 0 0 1 11 0z" fill="currentColor"/><path d="M36 0v8a4 4 0 0 0 4 4h8z" fill="var(--logo-fold)"/><circle cx="5.4" cy="17.8" r="1.9" fill="var(--butter)"/><circle cx="11.6" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="17.8" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="24.0" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="30.2" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="36.4" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="42.6" cy="17.8" r="1.9" fill="var(--logo-dot)"/><circle cx="5.4" cy="24.0" r="1.9" fill="var(--butter)"/><circle cx="11.6" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="17.8" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="24.0" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="30.2" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="36.4" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="42.6" cy="24.0" r="1.9" fill="var(--logo-dot)"/><circle cx="5.4" cy="30.2" r="1.9" fill="var(--butter)"/><circle cx="11.6" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="17.8" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="24.0" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="30.2" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="36.4" cy="30.2" r="1.9" fill="var(--logo-dot)"/><circle cx="42.6" cy="30.2" r="1.9" fill="var(--logo-dot)"/></symbol></defs></svg>
-<div class="band band-soft">
-<div class="wrap">
-  <div class="topbar">
-    <span class="topbar-brand"><svg class="logo" aria-hidden="true"><use href="#mb-logo"/></svg><b>Monday Briefs</b> · an automated client-intelligence service</span>
-    <span class="mono">Case study · September 2026</span>
+<header class="site-head" id="siteHead">
+  <div class="site-head-in">
+    <a class="brand" href="#top" aria-label="Monday Briefs, back to top"><svg class="logo" aria-hidden="true"><use href="#mb-logo"/></svg><b>Monday Briefs</b></a>
+    <span class="nextbrief" title="When the next briefs land, in your time zone">
+      <span class="week" id="nbWeek" aria-hidden="true"></span>
+      <span class="nb-long">Next briefs land <b id="nbWhen">Monday, 09:00</b> <span id="nbIn"></span></span>
+      <span class="nb-short" id="nbShort">Mon 09:00</span>
+    </span>
+    <nav class="site-nav" aria-label="Page">
+      <a href="#portal">The portal</a>
+      <a href="#how">How it works</a>
+      <a href="#why">Why it works</a>
+    </nav>
+    <a class="btn btn-accent head-cta" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener"><span class="cta-long">Book a walkthrough</span><span class="cta-short">Book a call</span></a>
   </div>
+</header>
+<div class="band band-soft" id="top">
+<div class="wrap">
   <header class="hero">
     <div>
       <span class="eyebrow">Built and running</span>
@@ -798,43 +828,42 @@ h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.08; letter-spacing: -0.
   </section>
 
 </div>
-<div class="band band-soft band-close">
+<div class="band ending band-close">
 <div class="wrap">
   <div class="closing rv">
-    <h2>Your clients already want to know <span class="hl">what changed this week.</span></h2>
-    <div>
-      <p>This tells them every Monday, in your name, without adding a single hour to your team's week.</p>
-      <div class="closing-cta"><a class="btn btn-accent" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a></div>
+    <div class="closing-main">
+      <h2>Your clients already want to know <span class="hl">what changed this week.</span></h2>
       <p class="byline" id="byline" aria-label="Written by: nobody on your team."><span id="bylineTxt"></span><span class="caret" aria-hidden="true"></span></p>
     </div>
-  </div>
-</div>
-</div>
-<footer class="band foot">
-<div class="wrap">
-  <div class="foot-top">
-    <div class="foot-brand">
-      <svg class="logo logo-lg" aria-hidden="true"><use href="#mb-logo"/></svg>
-      <div>
-        <div class="wordmark">Monday Briefs</div>
-        <p class="foot-tag">Every client, briefed every Monday. Nobody on your team writes it.</p>
-      </div>
+    <div class="closing-side">
+      <p>This tells them every Monday, in your name, without adding a single hour to your team's week.</p>
+      <a class="btn btn-accent" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
     </div>
-    <nav class="foot-cols" aria-label="Footer">
-      <div><h4>What clients get</h4><ul><li>A weekly brief</li><li>A short podcast</li><li>A Monday email</li><li>A private portal</li></ul></div>
-      <div><h4>On this page</h4><ul><li><a href="#portal">The client portal</a></li><li><a href="#how">How it works</a></li><li><a href="#why">Why firms want it</a></li><li><a href="#console">Your side of it</a></li><li><a href="#start">Getting started</a></li></ul></div>
-      <div><h4>Next step</h4><ul><li><a href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough</a></li><li><a href="#portal">See the client portal</a></li><li>First built for a government-affairs intelligence firm, running since 2026</li></ul></div>
-    </nav>
   </div>
-  <div class="foot-bottom">
-    <span>© 2026 Monday Briefs</span>
-    <span>Sample firms, clients and headlines on this page are fictional. Timings were measured on real client runs.</span>
-  </div>
+  <footer class="foot">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <svg class="logo logo-lg" aria-hidden="true"><use href="#mb-logo"/></svg>
+        <div>
+          <div class="wordmark">Monday Briefs</div>
+          <p class="foot-tag">Every client, briefed every Monday. Nobody on your team writes it.</p>
+        </div>
+      </div>
+      <nav class="foot-cols" aria-label="Footer">
+        <div><h4>What clients get</h4><ul><li><a href="#gets">A weekly brief</a></li><li><a href="#gets">A short podcast</a></li><li><a href="#gets">A Monday email</a></li><li><a href="#portal">A private portal</a></li></ul></div>
+        <div><h4>On this page</h4><ul><li><a href="#portal">The client portal</a></li><li><a href="#how">How it works</a></li><li><a href="#why">Why firms want it</a></li><li><a href="#console">Your side of it</a></li><li><a href="#start">Getting started</a></li></ul></div>
+        <div><h4>Next step</h4><ul><li><a href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a walkthrough</a></li><li><a href="#portal">See it for your firm</a></li></ul></div>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Monday Briefs · First built for a government-affairs intelligence firm</span>
+      <span>Sample firms, clients and headlines are fictional. Timings were measured on real client runs.</span>
+    </div>
+  </footer>
 </div>
-</footer>
+</div>
 
 <div class="pop" id="pop" hidden></div>
-<a class="fab" id="fab" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a walkthrough →</a>
 
 <script>
 (function () {
@@ -1442,13 +1471,33 @@ h2 { font-size: clamp(28px, 3.8vw, 44px); line-height: 1.08; letter-spacing: -0.
   });
   setCon("runs", false);
 
-  /* ---------- floating CTA ---------- */
-  var fab = $("#fab"), heroSeen = true, closeSeen = false;
-  function fabUpdate() { fab.classList.toggle("on", !heroSeen && !closeSeen); }
-  if ("IntersectionObserver" in window) {
-    new IntersectionObserver(function (en) { en.forEach(function (e) { heroSeen = e.isIntersecting; }); fabUpdate(); }, { threshold: 0.05 }).observe($(".hero"));
-    new IntersectionObserver(function (en) { en.forEach(function (e) { closeSeen = e.isIntersecting; }); fabUpdate(); }, { threshold: 0.05 }).observe($(".band-close"));
+  /* ---------- sticky header: the next Monday ---------- */
+  var head = $("#siteHead"), nbWeek = $("#nbWeek"), nbWhen = $("#nbWhen"), nbIn = $("#nbIn"), nbShort = $("#nbShort");
+  var DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  nbWeek.innerHTML = DAYS.map(function (d, i) { return '<i data-d="' + i + '"></i>'; }).join("");
+  var weekDots = $$("i", nbWeek);
+  function nextMonday(now) {
+    var d = new Date(now.getTime()); d.setHours(9, 0, 0, 0);
+    d.setDate(d.getDate() + (7 - (d.getDay() + 6) % 7) % 7);
+    if (d <= now) d.setDate(d.getDate() + 7);
+    return d;
   }
+  function tickHead() {
+    var now = new Date(), dow = (now.getDay() + 6) % 7, mins = now.getHours() * 60 + now.getMinutes();
+    weekDots.forEach(function (el, i) { el.className = i < dow ? "past" : i === dow ? "today" : ""; });
+    var landing = dow === 0 && mins >= 540 && mins < 560;
+    head.classList.toggle("landing", landing);
+    if (landing) { nbWhen.textContent = "this morning"; nbIn.textContent = "· landing now"; nbShort.textContent = "Landing now"; return; }
+    var nm = nextMonday(now), diff = nm - now;
+    var dd = Math.floor(diff / 86400000), hh = Math.floor(diff / 3600000) % 24, mm = Math.floor(diff / 60000) % 60;
+    var inTxt = dd ? dd + "d " + hh + "h" : hh ? hh + "h " + mm + "m" : Math.max(1, mm) + "m";
+    nbWhen.textContent = "Mon " + nm.getDate() + " " + nm.toLocaleString("en-US", { month: "short" }) + ", 09:00";
+    nbIn.textContent = "· in " + inTxt;
+    nbShort.textContent = "Mon 09:00 · " + inTxt;
+  }
+  tickHead(); setInterval(tickHead, 30000);
+  function headScroll() { head.classList.toggle("scrolled", (window.scrollY || document.documentElement.scrollTop) > 8); }
+  window.addEventListener("scroll", headScroll, { passive: true }); headScroll();
 
   /* ---------- typed byline ---------- */
   var bylineEl = $("#bylineTxt"), BY = "Written by: nobody on your team.";
