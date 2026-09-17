@@ -231,13 +231,14 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 /* pick a client */
 .pick { margin-bottom: 14px; }
 .pick-k { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); margin-bottom: 8px; }
-.cards { display: flex; gap: 14px; overflow-x: auto; padding: 12px 6px 22px; scrollbar-width: none; }
-.cards::-webkit-scrollbar { display: none; }
-.card { flex: 0 0 236px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 8px; padding: 0; text-align: left; cursor: pointer; display: grid; grid-template-rows: auto 1fr auto; overflow: hidden; transform: rotate(var(--r, 0deg)); transition: transform 0.35s var(--ease), box-shadow 0.35s, border-color 0.25s, opacity 0.3s; box-shadow: 0 1px 2px rgba(16, 22, 58, 0.08); position: relative; opacity: 0.9; }
-.card:hover { transform: rotate(0deg) translateY(-4px); box-shadow: var(--shadow); opacity: 1; }
-.card[aria-checked="true"] { transform: rotate(0deg) translateY(-8px) scale(1.03); border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), var(--shadow); opacity: 1; }
+.cards { display: flex; flex-wrap: wrap; gap: 12px; padding: 12px 0 20px; }
+.cards.js-deck { display: block; position: relative; padding: 0; margin: 4px 0 8px; height: 230px; transition: height 0.4s var(--ease); }
+.card { flex: 0 0 236px; background: var(--surface); border: 1px solid var(--line-2); border-radius: 8px; padding: 0; text-align: left; cursor: pointer; display: grid; grid-template-rows: auto 1fr auto; position: relative; box-shadow: -10px 0 18px -14px rgba(30, 37, 54, 0.35), 0 1px 2px rgba(30, 37, 54, 0.06); transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s, border-color 0.25s; }
+.cards.js-deck .card { position: absolute; top: 18px; left: 0; }
+.card.is-focus { box-shadow: 0 1px 2px rgba(30, 37, 54, 0.06), 0 20px 36px -18px rgba(30, 37, 54, 0.38); }
+.card[aria-checked="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), 0 20px 36px -18px rgba(30, 37, 54, 0.38); }
 .card[aria-checked="true"]::after { content: ""; position: absolute; left: 50%; bottom: -14px; width: 12px; height: 12px; background: var(--accent); transform: translateX(-50%) rotate(45deg); }
-.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 10px 14px; background: var(--ground); color: var(--ink); border-bottom: 1px solid var(--line); transition: background-color 0.25s, color 0.25s; }
+.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 10px 14px; background: var(--ground); color: var(--ink); border-bottom: 1px solid var(--line); border-radius: 7px 7px 0 0; transition: background-color 0.25s, color 0.25s; }
 .card[aria-checked="true"] .card-head { background: var(--accent); color: var(--on-accent); border-bottom-color: var(--accent); }
 .card-kind { font-size: 17px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.1; }
 .card-note { font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.75; white-space: nowrap; }
@@ -249,7 +250,9 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .card-who { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-top: 1px solid var(--line); padding-top: 6px; margin-top: 8px; min-width: 0; }
 .card-who b { font-size: 11.5px; font-weight: 700; white-space: nowrap; }
 .card-who span { font-size: 10px; color: var(--slate); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.card-foot { font-size: 10.5px; font-weight: 600; background: var(--ground); color: var(--slate); border-top: 1px solid var(--line); padding: 5px 14px; }
+.card-foot { font-size: 10.5px; font-weight: 600; background: var(--ground); color: var(--slate); border-top: 1px solid var(--line); padding: 5px 14px; border-radius: 0 0 7px 7px; }
+.cards.deck-v .card { top: 0; }
+.cards.deck-v .card[aria-checked="true"]::after { display: none; }
 .pick-note { font-size: 13.5px; color: var(--slate); }
 
 /* browser frame */
@@ -1157,13 +1160,15 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   bLive.addEventListener("click", function () { startMonday(); });
 
   /* ---------- pick a client ---------- */
-  var cards = $("#cards"), ROT = ["-2.5deg", "1.5deg", "-1deg", "2deg", "-1.5deg"];
+  var cards = $("#cards"), cardHover = -1;
   ORDER.forEach(function (k, i) {
     var d = V[k], b = document.createElement("button");
-    b.type = "button"; b.className = "card"; b.setAttribute("role", "radio"); b.setAttribute("data-v", k); b.style.setProperty("--r", ROT[i]);
+    b.type = "button"; b.className = "card"; b.setAttribute("role", "radio"); b.setAttribute("data-v", k);
     b.setAttribute("aria-label", d.org + ", a client of " + d.firm + " (" + d.chip + ")");
     b.innerHTML = '<div class="card-head"><span class="card-kind">' + esc(d.chip) + '</span>' + (d.chipNote ? '<span class="card-note">' + esc(d.chipNote) + "</span>" : "") + '</div><div class="card-body"><span class="card-eyebrow">One of their clients</span><div class="card-org">' + esc(d.org) + '</div><div class="card-sub">' + esc(d.sub) + '</div><div class="card-who"><b>' + esc(d.contact) + "</b><span>" + esc(d.title) + '</span></div></div><div class="card-foot">Client of ' + esc(d.firm) + "</div>";
     b.addEventListener("click", function () { setVertical(k, true); });
+    b.addEventListener("mouseenter", function () { cardHover = i; layoutCards(); });
+    b.addEventListener("focus", function () { cardHover = i; layoutCards(); });
     b.addEventListener("keydown", function (e) {
       var j = null;
       if (e.key === "ArrowRight" || e.key === "ArrowDown") j = (i + 1) % ORDER.length;
@@ -1172,11 +1177,45 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     });
     cards.appendChild(b);
   });
+  cards.classList.add("js-deck");
+  cards.addEventListener("mouseleave", function () { cardHover = -1; layoutCards(); });
+  cards.addEventListener("focusout", function (e) { if (!cards.contains(e.relatedTarget)) { cardHover = -1; layoutCards(); } });
+  function layoutCards() {
+    var els = $$(".card", cards), n = els.length, W = cards.clientWidth;
+    if (!W || !n) return;
+    var sel = ORDER.indexOf(cur), focus = cardHover >= 0 ? cardHover : sel, vertical = W < 940;
+    cards.classList.toggle("deck-v", vertical);
+    els.forEach(function (el, i) { el.classList.toggle("is-focus", i === focus); el.style.zIndex = i === focus ? 20 : i + 1; });
+    if (!vertical) {
+      var cw = Math.round(Math.min(270, Math.max(210, W * 0.235)));
+      var maxH = 0;
+      els.forEach(function (el) { el.style.width = cw + "px"; el.style.minHeight = ""; maxH = Math.max(maxH, el.offsetHeight); });
+      var step = Math.min(cw + 12, (W - 2 * cw - 12) / (n - 2)), shift = Math.max(0, cw + 12 - step);
+      els.forEach(function (el, i) {
+        el.style.minHeight = maxH + "px";
+        el.style.transform = "translate(" + (i * step + (i > focus ? shift : 0)).toFixed(1) + "px, " + (i === focus ? -10 : 0) + "px)";
+      });
+      cards.style.height = (maxH + 44) + "px";
+    } else {
+      var y = 0, HEAD = 48, GAP = 10, lastBottom = 0;
+      els.forEach(function (el) { el.style.width = "100%"; el.style.minHeight = ""; });
+      els.forEach(function (el, i) {
+        el.style.transform = "translate(0, " + y + "px)";
+        lastBottom = y + el.offsetHeight;
+        y += i === focus ? el.offsetHeight + GAP : HEAD;
+      });
+      cards.style.height = (lastBottom + 16) + "px";
+    }
+  }
+  window.addEventListener("resize", layoutCards);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutCards);
+
 
   function setVertical(k, animate) {
     cur = k;
     store("mb-vertical", k);
-    $$(".card").forEach(function (b) { var on = b.getAttribute("data-v") === k; b.setAttribute("aria-checked", String(on)); b.tabIndex = on ? 0 : -1; if (on && animate && cards.scrollWidth > cards.clientWidth) b.scrollIntoView({ inline: "center", block: "nearest", behavior: RM ? "auto" : "smooth" }); });
+    $$(".card").forEach(function (b) { var on = b.getAttribute("data-v") === k; b.setAttribute("aria-checked", String(on)); b.tabIndex = on ? 0 : -1; });
+    layoutCards();
     startMonday();
     renderPortalHead();
     renderTab(animate);
