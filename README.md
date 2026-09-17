@@ -1,4 +1,4 @@
-# The Monday Brief
+# Monday Briefs
 
 A prospect-facing page for an automated client-intelligence service: every client gets a personal briefing every Monday (a designed brief, a short podcast, an email and a private portal), and nobody on the firm's team writes it.
 
