@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Monday Briefs</title>
-<meta name="description" content="Every week, Monday Briefs reads about 50,000 words for each of your clients from the news, government sites, blogs, posts and podcasts, and turns what matters into a short report, a podcast and a private portal. Nobody on your team writes it.">
+<meta name="description" content="A weekly briefing your clients pay for and your team never writes. Every week, Monday Briefs reads about 50,000 words for each of your clients from the news, government sites, blogs, posts and podcasts, and turns what matters into a short report, a podcast and a private portal. Nobody on your team writes it.">
 <meta name="theme-color" content="#F7F8FA">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Monday Briefs">
-<meta property="og:description" content="The signals your clients need, turned into action every Monday. Nobody on your team writes it.">
+<meta property="og:description" content="A weekly briefing your clients pay for and your team never writes.">
 <meta property="og:url" content="https://mondaybriefs.com/">
 <meta property="og:site_name" content="Monday Briefs">
 <meta property="og:image" content="https://mondaybriefs.com/og.png">
@@ -177,8 +177,10 @@ button, input { font: inherit; color: inherit; }
 .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); display: inline-flex; align-items: center; gap: 10px; }
 .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
 .hero .eyebrow { color: var(--slate); }
-h1 { font-family: var(--pv-serif); font-size: clamp(40px, 5.8vw, 72px); line-height: 1.04; letter-spacing: -0.015em; font-weight: 500; margin-top: 18px; }
+h1 { font-family: var(--pv-serif); font-size: clamp(40px, 5.1vw, 66px); line-height: 1.04; letter-spacing: -0.015em; font-weight: 500; margin-top: 18px; }
 .mark { font-style: italic; position: relative; z-index: 0; white-space: nowrap; }
+.mark.plain { font-style: normal; }
+h1 .em { font-style: italic; white-space: nowrap; }
 .mark::after { content: ""; position: absolute; z-index: -1; left: -0.05em; right: -0.05em; bottom: 0.06em; height: 0.36em; border-radius: 0.08em; background: var(--butter); transform-origin: 0 50%; animation: sweep 0.8s var(--ease) 0.6s backwards; }
 @keyframes sweep { from { transform: scaleX(0); } }
 .hero-sub { font-size: 20px; line-height: 1.5; color: var(--ink-2); max-width: 38ch; margin-top: 22px; }
@@ -695,8 +697,8 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   <header class="hero">
     <div>
       <span class="eyebrow">Real-world signals, turned into action</span>
-      <h1>The signals your clients need, turned into action <span class="mark">every Monday.</span></h1>
-      <p class="hero-sub">Every week, Monday Briefs reads about 50,000 words for each of your clients<button type="button" class="cite" data-n="8">8</button> from the news, government sites, blogs, posts and podcasts, keeps what matters, and turns it into a short report, a podcast and a private portal. Nobody on your team writes it.</p>
+      <h1>A weekly briefing your clients pay&nbsp;for and&nbsp;your&nbsp;team <span class="em">never writes.</span></h1>
+      <p class="hero-sub"><span class="mark plain">Every Monday</span>, each of your clients gets a short report, a podcast and a private portal about their own world, under your name. We read about 50,000 words per client each week<button type="button" class="cite" data-n="8">8</button> to make it. Firms sell it, include it in their fee, or use it to stay the first call.</p>
       <div class="cycle"><span>Ready for <button class="cycle-btn" type="button" id="cycleBtn"></button></span></div>
       <div class="hero-cta">
         <a class="btn" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
@@ -751,7 +753,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     <div class="sec-top rv">
       <span class="eyebrow">The client portal</span>
       <h2>See it for your practice</h2>
-      <p class="lede">This is the portal from the live build, filled with sample content. Pick your kind of firm; the card is one of its clients, and the portal below is what that client opens on Monday. Everything inside the frame is clickable.</p>
+      <p class="lede">This works for any firm that owes its clients or members recurring updates and doesn&rsquo;t want to write them, from government-affairs consultants to law firms to associations. Pick your kind of firm below; the card is one of its clients, and the portal is what that client opens on Monday. Everything inside the frame is clickable.</p>
     </div>
     <div class="pick">
       <p class="pick-k" id="pickLabel">Pick your kind of firm. Each card is one of their clients.</p>
@@ -810,15 +812,15 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   <section id="why">
     <div class="sec-top rv">
       <span class="eyebrow">Why firms want it</span>
-      <h2>Your expertise, delivered to every client, every week</h2>
+      <h2>Clients pay for it, and it keeps them close</h2>
     </div>
     <div class="bens">
-      <div class="ben rv"><span class="k">Relationship</span><h3>Instant value, every week</h3><p>Your clients get something useful from you every Monday, about their own business, without having to ask.</p></div>
+      <div class="ben rv"><span class="k">Revenue</span><h3>Sell it, include it or upsell it</h3><p>Charge for it as a subscription, include it to justify your fee, make it the first step on your offer ladder, or offer it as a premium tier. The first firm charges its clients $300 a month. <button type="button" class="cite" data-n="9">9</button> The questionnaire can sit inside your checkout.</p></div>
       <div class="ben rv"><span class="k">New work</span><h3>A reason for clients to call you</h3><p>A new rule, a deadline, a competitor's move: the brief puts it in front of your client and gives them a reason to pick up the phone.</p></div>
+      <div class="ben rv"><span class="k">Relationship</span><h3>Clients hear it from you first</h3><p>When a rule changes or a deadline opens, your client reads it in your brief on Monday, not in someone else's newsletter later in the week.</p></div>
       <div class="ben rv"><span class="k">Effort</span><h3>Nothing extra for you to do</h3><p>We run it. Each brief is researched, written and recorded in about 11 minutes <button type="button" class="cite" data-n="3">3</button> with nobody involved. Your part is telling clients it exists.</p></div>
       <div class="ben rv"><span class="k">Presentation</span><h3>Looks like a premium service</h3><p>A designed report, a podcast and a private portal under your name. It's something clients can see and share, not just an email.</p></div>
       <div class="ben rv"><span class="k">Trust</span><h3>Grounded in sources</h3><p>Every item links to where it came from. <button type="button" class="cite" data-n="7">7</button> Your team can review each brief before it goes out, and web context is always kept apart from monitoring.</p></div>
-      <div class="ben rv"><span class="k">Revenue</span><h3>Sell it, include it or upsell it</h3><p>Charge for it as a subscription, include it to justify your fee, make it the first step on your offer ladder, or offer it as a premium tier. The questionnaire can sit inside your checkout.</p></div>
     </div>
   </section>
 
@@ -888,7 +890,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
       <p class="byline" id="byline" aria-label="Written by: nobody on your team."><span id="bylineTxt"></span><span class="caret" aria-hidden="true"></span></p>
     </div>
     <div class="closing-side">
-      <p>Simple, short and useful. Stay top of mind with every client and earn more from the relationships you already have, without adding work to your week.</p>
+      <p>The question is whether they hear it from you. Make it a service they pay for, every Monday, without adding work to your week.</p>
       <a class="btn btn-accent" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
     </div>
   </div>
