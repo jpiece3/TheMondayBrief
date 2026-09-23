@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Monday Briefs</title>
-<meta name="description" content="A weekly briefing your clients pay for and your team never writes. Every week, Monday Briefs reads about 50,000 words for each of your clients from the news, government sites, blogs, posts and podcasts, and turns what matters into a short report, a podcast and a private portal. Nobody on your team writes it.">
+<meta name="description" content="We write each client's own brief every Monday, under your name. Monday Briefs reads about 50,000 words a week for each of your clients, weighs it against what you've told us, and keeps what matters in a short report, a podcast and a portal they can search.">
 <meta name="theme-color" content="#F7F8FA">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Monday Briefs">
-<meta property="og:description" content="A weekly briefing your clients pay for and your team never writes.">
+<meta property="og:description" content="We write each client's own brief every Monday, under your name.">
 <meta property="og:url" content="https://mondaybriefs.com/">
 <meta property="og:site_name" content="Monday Briefs">
 <meta property="og:image" content="https://mondaybriefs.com/og.png">
@@ -173,27 +173,15 @@ button, input { font: inherit; color: inherit; }
 @media (max-width: 380px) { .site-head .head-cta { display: none; } .menu-btn { margin-left: auto; } }
 
 /* hero */
-.hero { display: grid; grid-template-columns: 1.02fr 0.98fr; gap: 48px; align-items: center; padding-block: 56px 64px; }
 .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); display: inline-flex; align-items: center; gap: 10px; }
 .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
-.hero .eyebrow { color: var(--slate); }
 h1 { font-family: var(--pv-serif); font-size: clamp(40px, 5.1vw, 66px); line-height: 1.04; letter-spacing: -0.015em; font-weight: 500; margin-top: 18px; }
 .mark { font-style: italic; position: relative; z-index: 0; white-space: nowrap; }
 .mark.plain { font-style: normal; }
-h1 .em { font-style: italic; white-space: nowrap; }
 .mark::after { content: ""; position: absolute; z-index: -1; left: -0.05em; right: -0.05em; bottom: 0.06em; height: 0.36em; border-radius: 0.08em; background: var(--butter); transform-origin: 0 50%; animation: sweep 0.8s var(--ease) 0.6s backwards; }
 @keyframes sweep { from { transform: scaleX(0); } }
-.hero-sub { font-size: 20px; line-height: 1.5; color: var(--ink-2); max-width: 38ch; margin-top: 22px; }
-.cycle { display: grid; gap: 8px; margin-top: 22px; font-size: 18px; color: var(--slate); }
-.cycle-btn { border: 0; background: var(--accent-tint); color: var(--accent); padding: 3px 12px; font-weight: 600; cursor: pointer; border-radius: 6px; transition: transform 0.2s var(--ease); display: inline-grid; text-align: left; vertical-align: baseline; margin-left: 4px; }
-.cycle-btn:hover { transform: translateY(-1px); }
-.cycle-btn span { grid-area: 1 / 1; visibility: hidden; white-space: nowrap; }
-.cycle-btn span.on { visibility: visible; animation: wordin 0.45s var(--ease); }
-@keyframes wordin { from { transform: translateY(40%); opacity: 0; } }
 .hero-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
 @media (max-width: 560px) { .hero-cta .btn { flex: 1 1 100%; justify-content: center; } }
-.proof-line { margin-top: 20px; font-size: 14.5px; line-height: 1.6; color: var(--slate); text-wrap: pretty; }
-.proof-price { font-weight: 600; color: var(--accent); background: var(--accent-tint); padding: 1px 7px; border-radius: 5px; white-space: nowrap; }
 .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 8px; font-size: 15px; font-weight: 600; border: 1px solid var(--ink); background: var(--ink); color: var(--on-ink); text-decoration: none; cursor: pointer; transition: transform 0.18s var(--ease), background-color 0.2s, color 0.2s; }
 .btn:hover { transform: translateY(-2px); }
 .btn.ghost { background: transparent; color: var(--ink); }
@@ -201,43 +189,128 @@ h1 .em { font-style: italic; white-space: nowrap; }
 .cta-strip { margin-top: 36px; background: var(--accent-tint); border: 0; border-radius: 14px; padding: 22px 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; }
 .cta-strip h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.15; }
 .cta-strip p { font-size: 15px; color: var(--slate); margin-top: 4px; max-width: 52ch; }
-.hero .btn { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
-.hero .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line-2); }
 
-/* the Monday board */
-.board { background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 18px 22px 16px; display: grid; gap: 10px; animation: boardin 0.9s var(--ease) 0.2s backwards; }
-@keyframes boardin { from { transform: translateY(28px); opacity: 0; } }
-.board-top { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
-.board-day { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); }
-.board-clock { font-family: var(--mono); font-size: 32px; font-weight: 500; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; margin-left: auto; }
-.board-clock small { font-size: 13px; margin-left: 2px; color: var(--slate); letter-spacing: 0; }
-.board-live { border: 0; background: transparent; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--coral); cursor: pointer; padding: 2px 0; width: 100%; text-align: left; }
-.board-live.done { color: var(--slate); }
-.board-rows { list-style: none; margin: 0; padding: 0; display: grid; }
-.brow { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--line); min-height: 48px; transition: opacity 0.35s; }
-.brow:last-child { border-bottom: 0; }
-.brow[data-state="pending"] { opacity: 0.32; }
-.brow-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--line-2); display: grid; place-items: center; font-size: 9px; color: #fff; position: relative; transition: background-color 0.25s, border-color 0.25s; }
-.brow[data-state="running"] .brow-dot { border-color: var(--coral); background: var(--coral); }
-.brow[data-state="running"] .brow-dot::before { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--coral); animation: pulse 1.1s ease-out infinite; }
-@keyframes pulse { from { transform: scale(0.7); opacity: 1; } to { transform: scale(1.4); opacity: 0; } }
-.brow[data-state="done"] .brow-dot { background: var(--accent); border-color: var(--accent); }
-.brow[data-state="done"] .brow-dot::after { content: "✓"; }
-.brow-main b { display: block; font-size: 14px; font-weight: 700; line-height: 1.25; }
-.brow-main span { display: block; font-size: 12.5px; color: var(--slate); font-variant-numeric: tabular-nums; min-height: 1.3em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.brow-side { font-family: var(--mono); font-size: 12px; color: var(--slate); text-align: right; font-variant-numeric: tabular-nums; min-width: 64px; }
-.chip { display: inline-block; background: var(--accent-tint); color: var(--accent); font-weight: 600; padding: 2px 7px; font-size: 11px; border-radius: 4px; font-family: var(--display); animation: popin 0.35s var(--ease) backwards; }
-@keyframes popin { from { transform: scale(0.4); opacity: 0; } }
 .score { font-family: var(--display); font-size: 24px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
-.wave { display: inline-flex; align-items: center; gap: 2px; height: 16px; vertical-align: middle; margin-right: 6px; }
-.wave i { width: 2px; background: var(--accent); border-radius: 1px; height: 30%; }
-.wave.on i { animation: wave 1.1s ease-in-out infinite; animation-delay: calc(var(--i) * -0.09s); }
-@keyframes wave { 0%, 100% { height: 25%; } 50% { height: 100%; } }
-.mailcard { display: inline-grid; gap: 1px; text-align: left; border: 1px solid var(--line); border-left: 3px solid var(--accent); padding: 5px 8px; border-radius: 3px; max-width: 210px; font-family: var(--display); animation: popin 0.4s var(--ease) backwards; }
-.mailcard b { font-size: 11.5px; line-height: 1.25; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--ink); }
-.mailcard span { font-size: 10.5px; color: var(--slate); }
-.board-foot { font-size: 13px; color: var(--slate); min-height: 1.4em; margin: 0; }
-.board-foot b { color: var(--ink); }
+
+/* hero: we write each client's brief; what's published and what you tell us flow into their portal */
+:root { --hx-dot: #4C5CC9; --hx-gold: #F0C24A; --hx-shadow: 0 1px 2px rgba(30, 37, 54, 0.05), 0 24px 48px -24px rgba(30, 37, 54, 0.35); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --hx-dot: #8E9BEA; --hx-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 24px 48px -24px rgba(0, 0, 0, 0.7); } }
+:root[data-theme="dark"] { --hx-dot: #8E9BEA; --hx-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 24px 48px -24px rgba(0, 0, 0, 0.7); }
+.hx { display: grid; grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr); gap: 40px 44px; align-items: center; padding-block: 28px 48px; }
+.hx .eyebrow { font-size: 11px; letter-spacing: 0.05em; }
+.hx h1 { font-size: clamp(34px, 3.7vw, 48px); margin-top: 14px; }
+.hx-sub { margin-top: 16px; font-size: 17px; line-height: 1.5; color: var(--ink-2); max-width: 50ch; }
+.hx-gains { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 460px; }
+.hx-gains li { padding: 0 14px; border-left: 1px solid var(--line-2); font-size: 13px; line-height: 1.4; color: var(--slate); display: grid; gap: 3px; align-content: start; }
+.hx-gains li:first-child { padding-left: 0; border-left: 0; }
+.hx-gains b { color: var(--ink); font-weight: 600; font-size: 14px; line-height: 1.25; }
+.hx .hero-cta { margin-top: 22px; }
+.hx .btn.ghost { border-color: var(--line-2); }
+@media (min-width: 1081px) { .hx-portal-btn { display: none !important; } }
+
+.hx-flow { position: relative; display: grid; grid-template-columns: 150px minmax(60px, 1fr) minmax(262px, 280px); gap: 0 12px; align-items: center; }
+.hx-cv { position: absolute; inset: -12px 0; width: 100%; height: calc(100% + 24px); z-index: 0; pointer-events: none; }
+.hx-flow > :not(canvas) { position: relative; z-index: 1; }
+.hx-inputs { grid-column: 1; display: grid; gap: 26px; }
+.hx-grp { display: grid; gap: 9px; }
+.hx-k { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); display: flex; align-items: center; gap: 7px; }
+.hx-k::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--hx-dot); flex: none; }
+.hx-you .hx-k::before { background: var(--ink); }
+.hx-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 7px; }
+.hx-list li { display: flex; justify-content: space-between; align-items: center; gap: 8px; line-height: 1.25; }
+.hx-list li::after { content: ""; width: 5px; height: 5px; border-radius: 50%; flex: none; background: var(--hx-dot); opacity: 0.8; }
+.hx-srcs li { font-size: 14px; font-weight: 500; color: var(--ink-2); }
+.hx-notes li { font-family: var(--pv-serif); font-style: italic; font-size: 15.5px; color: var(--ink); }
+.hx-notes li::after { background: var(--ink); width: 6px; height: 6px; opacity: 1; }
+.hx-n { font-size: 12.5px; color: var(--slate); line-height: 1.35; margin: 2px 0 0; }
+.hx-n b { font-family: var(--mono); font-weight: 500; color: var(--ink); }
+
+.hx-card { grid-column: 3; background: var(--surface); border: 1px solid var(--line-2); border-radius: 14px; box-shadow: var(--hx-shadow); overflow: hidden; font-family: var(--pv-sans); }
+.hx-card::before { content: ""; display: block; height: 5px; background: var(--hx-gold); }
+.hx-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 9px 14px; border-bottom: 1px solid var(--line); font-size: 11.5px; }
+.hx-top b { color: var(--ink); font-weight: 600; }
+.hx-mon { font-family: var(--mono); font-size: 11px; background: var(--butter); color: #1E2536; padding: 1px 6px; border-radius: 4px; white-space: nowrap; }
+.hx-client { display: flex; align-items: center; gap: 10px; padding: 12px 14px 4px; }
+.hx-mono { width: 32px; height: 32px; border-radius: 8px; background: var(--ink); color: var(--surface); display: grid; place-items: center; font-weight: 700; font-size: 12.5px; flex: none; }
+.hx-client b { display: block; font-size: 15px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.hx-client span { font-size: 12px; color: var(--slate); }
+.hx-panels { display: grid; }
+.hx-panel { grid-area: 1 / 1; transition: opacity 0.25s; }
+.hx-panel.off { visibility: hidden; opacity: 0; }
+.hx-item { margin: 8px 10px 0; padding: 11px 11px 9px; border: 1px solid var(--line); border-radius: 10px; display: grid; gap: 5px; }
+.hx-cat { justify-self: start; font-size: 10.5px; font-weight: 600; padding: 2px 7px; border-radius: 4px; color: var(--pvc-gov); background: color-mix(in srgb, var(--pvc-gov) 12%, transparent); }
+.hx-item h4 { font-size: 14px; font-weight: 600; line-height: 1.3; }
+.hx-told { display: flex; align-items: center; gap: 6px; font-family: var(--pv-serif); font-style: italic; font-size: 13px; color: var(--ink); }
+.hx-told::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
+.hx-why { font-size: 12.5px; line-height: 1.45; color: var(--ink-2); }
+.hx-why u { text-decoration: underline dotted var(--ink); text-underline-offset: 3px; text-decoration-thickness: 1.5px; }
+.hx-src { font-size: 11px; color: var(--faint); }
+.hx-ask { margin: 10px 10px 0; display: flex; align-items: center; gap: 8px; padding: 9px 11px; border: 1.5px solid var(--accent); border-radius: 10px; font-size: 13.5px; min-height: 40px; }
+.hx-ask svg { width: 15px; height: 15px; flex: none; stroke: var(--accent); fill: none; stroke-width: 2; }
+.hx-ask > span { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.hx-caret { display: inline-block; width: 2px; height: 1.05em; background: var(--accent); vertical-align: -2px; margin-left: 1px; animation: hxblink 0.9s steps(1) infinite; }
+@keyframes hxblink { 50% { opacity: 0; } }
+.hx-ans { margin: 7px 14px 0; font-size: 12.5px; line-height: 1.45; color: var(--ink-2); height: calc(1.45em * 3); overflow: hidden; transition: opacity 0.3s; }
+.hx-ans .n { font-family: var(--mono); font-size: 10px; color: var(--accent); background: var(--accent-tint); padding: 1px 5px; border-radius: 3px; margin-left: 4px; white-space: nowrap; }
+.hx-tabs { display: flex; gap: 5px; padding: 10px 12px 12px; border-top: 1px solid var(--line); margin-top: 10px; flex-wrap: wrap; }
+.hx-tabs button { font: 500 11.5px/1.3 var(--pv-sans); color: var(--slate); background: transparent; padding: 3px 9px; border: 1px solid var(--line-2); border-radius: 999px; cursor: pointer; transition: background-color 0.2s, color 0.2s, border-color 0.2s; }
+.hx-tabs button:hover { color: var(--accent); border-color: var(--accent); }
+.hx-tabs button[aria-selected="true"] { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+.hx-bhead { display: flex; align-items: center; gap: 10px; margin: 10px 14px 0; padding: 9px 10px; border: 1px solid var(--line); border-radius: 10px; }
+.hx-bhead svg { width: 20px; height: 20px; flex: none; fill: none; stroke: var(--ink); stroke-width: 1.6; }
+.hx-bhead b { display: block; font-size: 13.5px; font-weight: 600; line-height: 1.25; }
+.hx-bhead span { font-size: 11px; color: var(--slate); }
+.hx-bk { margin: 10px 14px 4px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); }
+.hx-blist { list-style: none; margin: 0 14px; padding: 0; display: grid; gap: 4px; }
+.hx-blist li { position: relative; padding-left: 12px; font-size: 12px; line-height: 1.4; color: var(--ink-2); }
+.hx-blist li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; border-radius: 50%; background: var(--hx-dot); }
+.hx-blist.act li::before { background: var(--ink); border-radius: 1px; }
+.hx-podtop { display: flex; align-items: center; gap: 10px; margin: 12px 14px 0; }
+.hx-play { position: relative; width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--accent); cursor: pointer; flex: none; }
+.hx-play::before { content: ""; position: absolute; left: 14px; top: 11px; border-left: 11px solid var(--on-accent); border-top: 7px solid transparent; border-bottom: 7px solid transparent; }
+.hx-play.on::before { left: 12px; top: 11px; width: 4px; height: 14px; border: 0; background: var(--on-accent); box-shadow: 7px 0 0 var(--on-accent); }
+.hx-podmeta b { display: block; font-size: 13.5px; font-weight: 600; line-height: 1.25; }
+.hx-podmeta span { font-family: var(--mono); font-size: 10.5px; color: var(--slate); font-variant-numeric: tabular-nums; }
+.hx-wave { display: flex; align-items: center; gap: 2px; height: 34px; margin: 10px 14px 0; }
+.hx-wave i { flex: 1; border-radius: 1px; background: var(--line-2); transition: background-color 0.2s; }
+.hx-wave i.done { background: var(--accent); }
+.hx-lines { list-style: none; margin: 10px 14px 0; padding: 0; display: grid; gap: 6px; }
+.hx-lines li { font-size: 12px; line-height: 1.4; color: var(--faint); transition: color 0.3s; }
+.hx-lines li.on { color: var(--ink); }
+.hx-lines b { font-family: var(--mono); font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; margin-right: 6px; color: var(--accent); }
+.hx-whead { display: flex; justify-content: space-between; margin: 12px 14px 4px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); }
+.hx-weeks { list-style: none; margin: 0 14px; padding: 0; display: grid; }
+.hx-weeks li { display: grid; grid-template-columns: 44px minmax(0, 1fr) 22px; gap: 2px 8px; align-items: center; padding: 7px 0; border-top: 1px solid var(--line); }
+.hx-wd { font-family: var(--mono); font-size: 11px; color: var(--ink-2); white-space: nowrap; }
+.hx-wbar { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.hx-wbar i { display: block; height: 100%; background: var(--hx-dot); opacity: 0.55; border-radius: 3px; }
+.hx-weeks li.now .hx-wbar i { opacity: 1; background: var(--accent); }
+.hx-wn { font-family: var(--mono); font-size: 11px; text-align: right; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.hx-weeks p { grid-column: 2 / -1; font-size: 11.5px; line-height: 1.35; color: var(--slate); }
+.hx-weeks li.now p { color: var(--ink-2); }
+.hx-cap { grid-column: 3; margin: 8px 0 0; font-size: 11.5px; color: var(--faint); text-align: right; }
+
+@media (max-width: 1080px) {
+  .hx { grid-template-columns: minmax(0, 1fr); }
+  .hx-sub { max-width: 60ch; }
+  .hx-flow { grid-template-columns: 190px minmax(60px, 1fr) 320px; }
+}
+@media (max-width: 760px) {
+  .hx-flow { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .hx-inputs { gap: 0; }
+  .hx-list { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+  .hx-list li::after { display: none; }
+  .hx-srcs li { font-size: 13px; padding: 3px 10px; border: 1px solid var(--line-2); border-radius: 999px; background: var(--surface); }
+  .hx-you { margin-top: 64px; justify-items: end; text-align: right; }
+  .hx-you .hx-list { justify-content: flex-end; }
+  .hx-notes li { font-size: 15px; }
+  .hx-card { grid-column: 1; margin-top: 56px; }
+  .hx-cap { grid-column: 1; }
+}
+@media (max-width: 560px) {
+  .hx-gains { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .hx-gains li, .hx-gains li:first-child { padding: 0 0 0 12px; border-left: 2px solid var(--line-2); }
+}
 
 /* sections */
 section { padding-block: 72px 0; scroll-margin-top: 92px; }
@@ -615,7 +688,6 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .wall-cap b { color: var(--ink); font-weight: 700; }
 
 @media (max-width: 980px) {
-  .hero { grid-template-columns: 1fr; gap: 20px; padding-block: 40px 40px; }
   .stack { height: 440px; max-width: 520px; }
   .gets { grid-template-columns: 1fr 1fr; }
   .get:nth-child(3) { padding-left: 0; border-left: 0; }
@@ -694,26 +766,87 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 </header>
 <div class="band band-soft" id="top">
 <div class="wrap">
-  <header class="hero">
+  <header class="hx">
     <div>
-      <span class="eyebrow">Real-world signals, turned into action</span>
-      <h1>A weekly briefing your clients pay&nbsp;for and&nbsp;your&nbsp;team <span class="em">never writes.</span></h1>
-      <p class="hero-sub"><span class="mark plain">Every Monday</span>, each of your clients gets a short report, a podcast and a private portal about their own world, under your name. We read about 50,000 words per client each week<button type="button" class="cite" data-n="8">8</button> to make it. Firms sell it, include it in their fee, or use it to stay the first call.</p>
-      <div class="cycle"><span>Ready for <button class="cycle-btn" type="button" id="cycleBtn"></button></span></div>
+      <span class="eyebrow">For law, accounting, wealth, real estate and government-affairs firms</span>
+      <h1>We write each client&rsquo;s own brief <span class="mark plain">every Monday</span>, under your&nbsp;name.</h1>
+      <p class="hx-sub">We read what&rsquo;s published about each client, weigh it against what you&rsquo;ve told us, and keep what matters in a portal they can search.</p>
+      <ul class="hx-gains">
+        <li><b>You can charge for it</b><span>One government-affairs firm charges each client $300 a month<button type="button" class="cite" data-n="9">9</button></span></li>
+        <li><b>Fewer check-in calls</b><span>The brief already answered &ldquo;anything new?&rdquo;</span></li>
+      </ul>
       <div class="hero-cta">
-        <a class="btn" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
-        <a class="btn ghost" href="#portal">See the client portal ↓</a>
+        <a class="btn btn-accent" href="https://cal.com/james-pinder/walkthrough-monday-brief" target="_blank" rel="noopener">Book a 20-minute walkthrough →</a>
+        <a class="btn ghost hx-portal-btn" href="#portal">See the client portal ↓</a>
       </div>
-      <p class="proof-line">The government-affairs firm we built it for charges its clients <span class="proof-price">$300 a month</span>.<button type="button" class="cite" data-n="9">9</button></p>
     </div>
-    <div class="board" id="board" role="group" aria-label="One client's Monday morning, replayed">
-      <div class="board-top">
-        <span class="board-day">Monday 14 Sep · one client</span>
-        <span class="board-clock" id="bClock">09:00<small>:00</small></span>
-        <button class="board-live" type="button" id="bReplay">● replaying · click to restart</button>
+
+    <div class="hx-flow" id="hxFlow" aria-label="What's published and what you tell us about a client flow into that client's portal">
+      <canvas class="hx-cv" id="hxCv" aria-hidden="true"></canvas>
+      <div class="hx-inputs">
+        <div class="hx-grp">
+          <span class="hx-k">What&rsquo;s published</span>
+          <ul class="hx-list hx-srcs" id="hxSrcs"><li>News</li><li>Government sites</li><li>Trade press</li><li>Blogs</li><li>Public posts</li></ul>
+          <p class="hx-n"><b>≈ 50,000 words</b> per client, every week<button type="button" class="cite" data-n="8">8</button></p>
+        </div>
+        <div class="hx-grp hx-you">
+          <span class="hx-k">What you tell us</span>
+          <ul class="hx-list hx-notes" id="hxNotes"><li>40 regional trucks</li><li>3 owner-operators</li><li>Main warehouse</li></ul>
+        </div>
       </div>
-      <ol class="board-rows" id="bRows"></ol>
-      <p class="board-foot" id="bFoot"></p>
+
+      <article class="hx-card" id="hxCard" aria-label="Sample client portal">
+        <div class="hx-top"><b>Aldercrest Law</b><span class="hx-mon">Mon 09:00</span></div>
+        <div class="hx-client"><span class="hx-mono">BF</span><div><b>Brightline Freight Co.</b><span>Week of 14 Sep · 3 items</span></div></div>
+        <div class="hx-panels">
+          <div class="hx-panel" id="hxPnWeek" role="tabpanel" aria-labelledby="hxTbWeek">
+            <div class="hx-item">
+              <span class="hx-cat">Regulation</span>
+              <h4>Federal regulator proposes electronic logging for regional fleets</h4>
+              <p class="hx-told">you told us: 40 regional trucks</p>
+              <p class="hx-why">Brightline&rsquo;s <u>40 regional trucks</u> would need certified devices and driver training before the compliance date.</p>
+              <span class="hx-src">Federal Register · 11 Sep</span>
+            </div>
+            <div class="hx-ask" aria-live="polite"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span><span id="hxQ">Which deadlines are still open?</span><i class="hx-caret"></i></span></div>
+            <p class="hx-ans" id="hxA">Two: racking standard comments close 28 Sep, and the logging timeline on 15 Oct.<span class="n">2 sources</span></p>
+          </div>
+
+          <div class="hx-panel off" id="hxPnBrief" role="tabpanel" aria-labelledby="hxTbBrief" inert>
+            <div class="hx-bhead"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 12h8M9 16h8M9 20h5"/></svg><div><b>Weekly brief · 14 Sep</b><span>PDF under the Aldercrest Law name</span></div></div>
+            <p class="hx-bk">Summary</p>
+            <ul class="hx-blist"><li>Federal proposal: electronic logs for regional fleets from next spring.</li><li>An appeals court narrowed the contractor test for owner-operators.</li><li>Racking standard comments close in 12 days.</li></ul>
+            <p class="hx-bk">What to do</p>
+            <ul class="hx-blist act"><li>Budget for logging devices before vendor lead times grow.</li><li>Review the three owner-operator agreements before renewal.</li></ul>
+          </div>
+
+          <div class="hx-panel off" id="hxPnPod" role="tabpanel" aria-labelledby="hxTbPod" inert>
+            <div class="hx-podtop"><button class="hx-play" type="button" id="hxPlay" aria-label="Play sample episode"></button><div class="hx-podmeta"><b>Brightline, week of 14 Sep</b><span id="hxTime">0:00 / 6:01 · sample</span></div></div>
+            <div class="hx-wave" id="hxWave" aria-hidden="true"></div>
+            <ol class="hx-lines" id="hxLines">
+              <li class="on" data-at="0"><b>Nora</b>Big week for Brightline. A federal proposal would put electronic logs in regional trucks.</li>
+              <li data-at="95"><b>Sam</b>That&rsquo;s 40 trucks needing certified devices and driver training before the deadline.</li>
+              <li data-at="210"><b>Nora</b>And an appeals court narrowed the contractor test, which touches the owner-operator contracts.</li>
+            </ol>
+          </div>
+
+          <div class="hx-panel off" id="hxPnPast" role="tabpanel" aria-labelledby="hxTbPast" inert>
+            <div class="hx-whead"><span>Week</span><span>Activity</span></div>
+            <ul class="hx-weeks">
+              <li class="now"><span class="hx-wd">14 Sep</span><span class="hx-wbar"><i style="width:62%"></i></span><span class="hx-wn">62</span><p>A proposed rule and an appeals decision both hit core operations.</p></li>
+              <li><span class="hx-wd">7 Sep</span><span class="hx-wbar"><i style="width:44%"></i></span><span class="hx-wn">44</span><p>Quiet week: one ruling on overtime averaging, no direct impact.</p></li>
+              <li><span class="hx-wd">31 Aug</span><span class="hx-wbar"><i style="width:41%"></i></span><span class="hx-wn">41</span><p>New fuel-tax reporting guidance; filing changes next quarter.</p></li>
+              <li><span class="hx-wd">24 Aug</span><span class="hx-wbar"><i style="width:35%"></i></span><span class="hx-wn">35</span><p>Truck-route reviews opened in two delivery areas.</p></li>
+            </ul>
+          </div>
+        </div>
+        <div class="hx-tabs" role="tablist" aria-label="Portal sections">
+          <button type="button" role="tab" id="hxTbWeek" aria-controls="hxPnWeek" aria-selected="true">This week</button>
+          <button type="button" role="tab" id="hxTbBrief" aria-controls="hxPnBrief" aria-selected="false" tabindex="-1">The brief</button>
+          <button type="button" role="tab" id="hxTbPod" aria-controls="hxPnPod" aria-selected="false" tabindex="-1">Podcast · 6 min</button>
+          <button type="button" role="tab" id="hxTbPast" aria-controls="hxPnPast" aria-selected="false" tabindex="-1">Every past week</button>
+        </div>
+      </article>
+      <p class="hx-cap">Sample firm and client</p>
     </div>
   </header>
 </div>
@@ -816,7 +949,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     </div>
     <div class="bens">
       <div class="ben rv"><span class="k">Revenue</span><h3>Sell it, include it or upsell it</h3><p>Charge for it as a subscription, include it to justify your fee, make it the first step on your offer ladder, or offer it as a premium tier. The first firm charges its clients $300 a month. <button type="button" class="cite" data-n="9">9</button> The questionnaire can sit inside your checkout.</p></div>
-      <div class="ben rv"><span class="k">New work</span><h3>A reason for clients to call you</h3><p>A new rule, a deadline, a competitor's move: the brief puts it in front of your client and gives them a reason to pick up the phone.</p></div>
+      <div class="ben rv"><span class="k">New work</span><h3>Spot new work early</h3><p>A new rule, a deadline, a competitor's move: you see what's coming for each client in the same brief they read.</p></div>
       <div class="ben rv"><span class="k">Relationship</span><h3>Clients hear it from you first</h3><p>When a rule changes or a deadline opens, your client reads it in your brief on Monday, not in someone else's newsletter later in the week.</p></div>
       <div class="ben rv"><span class="k">Effort</span><h3>Nothing extra for you to do</h3><p>We run it. Each brief is researched, written and recorded in about 11 minutes <button type="button" class="cite" data-n="3">3</button> with nobody involved. Your part is telling clients it exists.</p></div>
       <div class="ben rv"><span class="k">Presentation</span><h3>Looks like a premium service</h3><p>A designed report, a podcast and a private portal under your name. It's something clients can see and share, not just an email.</p></div>
@@ -1121,87 +1254,6 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     });
   }
 
-  /* ---------- hero word cycle ---------- */
-  var cycleBtn = $("#cycleBtn"), cycleIdx = ORDER.indexOf(cur), cycleTimer = 0, cyclePaused = false;
-  var cycleSpans = ORDER.map(function (k) { var sp = document.createElement("span"); sp.textContent = V[k].noun; cycleBtn.appendChild(sp); return sp; });
-  function setCycle(i) {
-    cycleIdx = (i + ORDER.length) % ORDER.length;
-    cycleSpans.forEach(function (sp, j) { sp.classList.remove("on"); if (j === cycleIdx) { if (!RM) void sp.offsetWidth; sp.classList.add("on"); } });
-    cycleBtn.setAttribute("aria-label", "Show the portal for " + V[ORDER[cycleIdx]].noun);
-  }
-  setCycle(cycleIdx);
-  if (!RM) {
-    cycleTimer = setInterval(function () { if (!cyclePaused) setCycle(cycleIdx + 1); }, 2600);
-    cycleBtn.addEventListener("mouseenter", function () { cyclePaused = true; });
-    cycleBtn.addEventListener("mouseleave", function () { cyclePaused = false; });
-    cycleBtn.addEventListener("focus", function () { cyclePaused = true; });
-    cycleBtn.addEventListener("blur", function () { cyclePaused = false; });
-  }
-  cycleBtn.addEventListener("click", function () {
-    setVertical(ORDER[cycleIdx], true);
-    $("#portal").scrollIntoView({ behavior: RM ? "auto" : "smooth", block: "start" });
-  });
-
-  /* ---------- the Monday board ---------- */
-  var ROWS = [
-    { k: "search", t: "Searching this week's sources", a: 0, b: 0.5 },
-    { k: "read", t: "Reading every page", a: 0.5, b: 8.4 },
-    { k: "score", t: "Scoring the week", a: 8.4, b: 8.7 },
-    { k: "brief", t: "Building the brief", a: 8.7, b: 8.9 },
-    { k: "pod", t: "Recording the episode", a: 8.9, b: 11.0 },
-    { k: "send", t: "Sending it", a: 11.0, b: 11.2 }
-  ];
-  var END = 11.2, MS_PER_MIN = 1050, HOLD = 4200;
-  var bRows = $("#bRows"), bClock = $("#bClock"), bFoot = $("#bFoot"), bLive = $("#bReplay");
-  var bRaf = 0, bT0 = 0, bEls = [], bDone = null;
-  function pad2(n) { return (n < 10 ? "0" : "") + n; }
-  function mmss(sec) { sec = Math.max(0, Math.floor(sec)); return Math.floor(sec / 60) + ":" + pad2(sec % 60); }
-  function waveBars(n) { var o = ""; for (var i = 0; i < n; i++) o += '<i style="--i:' + i + '"></i>'; return o; }
-  function buildBoard() {
-    bRows.innerHTML = ROWS.map(function (r) {
-      return '<li class="brow" data-k="' + r.k + '" data-state="pending"><span class="brow-dot" aria-hidden="true"></span><div class="brow-main"><b>' + esc(r.t) + '</b><span class="brow-sub"></span></div><div class="brow-side"></div></li>';
-    }).join("");
-    bEls = $$(".brow", bRows).map(function (li) { return { li: li, sub: $(".brow-sub", li), side: $(".brow-side", li), st: "", lastSub: null, lastSide: null }; });
-    bFoot.innerHTML = ""; bDone = null;
-  }
-  function frac(T, r) { return Math.max(0, Math.min(1, (T - r.a) / (r.b - r.a))); }
-  function paintBoard(T) {
-    var d = V[cur], total = Math.floor((540 + T) * 60);
-    bClock.innerHTML = pad2(Math.floor(total / 3600)) + ":" + pad2(Math.floor(total / 60) % 60) + "<small>:" + pad2(total % 60) + "</small>";
-    ROWS.forEach(function (r, i) {
-      var e = bEls[i], f = frac(T, r), st = T >= r.b ? "done" : T >= r.a ? "running" : "pending", sub = "", side = "", first = d.contact.split(" ")[0];
-      if (r.k === "search") { sub = st === "pending" ? "12 searches, trusted sources only" : st === "done" ? "120 results · 112 different pages" : Math.round(120 * f) + " results from 12 searches"; side = st === "pending" ? "" : "09:00"; }
-      else if (r.k === "read") { sub = st === "pending" ? "112 pages, every one of them" : st === "done" ? "112 read · 15 kept for " + d.org : Math.round(112 * f) + " of 112 pages read"; side = st === "done" ? "09:08" : st === "running" ? Math.round(f * 100) + "%" : ""; }
-      else if (r.k === "score") { var sc = Math.round(d.score * (st === "done" ? 1 : f)); sub = st === "pending" ? "activity level, 0 to 100" : "volume " + d.volume + " · consequence " + d.consequence; side = st === "pending" ? "" : '<span class="score">' + sc + "</span>" + (st === "done" ? ' <span class="chip">' + cap(BANDS[bandOf(d.score)]) + "</span>" : ""); }
-      else if (r.k === "brief") { sub = st === "pending" ? "a PDF in " + d.firm + "'s branding" : "8 pages · every item cited"; side = st === "done" ? '<span class="chip">PDF ready</span>' : st === "running" ? "rendering…" : ""; }
-      else if (r.k === "pod") { sub = st === "pending" ? "two hosts, about six minutes" : st === "done" ? "6:01 · transcript attached" : "recording… " + mmss(361 * f); side = st === "pending" ? "" : '<span class="wave' + (st === "running" ? " on" : "") + '">' + waveBars(9) + "</span>" + (st === "done" ? "6:01" : ""); }
-      else if (r.k === "send") { sub = st === "pending" ? "to " + d.contact + ", " + d.title.toLowerCase() : st === "done" ? "in " + first + "'s inbox, with the PDF and the episode" : "sending…"; side = st === "done" ? '<span class="mailcard"><b>3 things that matter this week</b><span>to ' + esc(d.contact) + "</span></span>" : ""; }
-      if (e.st !== st) { e.st = st; e.li.setAttribute("data-state", st); }
-      if (e.lastSub !== sub) { e.lastSub = sub; e.sub.textContent = sub; }
-      if (e.lastSide !== side) { e.lastSide = side; e.side.innerHTML = side; }
-    });
-    var done = T >= END;
-    if (bDone !== done) {
-      bDone = done;
-      bFoot.innerHTML = done ? "<b>Done at 09:11.</b> Nobody on your team touched it." : "";
-      bLive.textContent = done ? "● done · click to replay" : "● replaying · click to restart";
-      bLive.classList.toggle("done", done);
-    }
-  }
-  function stopMonday() { if (bRaf) cancelAnimationFrame(bRaf); bRaf = 0; }
-  function startMonday() {
-    stopMonday(); buildBoard();
-    if (RM) { paintBoard(END); return; }
-    bT0 = performance.now();
-    (function f(now) {
-      var T = (now - bT0) / MS_PER_MIN;
-      if (T >= END + HOLD / MS_PER_MIN) { bT0 = now; T = 0; }
-      paintBoard(Math.min(T, END));
-      bRaf = requestAnimationFrame(f);
-    })(bT0);
-  }
-  bLive.addEventListener("click", function () { startMonday(); });
-
   /* ---------- pick a client ---------- */
   var cards = $("#cards"), cardHover = -1;
   ORDER.forEach(function (k, i) {
@@ -1259,7 +1311,6 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     store("mb-vertical", k);
     $$(".card").forEach(function (b) { var on = b.getAttribute("data-v") === k; b.setAttribute("aria-checked", String(on)); b.tabIndex = on ? 0 : -1; });
     layoutCards();
-    startMonday();
     renderPortalHead();
     renderTab(animate);
     renderDossier(animate);
@@ -1467,7 +1518,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     { who: "Software", t: "The research runs on its own", p: "Every week, scripts search the news, government sites, blogs, public posts and podcasts for each client. Podcast audio is transcribed, so an interview is searched the same way as an article. Search works by meaning, so \u201cvariance approved for the east lot\u201d still reaches a client watching \u201crezoning\u201d. Paid databases and your own systems can be added when your clients need them.", chips: ["Past week only", "Podcasts transcribed", "Matches by meaning"], vis: "search" },
     { who: "AI", t: "AI decides what matters", p: "AI reads everything collected for that client, about 50,000 words a week, more than three hours of reading, and keeps only the signals worth their attention. Every item is logged with its source, so it can be searched and tracked later.", chips: ["~50,000 words read", "Every item logged", "Every item cited"], vis: "funnel" },
     { who: "AI + software", t: "The brief, podcast and portal update", p: "AI writes the brief and the podcast script. Software builds the branded report, records the episode, sends the Monday email and updates the portal. Your team can review before anything goes out.", chips: ["~8-page brief", "~6-minute episode", "Optional review"], vis: "outputs" },
-    { who: "AI", t: "Your client knows what to do next", p: "Each brief ends with suggested actions, the deadlines still open, and whether anything needs doing yet. It gives your client a reason to call you.", chips: ["Suggested actions", "Open deadlines", "A reason to call you"], vis: "portal" }
+    { who: "AI", t: "Your client knows what to do next", p: "Each brief ends with suggested actions, the deadlines still open, and whether anything needs doing yet. They know what to do next without having to ask.", chips: ["Suggested actions", "Open deadlines", "Fewer check-ins"], vis: "portal" }
   ];
   function whoTag(s) { return '<span class="who' + (s.who.indexOf("AI") === 0 ? " who-ai" : "") + '">' + esc(s.who) + "</span>"; }
   function visHtml(kind) {
@@ -1626,5 +1677,131 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 })();
 </script>
 
+<script>
+/* hero: rotating Ask box, portal tabs, sample episode, and the dot stream */
+(function () {
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $id = function (id) { return document.getElementById(id); };
+  if (!$id('hxFlow')) return;
+
+  var QA = [
+    ['Which deadlines are still open?', 'Two: racking standard comments close 28 Sep, and the logging timeline on 15 Oct.', '2 sources'],
+    ['Any new contractor rulings?', 'Yes. An appeals court narrowed the contractor test where the carrier sets the routes.', '1 source'],
+    ['Any fines at warehouses?', 'Inspectors fined two warehouse operators over racking checks on 9 Sep.', '1 source']
+  ];
+  var qEl = $id('hxQ'), aEl = $id('hxA');
+  function showAnswer(i) { aEl.textContent = QA[i][1]; var n = document.createElement('span'); n.className = 'n'; n.textContent = QA[i][2]; aEl.appendChild(n); aEl.style.opacity = 1; }
+  if (!still) {
+    var qi = 0;
+    var next = function () {
+      qi = (qi + 1) % QA.length; var q = QA[qi][0], k = 0;
+      aEl.style.opacity = 0; qEl.textContent = '';
+      var type = setInterval(function () {
+        k++; qEl.textContent = q.slice(0, k);
+        if (k >= q.length) { clearInterval(type); setTimeout(function () { showAnswer(qi); setTimeout(next, 5200); }, 450); }
+      }, 42);
+    };
+    setTimeout(next, 5200);
+  }
+
+  var tabs = [].slice.call(document.querySelectorAll('.hx-tabs [role="tab"]'));
+  function select(tab) {
+    tabs.forEach(function (t) {
+      var on = t === tab, panel = $id(t.getAttribute('aria-controls'));
+      t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
+      panel.classList.toggle('off', !on);
+      if (on) panel.removeAttribute('inert'); else panel.setAttribute('inert', '');
+    });
+    if (tab.id !== 'hxTbPod') pause();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t); });
+    t.addEventListener('keydown', function (e) {
+      var k = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!k) return;
+      e.preventDefault(); var n = tabs[(i + k + tabs.length) % tabs.length]; n.focus(); select(n);
+    });
+  });
+
+  /* sample episode: silent, like the portal demo's player */
+  var wave = $id('hxWave'), play = $id('hxPlay'), timeEl = $id('hxTime');
+  var lines = [].slice.call(document.querySelectorAll('#hxLines li')), bars = [], sec = 0, total = 361, timer = 0, ws = 5;
+  for (var b = 0; b < 44; b++) { ws = (ws * 16807) % 2147483647; var bar = document.createElement('i'); bar.style.height = (20 + (ws % 80)) + '%'; wave.appendChild(bar); bars.push(bar); }
+  function paint() {
+    var f = sec / total, cur = 0;
+    bars.forEach(function (x, i) { x.classList.toggle('done', i / bars.length < f); });
+    timeEl.textContent = Math.floor(sec / 60) + ':' + String(sec % 60).padStart(2, '0') + ' / 6:01 · sample';
+    lines.forEach(function (l, i) { if (sec >= +l.dataset.at) cur = i; });
+    lines.forEach(function (l, i) { l.classList.toggle('on', i === cur); });
+  }
+  function pause() { clearInterval(timer); timer = 0; play.classList.remove('on'); play.setAttribute('aria-label', 'Play sample episode'); }
+  play.addEventListener('click', function () {
+    if (timer) { pause(); return; }
+    play.classList.add('on'); play.setAttribute('aria-label', 'Pause sample episode');
+    timer = setInterval(function () { sec = (sec + 1) % total; paint(); }, 110);
+  });
+  paint();
+
+  /* the stream: most of what's published falls away; what you tell us always arrives */
+  var flow = $id('hxFlow'), cv = $id('hxCv');
+  if (!cv.getContext) return;
+  var ctx = cv.getContext('2d'), W, H, dots = [], srcA = [], noteA = [], target, vertical, dotC, accC, inkC, t0 = performance.now(), raf = 0, visible = true;
+  var seed = 11; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  function rel(el) { var r = el.getBoundingClientRect(), c = cv.getBoundingClientRect(); return { l: r.left - c.left, t: r.top - c.top, r: r.right - c.left, b: r.bottom - c.top, w: r.width, h: r.height }; }
+  function anchorsOf(sel) { return [].map.call(document.querySelectorAll(sel), function (li) { var r = rel(li); return vertical ? { x: r.l + r.w / 2, y: r.b } : { x: r.r - 2, y: r.t + r.h / 2 }; }); }
+  function path(d) {
+    var s = (d.firm ? noteA : srcA)[d.s], a, tx, ty, cx, cy;
+    if (!s) return null;
+    a = vertical ? { x: s.x + (d.j - 0.5) * 24, y: s.y + 2 } : { x: s.x, y: s.y + (d.j - 0.5) * 6 };
+    if (vertical) { tx = target.x0 + (target.x1 - target.x0) * d.tj; ty = target.y; cx = a.x + (tx - a.x) * 0.15; cy = a.y + (ty - a.y) * 0.85; }
+    else { tx = target.x; ty = target.y0 + (target.y1 - target.y0) * d.tj; cx = a.x + (tx - a.x) * 0.5; cy = ty; }
+    return [a.x, a.y, cx, cy, tx, ty];
+  }
+  function setup() {
+    var dpr = Math.min(2, window.devicePixelRatio || 1), c = cv.getBoundingClientRect();
+    W = c.width; H = c.height; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var cs = getComputedStyle(document.documentElement);
+    dotC = cs.getPropertyValue('--hx-dot').trim() || '#4C5CC9'; accC = cs.getPropertyValue('--accent').trim() || '#4F63C9'; inkC = cs.getPropertyValue('--ink').trim() || '#1E2536';
+    vertical = window.matchMedia('(max-width: 760px)').matches;
+    srcA = anchorsOf('#hxSrcs li'); noteA = anchorsOf('#hxNotes li');
+    var p = rel($id('hxCard'));
+    target = vertical ? { x0: p.l + p.w * 0.18, x1: p.l + p.w * 0.82, y: p.t + 3 } : { x: p.l + 3, y0: p.t + p.h * 0.26, y1: p.t + p.h * 0.62 };
+    seed = 11; dots = [];
+    var n = Math.round(Math.min(300, Math.max(140, W * 0.42)));
+    for (var i = 0; i < n; i++) dots.push({ firm: false, s: Math.floor(rnd() * srcA.length), j: rnd(), tj: rnd(), ph: rnd(), v: 34 + rnd() * 30, keep: rnd() < 0.18, die: 0.3 + rnd() * 0.45, r: 1.1 + rnd() * 0.9 });
+    for (var k = 0; k < 15; k++) dots.push({ firm: true, s: k % noteA.length, j: rnd(), tj: 0.2 + rnd() * 0.6, ph: k / 15 + rnd() * 0.05, v: 40, keep: true, r: 2.5 });
+    // speed in pixels per second, so a short stream still moves visibly
+    dots.forEach(function (d) { var c2 = path(d); var len = c2 ? Math.hypot(c2[4] - c2[0], c2[5] - c2[1]) * 1.1 + 20 : 200; d.sp = d.v / len; });
+  }
+  function at(c, p) { var q = 1 - p; return [q * q * c[0] + 2 * q * p * c[2] + p * p * c[4], q * q * c[1] + 2 * q * p * c[3] + p * p * c[5]]; }
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < dots.length; i++) {
+      var d = dots[i], c = path(d); if (!c) continue;
+      var p = (d.ph + t * d.sp) % 1, xy = at(c, p), al, r, col;
+      if (d.firm) {
+        al = 0.95; r = d.r; col = inkC;
+        var tr = at(c, Math.max(0, p - 0.035));
+        ctx.globalAlpha = 0.25; ctx.fillStyle = inkC; ctx.beginPath(); ctx.arc(tr[0], tr[1], r * 0.6, 0, 6.2832); ctx.fill();
+      } else {
+        al = 0.18 + 0.5 * p; r = d.r + 0.5 * p; col = dotC;
+        if (!d.keep && p > d.die) { al *= Math.max(0, 1 - (p - d.die) / 0.12); if (al <= 0.01) continue; }
+        if (d.keep && p > 0.6) { col = accC; al = 0.55 + 0.45 * (p - 0.6) / 0.4; r = d.r + 0.8; }
+      }
+      if (p < 0.06) al *= p / 0.06;
+      ctx.globalAlpha = al; ctx.fillStyle = col; ctx.beginPath(); ctx.arc(xy[0], xy[1], r, 0, 6.2832); ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+  function loop(now) { if (visible) draw((now - t0) / 1000 + 6); raf = still ? 0 : requestAnimationFrame(loop); }
+  function reset() { setup(); draw((performance.now() - t0) / 1000 + 6); }
+  reset(); if (!still) raf = requestAnimationFrame(loop);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(reset);
+  window.addEventListener('resize', reset);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(flow);
+  var recolor = function () { setTimeout(reset, 0); };
+  if (window.matchMedia) { var mq = window.matchMedia('(prefers-color-scheme: dark)'); if (mq.addEventListener) mq.addEventListener('change', recolor); }
+  new MutationObserver(recolor).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>
 </body>
 </html>
