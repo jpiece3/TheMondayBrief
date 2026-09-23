@@ -112,8 +112,15 @@ h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
 p { margin: 0; }
 button, input { font: inherit; color: inherit; }
 :focus-visible { outline: 1px solid var(--line-2); outline-offset: 3px; }
-.wrap { max-width: 1160px; margin: 0 auto; }
-.narrow { max-width: 720px; }
+/* widths, laid out like a brief: text in a reading column, exhibits run wide, all on one centre line */
+:root { --w-read: 720px; --w-std: 1160px; --w-wide: 1400px; }
+.wrap { max-width: var(--w-std); margin: 0 auto; }
+.page { max-width: var(--w-wide); margin: 0 auto; }
+.page > section { max-width: var(--w-std); margin-inline: auto; }
+.page > section.w-read { max-width: var(--w-read); }
+.page > section.w-wide { max-width: max(var(--w-std), min(var(--w-wide), 100% - 64px)); }
+.w-wide > * { max-width: var(--w-std); margin-inline: auto; }
+.w-wide > .exhibit { max-width: none; }
 .mono { font-family: var(--mono); }
 .rv { transition: transform 0.8s var(--ease), opacity 0.8s var(--ease); }
 .rv.pre { transform: translateY(24px); opacity: 0.35; }
@@ -127,7 +134,7 @@ button, input { font: inherit; color: inherit; }
 /* sticky header: frosted, with the next Monday */
 .site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 40; padding-top: 12px; pointer-events: none; }
 .site-head.scrolled .site-head-in { background: color-mix(in srgb, var(--surface) 80%, transparent); border-color: color-mix(in srgb, var(--line-2) 70%, transparent); box-shadow: 0 12px 32px -16px rgba(30, 37, 54, 0.28); }
-.site-head-in { pointer-events: auto; max-width: 1080px; margin: 0 auto; height: 60px; padding: 0 9px 0 18px; display: flex; align-items: center; gap: 16px; border-radius: 999px; background: color-mix(in srgb, var(--surface) 62%, transparent); -webkit-backdrop-filter: saturate(1.6) blur(18px); backdrop-filter: saturate(1.6) blur(18px); border: 1px solid color-mix(in srgb, var(--line-2) 55%, transparent); box-shadow: 0 1px 2px rgba(30, 37, 54, 0.04); transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; }
+.site-head-in { pointer-events: auto; max-width: var(--w-std); margin: 0 auto; height: 60px; padding: 0 9px 0 18px; display: flex; align-items: center; gap: 16px; border-radius: 999px; background: color-mix(in srgb, var(--surface) 62%, transparent); -webkit-backdrop-filter: saturate(1.6) blur(18px); backdrop-filter: saturate(1.6) blur(18px); border: 1px solid color-mix(in srgb, var(--line-2) 55%, transparent); box-shadow: 0 1px 2px rgba(30, 37, 54, 0.04); transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s; }
 .brand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); text-decoration: none; flex: none; }
 .brand .mb-mark { height: 21px; width: 27px; }
 .brand-word { font-family: var(--pv-sans); font-size: 18px; font-weight: 600; letter-spacing: -0.024em; line-height: 1; white-space: nowrap; }
@@ -158,7 +165,7 @@ button, input { font: inherit; color: inherit; }
 .menu-btn span:last-child { transform: translateY(4px); }
 .site-head.menu-open .menu-btn span:first-child { transform: rotate(45deg); }
 .site-head.menu-open .menu-btn span:last-child { transform: rotate(-45deg); }
-.menu-panel { pointer-events: auto; position: absolute; left: 0; right: 0; top: calc(100% + 8px); max-width: 1080px; margin: 0 auto; display: grid; gap: 6px; padding: 12px; border-radius: 22px; background: color-mix(in srgb, var(--surface) 92%, transparent); -webkit-backdrop-filter: saturate(1.6) blur(18px); backdrop-filter: saturate(1.6) blur(18px); border: 1px solid color-mix(in srgb, var(--line-2) 70%, transparent); box-shadow: 0 18px 40px -18px rgba(30, 37, 54, 0.35); transform-origin: 50% 0; animation: menuin 0.26s var(--ease); }
+.menu-panel { pointer-events: auto; position: absolute; left: 0; right: 0; top: calc(100% + 8px); max-width: var(--w-std); margin: 0 auto; display: grid; gap: 6px; padding: 12px; border-radius: 22px; background: color-mix(in srgb, var(--surface) 92%, transparent); -webkit-backdrop-filter: saturate(1.6) blur(18px); backdrop-filter: saturate(1.6) blur(18px); border: 1px solid color-mix(in srgb, var(--line-2) 70%, transparent); box-shadow: 0 18px 40px -18px rgba(30, 37, 54, 0.35); transform-origin: 50% 0; animation: menuin 0.26s var(--ease); }
 @keyframes menuin { from { opacity: 0; transform: translateY(-6px) scale(0.98); } }
 .menu-next { display: flex; align-items: center; gap: 10px; padding: 6px 10px 12px; border-bottom: 1px solid var(--line); font-size: 13.5px; color: var(--slate); }
 .menu-next b { color: var(--ink); font-weight: 600; }
@@ -578,12 +585,11 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .fp-vis { margin-top: 22px; border-top: 1px dashed var(--line-2); padding-top: 18px; }
 
 /* benefits */
-.bens { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line-2); }
-.ben { padding: 22px 24px 26px 0; border-bottom: 1px solid var(--line); }
-.ben:not(:nth-child(3n + 1)) { padding-left: 24px; border-left: 1px solid var(--line); }
+.bens { display: grid; border-top: 1px solid var(--line-2); }
+.ben { display: grid; grid-template-columns: 128px minmax(0, 1fr); column-gap: 24px; padding: 20px 0 22px; border-bottom: 1px solid var(--line); }
 .ben h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
-.ben p { font-size: 16px; color: var(--ink-2); margin-top: 8px; }
-.ben .k { font-family: var(--mono); font-size: 12px; color: var(--accent); display: block; margin-bottom: 10px; }
+.ben p { font-size: 16px; color: var(--ink-2); margin-top: 6px; }
+.ben .k { grid-row: 1 / span 2; font-family: var(--mono); font-size: 12px; color: var(--accent); padding-top: 5px; }
 
 /* console */
 .console { background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: 14px; overflow: hidden; }
@@ -624,14 +630,14 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .built li::before { content: "✓"; font-weight: 700; }
 
 /* start */
-.start { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; counter-reset: s; border-top: 1px solid var(--line-2); padding: 0; margin: 0; list-style: none; }
-.start li { counter-increment: s; padding: 18px 18px 0 0; }
-.start li + li { padding-left: 18px; border-left: 1px solid var(--line); }
-.start li::before { content: counter(s); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--ink); font-family: var(--mono); font-size: 13px; margin-bottom: 12px; }
-.start li::before { border-color: var(--line-2); color: var(--accent); }
+.start { display: grid; counter-reset: s; padding: 0; margin: 0; list-style: none; }
+.start li { counter-increment: s; display: grid; grid-template-columns: 30px minmax(0, 1fr); column-gap: 20px; position: relative; padding-bottom: 26px; }
+.start li:last-child { padding-bottom: 0; }
+.start li::before { content: counter(s); grid-row: 1 / span 2; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--line-2); background: var(--ground); color: var(--accent); font-family: var(--mono); font-size: 13px; }
+.start li:not(:last-child)::after { content: ""; position: absolute; left: 15px; top: 34px; bottom: 4px; width: 1px; background: var(--line-2); }
 .start li:first-child::before { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
-.start h3 { font-size: 17px; font-weight: 700; line-height: 1.25; }
-.start p { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
+.start h3 { font-size: 19px; font-weight: 700; line-height: 1.25; padding-top: 4px; }
+.start p { font-size: 15.5px; color: var(--ink-2); margin-top: 4px; }
 
 /* logo: design handoff 1B, "Fifty Thousand to One" */
 .mb-mark { --mb-dot: #4C5CC9; --mb-o1: 0.32; --mb-o2: 0.56; --mb-o3: 0.86; --mb-s1: 0.40; --mb-s2: 0.72; display: block; flex: none; overflow: visible; }
@@ -642,15 +648,15 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 
 /* ending: closing call and footer on one sheet */
 .ending { margin-top: 96px; background: var(--surface); border-top: 1px solid var(--line); }
-.closing { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 28px 64px; align-items: end; padding-block: 76px 64px; }
+.closing { display: grid; justify-items: center; gap: 22px; max-width: var(--w-read); margin-inline: auto; text-align: center; padding-block: 84px 72px; }
 .closing h2 { color: var(--ink); }
 .closing .hl { color: var(--accent); font-style: italic; }
 .byline { margin-top: 18px; font-family: var(--mono); font-size: 13px; color: var(--slate); min-height: 1.5em; }
 .caret { display: inline-block; width: 2px; height: 1em; background: var(--accent); vertical-align: -2px; margin-left: 2px; animation: blink 0.9s steps(1) infinite; }
 @keyframes blink { 50% { opacity: 0; } }
-.closing-side { display: grid; gap: 20px; justify-items: start; }
+.closing-side { display: grid; gap: 20px; justify-items: center; }
 @media (max-width: 560px) { .closing-side .btn { justify-self: stretch; justify-content: center; } }
-.closing-side p { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
+.closing-side p { font-size: 17px; line-height: 1.55; color: var(--ink-2); max-width: 44ch; }
 .foot { border-top: 1px solid var(--line); padding-block: 48px calc(30px + env(safe-area-inset-bottom, 0px)); color: var(--ink-2); }
 .foot-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr); gap: 40px; }
 .foot-brand { display: grid; gap: 12px; justify-items: start; }
@@ -664,7 +670,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
 .foot-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--faint); }
 @media (max-width: 860px) {
   .ending { margin-top: 64px; }
-  .closing { grid-template-columns: 1fr; gap: 22px; align-items: start; padding-block: 52px 44px; }
+  .closing { padding-block: 52px 44px; }
   .foot-top { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 540px) {
@@ -697,14 +703,8 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   .get:nth-child(n + 3) { border-top: 1px solid var(--line); }
   .pv-grid { grid-template-columns: 1fr; }
   .flow { grid-template-columns: 1fr; }
-  .bens { grid-template-columns: 1fr 1fr; }
-  .ben:not(:nth-child(3n + 1)) { padding-left: 0; border-left: 0; }
-  .ben:nth-child(even) { padding-left: 20px; border-left: 1px solid var(--line); }
   .con-panel { grid-template-columns: 1fr; }
   .proof { grid-template-columns: 1fr; }
-  .start { grid-template-columns: 1fr 1fr; }
-  .start li + li { padding-left: 0; border-left: 0; }
-  .start li:nth-child(even) { padding-left: 18px; border-left: 1px solid var(--line); }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
@@ -714,8 +714,10 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   .sk-audio { width: 220px; }
   .sk-mail { width: 230px; top: 140px; }
   .sk-dl { width: 210px; top: 290px; right: 0; }
-  .gets, .bens, .dossier, .nums, .start, .pv-two, .dos-value { grid-template-columns: 1fr; }
-  .get + .get, .dos + .dos, .num:nth-child(even), .ben:nth-child(even), .start li:nth-child(even) { padding-left: 0; border-left: 0; }
+  .gets, .dossier, .nums, .pv-two, .dos-value { grid-template-columns: 1fr; }
+  .ben { grid-template-columns: 1fr; }
+  .ben .k { grid-row: auto; padding: 0 0 8px; }
+  .get + .get, .dos + .dos, .num:nth-child(even) { padding-left: 0; border-left: 0; }
   .get + .get, .dos + .dos { border-top: 1px solid var(--line); }
   .pv { padding: 16px 14px 20px; }
   .pv-org { font-size: 22px; }
@@ -854,7 +856,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
   </header>
 </div>
 </div>
-<div class="wrap">
+<div class="page">
 
   <section id="gets" style="padding-top:0">
     <div class="gets">
@@ -885,7 +887,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     </div>
   </section>
 
-  <section id="portal">
+  <section id="portal" class="w-wide">
     <div class="sec-top rv">
       <span class="eyebrow">The client portal</span>
       <h2>See it for your practice</h2>
@@ -896,7 +898,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
       <div class="cards" role="radiogroup" aria-labelledby="pickLabel" id="cards"></div>
       <p class="pick-note">In the real system, a photo of a business card is enough to start a client's intake.</p>
     </div>
-    <div class="portal-split">
+    <div class="portal-split exhibit">
     <div class="frame">
       <div class="frame-bar">
         <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -945,7 +947,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     </div>
   </section>
 
-  <section id="why">
+  <section id="why" class="w-read">
     <div class="sec-top rv">
       <span class="eyebrow">Why firms want it</span>
       <h2>Clients pay for it, and it keeps them close</h2>
@@ -960,13 +962,13 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     </div>
   </section>
 
-  <section id="console">
+  <section id="console" class="w-wide">
     <div class="sec-top rv">
       <span class="eyebrow">Your side of it</span>
       <h2>An operator console for the whole practice</h2>
       <p class="lede">While clients see their own portal, your team sees everyone at once.</p>
     </div>
-    <div class="console">
+    <div class="console exhibit">
       <div class="con-tabs" role="tablist" aria-label="Console views" id="conTabs">
         <button class="con-tab" role="tab" type="button" aria-selected="true" data-c="runs" id="ct-runs" aria-controls="conPanel">This week's runs</button>
         <button class="con-tab" role="tab" type="button" aria-selected="false" data-c="clients" id="ct-clients" aria-controls="conPanel" tabindex="-1">Clients &amp; briefings</button>
@@ -1003,7 +1005,7 @@ h2 { font-family: var(--pv-serif); font-size: clamp(30px, 4vw, 46px); line-heigh
     </div>
   </section>
 
-  <section id="start">
+  <section id="start" class="w-read">
     <div class="sec-top rv">
       <span class="eyebrow">Getting started</span>
       <h2>From first call to first Monday</h2>
